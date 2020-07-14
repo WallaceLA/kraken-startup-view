@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lpG-L4-x1e">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SignIn-->
+        <scene sceneID="EhH-Zw-6Q7">
+            <objects>
+                <viewController id="3Ci-bP-aLz" customClass="AccessViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WPD-cM-mP7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="sJw-SS-0xu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="Ems-9y-6yH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Parken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-E5-wpe">
+                                <rect key="frame" x="20" y="285" width="120" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="ODd-e4-0mo"/>
+                                    <constraint firstAttribute="width" constant="120" id="aLO-EU-PWN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-KM-dNH">
+                                <rect key="frame" x="259" y="787" width="48" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Terms"/>
+                                <connections>
+                                    <segue destination="lXH-Bo-QDa" kind="show" identifier="SignInToTermsSegue" id="2l9-e1-Oy8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-Ao-4p9" customClass="PhoneNumberCustomButton" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="383" width="374" height="40"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dbc-hV-im3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="phoneNumberChangeEvent:" destination="3Ci-bP-aLz" eventType="touchUpInside" id="nYe-kf-1dn"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9T-t8-toi" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="443" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="JOIN NOW"/>
+                                <connections>
+                                    <action selector="signInClick:" destination="3Ci-bP-aLz" eventType="touchUpInside" id="WUx-hO-fXc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up you agree to our " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCS-m7-h1E">
+                                <rect key="frame" x="20" y="793.5" width="237" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-S0-rs5">
+                                <rect key="frame" x="59" y="824" width="106" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Privacy policy"/>
+                                <connections>
+                                    <segue destination="L5r-pw-Zjr" kind="show" identifier="SignInToPrivacySegue" id="5A2-ma-lpL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g36-aY-UzH">
+                                <rect key="frame" x="20" y="831.5" width="29" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="bin-4V-sUE">
+                                <rect key="frame" x="122" y="85" width="170" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="g6K-uR-wSD"/>
+                                    <constraint firstAttribute="height" constant="90" id="rsw-Tp-wCp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider 1" translatesAutoresizingMaskIntoConstraints="NO" id="yev-Ho-gXz">
+                                <rect key="frame" x="150" y="320" width="244" height="5"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="AcF-6b-St1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-20-amc" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="499" width="374" height="36"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="MEET THE SERVICE"/>
+                                <connections>
+                                    <segue destination="xbe-u3-wcg" kind="show" identifier="SignInToPresentationSegue" id="Wvl-81-clh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sJw-SS-0xu" firstAttribute="trailing" secondItem="gjZ-az-xTP" secondAttribute="trailing" id="0GJ-dg-7qf"/>
+                            <constraint firstItem="yev-Ho-gXz" firstAttribute="top" secondItem="sJw-SS-0xu" secondAttribute="bottom" constant="60" id="3S3-av-Hlg"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="dpj-KM-dNH" secondAttribute="bottom" constant="42" id="5cV-L9-hu9"/>
+                            <constraint firstItem="sJw-SS-0xu" firstAttribute="top" secondItem="WPD-cM-mP7" secondAttribute="top" id="96A-Hi-AjJ"/>
+                            <constraint firstItem="yev-Ho-gXz" firstAttribute="leading" secondItem="HXf-E5-wpe" secondAttribute="trailing" constant="10" id="AeE-QU-hW8"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="Wfo-S0-rs5" secondAttribute="bottom" constant="5" id="BMN-CF-1bp"/>
+                            <constraint firstItem="PfN-20-amc" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="F0s-CP-0cP"/>
+                            <constraint firstItem="aCS-m7-h1E" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="LMd-P9-UXm"/>
+                            <constraint firstItem="HFP-Ao-4p9" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="OwD-le-H2g"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="yev-Ho-gXz" secondAttribute="trailing" constant="20" id="QU2-VF-aMo"/>
+                            <constraint firstItem="g36-aY-UzH" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="T8N-b5-0nh"/>
+                            <constraint firstItem="bin-4V-sUE" firstAttribute="centerY" secondItem="sJw-SS-0xu" secondAttribute="centerY" id="Uwr-kl-QJ0"/>
+                            <constraint firstItem="bin-4V-sUE" firstAttribute="centerX" secondItem="sJw-SS-0xu" secondAttribute="centerX" id="Y6h-8p-Zsd"/>
+                            <constraint firstItem="m9T-t8-toi" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="YKA-kg-OPO"/>
+                            <constraint firstItem="dpj-KM-dNH" firstAttribute="leading" secondItem="aCS-m7-h1E" secondAttribute="trailing" constant="2" id="aAv-EK-MnL"/>
+                            <constraint firstItem="Wfo-S0-rs5" firstAttribute="top" secondItem="aCS-m7-h1E" secondAttribute="bottom" constant="10" id="dcr-Qh-j7C"/>
+                            <constraint firstItem="PfN-20-amc" firstAttribute="top" secondItem="m9T-t8-toi" secondAttribute="bottom" constant="20" id="diu-Jn-qQT"/>
+                            <constraint firstItem="m9T-t8-toi" firstAttribute="top" secondItem="HFP-Ao-4p9" secondAttribute="bottom" constant="20" id="fMU-M1-hZo"/>
+                            <constraint firstItem="aCS-m7-h1E" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="kbT-Ko-CgE"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="m9T-t8-toi" secondAttribute="trailing" constant="20" id="m4O-qm-Ju2"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="top" secondItem="sJw-SS-0xu" secondAttribute="bottom" constant="25" id="m5l-AX-bP6"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="PfN-20-amc" secondAttribute="trailing" constant="20" id="oFg-Sr-OEJ"/>
+                            <constraint firstItem="Wfo-S0-rs5" firstAttribute="leading" secondItem="g36-aY-UzH" secondAttribute="trailing" constant="10" id="pac-L3-yZd"/>
+                            <constraint firstItem="sJw-SS-0xu" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" id="tkh-58-Fkm"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="g36-aY-UzH" secondAttribute="bottom" constant="10" id="wEz-nL-gib"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="HFP-Ao-4p9" secondAttribute="trailing" constant="20" id="wG0-vE-j8v"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="yfa-Qg-enl"/>
+                            <constraint firstItem="HFP-Ao-4p9" firstAttribute="top" secondItem="HXf-E5-wpe" secondAttribute="bottom" constant="20" id="zhz-mM-9IB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gjZ-az-xTP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SignIn" id="MQz-jU-Mcd">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="V96-o7-qMr"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="phoneNumberField" destination="HFP-Ao-4p9" id="0H2-CO-sdN"/>
+                        <outlet property="signInButton" destination="m9T-t8-toi" id="aoa-gm-aaP"/>
+                        <segue destination="0X2-DT-xlh" kind="show" identifier="AccessToSignInSegue" id="meV-gn-ys3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bws-y9-G01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="-76"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="oTi-KQ-bsE">
+            <objects>
+                <viewController id="z7k-8B-eGx" customClass="RegisterViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4h1-m7-cnj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-iC-Smt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="158"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="158" id="dpt-5K-vTC"/>
+                                    <constraint firstAttribute="height" constant="158" id="e6x-LH-s9l"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-ud-sE9">
+                                <rect key="frame" x="20" y="90" width="175.5" height="33"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let`s get start your registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-Xr-oWF">
+                                <rect key="frame" x="20" y="149" width="281.5" height="26"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhm-LS-zYM" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="803" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Complete registration"/>
+                                <connections>
+                                    <action selector="acessarClick:" destination="0X2-DT-xlh" eventType="touchUpInside" id="Sna-N6-MY6"/>
+                                    <action selector="registerClick:" destination="z7k-8B-eGx" eventType="touchUpInside" id="MRL-kW-nup"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-h1-gor" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="222" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n45-hR-eA8" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="267.5" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Document Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUU-oP-WDS" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="313" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYQ-WF-tTF" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="744" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="I already have an account"/>
+                                <connections>
+                                    <action selector="updatePhoneNumberClick:" destination="z7k-8B-eGx" eventType="touchUpInside" id="7cb-SE-DZd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-fo-nDe" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="358.5" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="G7b-iC-Smt" secondAttribute="trailing" id="2P4-be-QDY"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="bottom" secondItem="zhm-LS-zYM" secondAttribute="bottom" constant="20" id="2i2-b0-Bfo"/>
+                            <constraint firstItem="zhm-LS-zYM" firstAttribute="top" secondItem="JYQ-WF-tTF" secondAttribute="bottom" constant="20" id="6z6-aC-GZD"/>
+                            <constraint firstItem="zhm-LS-zYM" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="Cuj-gX-M1f"/>
+                            <constraint firstItem="WUU-oP-WDS" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="D6p-w3-Qyt"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="n45-hR-eA8" secondAttribute="trailing" constant="20" id="D9k-6v-3qH"/>
+                            <constraint firstItem="RpV-Xr-oWF" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="GG9-FM-GpW"/>
+                            <constraint firstItem="G7b-iC-Smt" firstAttribute="top" secondItem="isZ-yt-4gS" secondAttribute="top" id="IBF-u4-ONf"/>
+                            <constraint firstItem="n45-hR-eA8" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="IcG-C3-mXF"/>
+                            <constraint firstItem="G7b-iC-Smt" firstAttribute="leading" secondItem="4h1-m7-cnj" secondAttribute="leading" id="KY3-uj-TjV"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="JYQ-WF-tTF" secondAttribute="trailing" constant="20" id="KpC-kL-RTX"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="3Jm-fo-nDe" secondAttribute="trailing" constant="20" id="KyW-MK-ZgF"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="WUU-oP-WDS" secondAttribute="trailing" constant="20" id="LzU-xh-z7w"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="zhm-LS-zYM" secondAttribute="trailing" constant="20" id="Q3b-Ud-UYs"/>
+                            <constraint firstItem="gqT-h1-gor" firstAttribute="top" secondItem="G7b-iC-Smt" secondAttribute="bottom" constant="20" id="XQW-JQ-zp6"/>
+                            <constraint firstItem="n45-hR-eA8" firstAttribute="top" secondItem="gqT-h1-gor" secondAttribute="bottom" constant="20" id="dWl-TY-sV4"/>
+                            <constraint firstItem="JYQ-WF-tTF" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="dkQ-QF-32F"/>
+                            <constraint firstItem="7hh-ud-sE9" firstAttribute="top" secondItem="isZ-yt-4gS" secondAttribute="top" constant="46" id="htE-nv-RkL"/>
+                            <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="gqT-h1-gor" secondAttribute="trailing" constant="20" id="jvj-EQ-9iz"/>
+                            <constraint firstItem="3Jm-fo-nDe" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="kU5-k7-mjE"/>
+                            <constraint firstItem="gqT-h1-gor" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="mzf-2N-geD"/>
+                            <constraint firstItem="WUU-oP-WDS" firstAttribute="top" secondItem="n45-hR-eA8" secondAttribute="bottom" constant="20" id="pMx-9s-M3W"/>
+                            <constraint firstItem="RpV-Xr-oWF" firstAttribute="top" secondItem="7hh-ud-sE9" secondAttribute="bottom" constant="26" id="wIR-M7-fwe"/>
+                            <constraint firstItem="7hh-ud-sE9" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="wXq-3G-g0N"/>
+                            <constraint firstItem="3Jm-fo-nDe" firstAttribute="top" secondItem="WUU-oP-WDS" secondAttribute="bottom" constant="20" id="yjK-A4-UX7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="isZ-yt-4gS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IZM-4a-9o0"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="documentNumberField" destination="WUU-oP-WDS" id="eaD-nc-svS"/>
+                        <outlet property="emailField" destination="3Jm-fo-nDe" id="UpI-wn-mHa"/>
+                        <outlet property="firstNameField" destination="gqT-h1-gor" id="mYT-VA-brS"/>
+                        <outlet property="lastNameField" destination="n45-hR-eA8" id="uMT-5c-i3A"/>
+                        <segue destination="8Oi-bW-grw" kind="show" identifier="RegisterToMain" id="HQi-1L-Wif"/>
+                        <segue destination="dYI-hp-ws8" kind="show" identifier="RegisterToChangePhoneSegue" id="c3R-Rt-Amw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-h8-sdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2978" y="329"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="S3h-HJ-X3S">
+            <objects>
+                <viewController id="0X2-DT-xlh" customClass="SignInViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fbv-0i-dPG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mH-Oj-TiU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="158"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="158" id="yyq-yo-TXI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCj-DA-oaQ">
+                                <rect key="frame" x="20" y="90" width="205" height="33"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your code received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raE-KF-U5m">
+                                <rect key="frame" x="20" y="149" width="227" height="26"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-send code in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-Zd-xJw">
+                                <rect key="frame" x="20" y="809" width="131" height="23"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-gW-FpF">
+                                <rect key="frame" x="159" y="809" width="35" height="23"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+55 91111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xll-SR-wgJ">
+                                <rect key="frame" x="228" y="809" width="134" height="23"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgg-3w-SJL">
+                                <rect key="frame" x="202" y="809" width="18" height="23"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-Vg-TYN" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="724" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Verify now"/>
+                                <connections>
+                                    <action selector="acessarClick:" destination="0X2-DT-xlh" eventType="touchUpInside" id="tS6-vK-MdS"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ap1-M0-qSQ" customClass="SGCodeTextField" customModule="SGCodeTextField">
+                                <rect key="frame" x="20" y="222" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8MU-e6-eTF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="5Zp-gW-FpF" secondAttribute="bottom" constant="30" id="3Fz-z8-QNX"/>
+                            <constraint firstItem="7mH-Oj-TiU" firstAttribute="trailing" secondItem="xjP-cH-LY4" secondAttribute="trailing" id="5rq-ew-cVe"/>
+                            <constraint firstItem="gCj-DA-oaQ" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="8JZ-k1-UAy"/>
+                            <constraint firstItem="Sgg-3w-SJL" firstAttribute="leading" secondItem="5Zp-gW-FpF" secondAttribute="trailing" constant="8" id="Cjr-Cd-XN3"/>
+                            <constraint firstItem="Ap1-M0-qSQ" firstAttribute="top" secondItem="7mH-Oj-TiU" secondAttribute="bottom" constant="20" id="Ft4-9C-tsk"/>
+                            <constraint firstItem="Ap1-M0-qSQ" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="Ga8-97-AeX"/>
+                            <constraint firstItem="gCj-DA-oaQ" firstAttribute="top" secondItem="xjP-cH-LY4" secondAttribute="top" constant="46" id="HEs-Dk-eIT"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="hdu-Zd-xJw" secondAttribute="bottom" constant="30" id="JlA-Cw-oZa"/>
+                            <constraint firstItem="raE-KF-U5m" firstAttribute="top" secondItem="gCj-DA-oaQ" secondAttribute="bottom" constant="26" id="LQo-Wz-vM1"/>
+                            <constraint firstItem="xll-SR-wgJ" firstAttribute="leading" secondItem="Sgg-3w-SJL" secondAttribute="trailing" constant="8" id="MZH-Xt-uh7"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="xll-SR-wgJ" secondAttribute="bottom" constant="30" id="Ovk-oo-Edp"/>
+                            <constraint firstItem="hdu-Zd-xJw" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="PXX-e6-xnJ"/>
+                            <constraint firstItem="1JF-Vg-TYN" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="TVO-ZB-zW3"/>
+                            <constraint firstItem="7mH-Oj-TiU" firstAttribute="top" secondItem="xjP-cH-LY4" secondAttribute="top" id="Z0n-bP-fvg"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="1JF-Vg-TYN" secondAttribute="trailing" constant="20" id="ZYf-Eg-ER6"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="Ap1-M0-qSQ" secondAttribute="trailing" constant="20" id="bj8-EU-Dn6"/>
+                            <constraint firstItem="hdu-Zd-xJw" firstAttribute="top" secondItem="1JF-Vg-TYN" secondAttribute="bottom" constant="46" id="eVy-Jp-8DS"/>
+                            <constraint firstItem="5Zp-gW-FpF" firstAttribute="leading" secondItem="hdu-Zd-xJw" secondAttribute="trailing" constant="8" id="f3C-pl-bPE"/>
+                            <constraint firstItem="7mH-Oj-TiU" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" id="gZB-Se-Z6M"/>
+                            <constraint firstItem="raE-KF-U5m" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="kGn-Da-D2I"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="Sgg-3w-SJL" secondAttribute="bottom" constant="30" id="yMH-Fb-zF2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjP-cH-LY4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p3W-fu-IiV"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="codeSecurityField" destination="Ap1-M0-qSQ" id="Fv2-JM-Zk0"/>
+                        <outlet property="phoneNumberLabel" destination="xll-SR-wgJ" id="OVa-lj-QQR"/>
+                        <outlet property="retryTimeLabel" destination="5Zp-gW-FpF" id="i6x-7g-xsp"/>
+                        <segue destination="z7k-8B-eGx" kind="show" identifier="SignToRegisterSegue" id="hdA-z8-DEL"/>
+                        <segue destination="8Oi-bW-grw" kind="show" identifier="SignInToMainSegue" id="fWN-Ll-ZtF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndL-dd-IjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139.130434782609" y="-76.339285714285708"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="7aF-yA-IKd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="8Oi-bW-grw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8yv-ca-8fm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7e-nl-2RN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3781" y="-329"/>
+        </scene>
+        <!--Terms of privacy-->
+        <scene sceneID="sN8-nA-89I">
+            <objects>
+                <viewController id="L5r-pw-Zjr" customClass="PrivacyViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lKx-xy-hId">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgG-xs-2CR">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">At Parken, accessible from parken.com.br, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Parken and how we use it.
+
+If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+
+This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Parken. This policy is not applicable to any information collected offline or via channels other than this website.
+
+Consent
+
+By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+
+Information we collect
+
+The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
+If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.
+When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.
+
+How we use your information
+
+We use the information we collect in various ways, including to:
+
+Provide, operate, and maintain our webste
+Improve, personalize, and expand our webste
+Understand and analyze how you use our webste
+Develop new products, services, features, and functionality
+Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the webste, and for marketing and promotional purposes
+Send you emails
+Find and prevent fraud
+Log Files
+
+Parken follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+
+Advertising Partners Privacy Policies
+
+You may consult this list to find the Privacy Policy for each of the advertising partners of Parken.
+
+Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Parken, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+
+Note that Parken has no access to or control over these cookies that are used by third-party advertisers.
+
+Third Party Privacy Policies
+
+Parken's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. 
+
+You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
+
+CCPA Privacy Rights (Do Not Sell My Personal Information)
+
+Under the CCPA, among other rights, California consumers have the right to:
+Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
+Request that a business delete any personal data about the consumer that a business has collected.
+Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
+If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+
+GDPR Data Protection Rights
+
+We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
+The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.
+The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.
+The right to erasure – You have the right to request that we erase your personal data, under certain conditions.
+The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.
+The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.
+The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+
+Children's Information
+
+Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
+
+Parken does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bgG-xs-2CR" firstAttribute="leading" secondItem="r4K-Vh-PdT" secondAttribute="leading" constant="20" id="ZVp-4I-bfr"/>
+                            <constraint firstItem="r4K-Vh-PdT" firstAttribute="trailing" secondItem="bgG-xs-2CR" secondAttribute="trailing" constant="20" id="d9u-Br-m8V"/>
+                            <constraint firstItem="r4K-Vh-PdT" firstAttribute="bottom" secondItem="bgG-xs-2CR" secondAttribute="bottom" constant="20" id="hUO-ML-V6t"/>
+                            <constraint firstItem="bgG-xs-2CR" firstAttribute="top" secondItem="r4K-Vh-PdT" secondAttribute="top" constant="20" id="iHz-Jm-8ID"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r4K-Vh-PdT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms of privacy" id="0CY-zd-O68">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Cs5-rk-83a"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sgh-td-g66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="998"/>
+        </scene>
+        <!--Terms of service-->
+        <scene sceneID="jXy-P7-TgS">
+            <objects>
+                <viewController id="lXH-Bo-QDa" customClass="TermsViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hpa-NF-3cV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czM-kS-NN2">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">By accessing this Website, accessible from contact@parken.com.br, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.  
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="1">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Use License
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Permission is granted to temporarily download one copy of the materials on Parken Startup's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+
+    Modify or copy the materials;
+    Use the materials for any commercial purpose or for any public display;
+    Attempt to reverse engineer any software contained on Parken Startup's Website;
+    Remove any copyright or other proprietary notations from the materials; or
+    Transferring the materials to another person or "mirror" the materials on any other server.
+
+This will let Parken Startup to terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format. 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="2">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Disclaimer
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+All the materials on Parken Startup’s Website are provided "as is". Parken Startup makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, Parken Startup does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website. 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="3">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Limitations
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Parken Startup or its suppliers will not be hold accountable for any damages that will arise with the use or inability to use the materials on Parken Startup’s Website, even if Parken Startup or an authorize representative of this Website has been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on implied warranties or limitations of liability for incidental damages, these limitations may not apply to you. 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="4">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Revisions and Errata
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+The materials appearing on Parken Startup’s Website may include technical, typographical, or photographic errors. Parken Startup will not promise that any of the materials in this Website are accurate, complete, or current. Parken Startup may change the materials contained on its Website at any time without notice. Parken Startup does not make any commitment to update the materials. 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="5">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Links
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Parken Startup has not reviewed all of the sites linked to its Website and is not responsible for the contents of any such linked site. The presence of any link does not imply endorsement by Parken Startup of the site. The use of any linked website is at the user’s own risk. 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="6">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Site Terms of Use Modifications
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Parken Startup may revise these Terms of Use for its Website at any time without prior notice. By using this Website, you are agreeing to be bound by the current version of these Terms and Conditions of Use. 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="7">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Your Privacy
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Please read  &lt;https://www.privacypolicygenerator.info/"&gt;our Privacy Policy&lt;&gt; 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="8">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">. Governing Law
+</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Any claim related to Parken Startup's Website shall be governed by the laws of br without regards to its conflict of law provisions.	</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="22" name="GillSans"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="czM-kS-NN2" firstAttribute="leading" secondItem="Gm6-1h-hA1" secondAttribute="leading" constant="20" id="JxG-E8-Yem"/>
+                            <constraint firstItem="czM-kS-NN2" firstAttribute="top" secondItem="Gm6-1h-hA1" secondAttribute="top" constant="20" id="WaT-ig-Ffd"/>
+                            <constraint firstItem="Gm6-1h-hA1" firstAttribute="trailing" secondItem="czM-kS-NN2" secondAttribute="trailing" constant="20" id="ci6-I1-xta"/>
+                            <constraint firstItem="Gm6-1h-hA1" firstAttribute="bottom" secondItem="czM-kS-NN2" secondAttribute="bottom" constant="20" id="sfa-a3-wW3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gm6-1h-hA1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms of service" id="n66-DN-hva">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="aYd-Yu-C5V"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDl-UV-NT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="998"/>
+        </scene>
+        <!--Presentation-->
+        <scene sceneID="keo-j5-6cf">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="xbe-u3-wcg" customClass="PresentationViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tdl-7T-QQy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIk-xz-IMA">
+                                <rect key="frame" x="20" y="803" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="skipClick:" destination="xbe-u3-wcg" eventType="touchUpInside" id="Whp-po-vEt"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-jT-jHA">
+                                <rect key="frame" x="94" y="736" width="226" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-1r-yCk" customClass="CustomScrollView" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="123" width="374" height="568"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="JXh-vj-zUM"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="GaB-zY-DGc"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zgc-jT-jHA" firstAttribute="leading" secondItem="mLY-rB-cfG" secondAttribute="leading" constant="94" id="57f-C0-Dp1"/>
+                            <constraint firstItem="mLY-rB-cfG" firstAttribute="trailing" secondItem="XIk-xz-IMA" secondAttribute="trailing" constant="20" id="5ec-an-Hrl"/>
+                            <constraint firstItem="a9v-1r-yCk" firstAttribute="top" secondItem="mLY-rB-cfG" secondAttribute="top" constant="69" id="F8r-N0-4u1"/>
+                            <constraint firstItem="XIk-xz-IMA" firstAttribute="top" secondItem="zgc-jT-jHA" secondAttribute="bottom" constant="30" id="IJA-xC-XKh"/>
+                            <constraint firstItem="XIk-xz-IMA" firstAttribute="leading" secondItem="mLY-rB-cfG" secondAttribute="leading" constant="20" id="a2v-ZH-N1V"/>
+                            <constraint firstItem="a9v-1r-yCk" firstAttribute="leading" secondItem="mLY-rB-cfG" secondAttribute="leading" constant="20" id="aEY-c1-VZq"/>
+                            <constraint firstItem="mLY-rB-cfG" firstAttribute="trailing" secondItem="a9v-1r-yCk" secondAttribute="trailing" constant="20" id="gOl-aX-Hrh"/>
+                            <constraint firstItem="mLY-rB-cfG" firstAttribute="trailing" secondItem="zgc-jT-jHA" secondAttribute="trailing" constant="94" id="ijh-45-GIn"/>
+                            <constraint firstItem="mLY-rB-cfG" firstAttribute="bottom" secondItem="XIk-xz-IMA" secondAttribute="bottom" constant="20" id="lJj-4N-qq5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mLY-rB-cfG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Presentation" id="44U-DH-gTt">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="sy6-N6-jlU"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="pageControl" destination="zgc-jT-jHA" id="4cn-YK-d2u"/>
+                        <outlet property="scrollView" destination="a9v-1r-yCk" id="uB9-LL-jNn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcT-1X-Lk6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="998"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zTu-jG-9aS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lpG-L4-x1e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="XTs-gw-8CI"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A40-II-nwd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Ci-bP-aLz" kind="relationship" relationship="rootViewController" id="I8t-Na-Bho"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rdi-OC-8m7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="-76"/>
+        </scene>
+        <!--Register Update View Controller-->
+        <scene sceneID="ZHV-Yc-yVq">
+            <objects>
+                <viewController id="dYI-hp-ws8" customClass="RegisterUpdateViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kxj-Hw-zX2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-7Z-Ftc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="158"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="158" id="SAq-WB-eGz"/>
+                                    <constraint firstAttribute="height" constant="158" id="vEy-Ni-eye"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-Lk-jL1">
+                                <rect key="frame" x="20" y="90" width="180" height="33"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let`s update your registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d73-Kp-KM1">
+                                <rect key="frame" x="20" y="149" width="267" height="26"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp5-C5-Yn7" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="803" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Verify registration"/>
+                                <connections>
+                                    <action selector="updateAccountClick:" destination="dYI-hp-ws8" eventType="touchUpInside" id="lAr-7e-l9p"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Document Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DF-JK-8p0" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="295" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxi-fJ-Kh9" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="340.5" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry your account informations to found it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-w2-ZdI">
+                                <rect key="frame" x="20" y="222" width="374" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iTG-Sb-iwh" firstAttribute="trailing" secondItem="lp5-C5-Yn7" secondAttribute="trailing" constant="20" id="5SE-aE-SKk"/>
+                            <constraint firstItem="SmZ-w2-ZdI" firstAttribute="top" secondItem="DD6-7Z-Ftc" secondAttribute="bottom" constant="20" id="75u-SB-36N"/>
+                            <constraint firstItem="lp5-C5-Yn7" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="F45-Mt-hZ3"/>
+                            <constraint firstItem="iTG-Sb-iwh" firstAttribute="trailing" secondItem="Sxi-fJ-Kh9" secondAttribute="trailing" constant="20" id="GX6-ZP-RGN"/>
+                            <constraint firstItem="Sxi-fJ-Kh9" firstAttribute="top" secondItem="7DF-JK-8p0" secondAttribute="bottom" constant="20" id="HX8-Rj-Hsr"/>
+                            <constraint firstItem="HZW-Lk-jL1" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="ISb-6K-weB"/>
+                            <constraint firstItem="iTG-Sb-iwh" firstAttribute="bottom" secondItem="lp5-C5-Yn7" secondAttribute="bottom" constant="20" id="LWy-vo-pNa"/>
+                            <constraint firstItem="iTG-Sb-iwh" firstAttribute="trailing" secondItem="SmZ-w2-ZdI" secondAttribute="trailing" constant="20" id="Mki-Cp-U3T"/>
+                            <constraint firstItem="iTG-Sb-iwh" firstAttribute="trailing" secondItem="7DF-JK-8p0" secondAttribute="trailing" constant="20" id="VZl-5j-gTy"/>
+                            <constraint firstItem="Sxi-fJ-Kh9" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="VwA-nc-V7i"/>
+                            <constraint firstItem="d73-Kp-KM1" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="WFM-ad-KBS"/>
+                            <constraint firstItem="iTG-Sb-iwh" firstAttribute="trailing" secondItem="DD6-7Z-Ftc" secondAttribute="trailing" id="Z0b-LG-Xxa"/>
+                            <constraint firstItem="7DF-JK-8p0" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="Z6Q-0t-DGL"/>
+                            <constraint firstItem="d73-Kp-KM1" firstAttribute="top" secondItem="HZW-Lk-jL1" secondAttribute="bottom" constant="26" id="gT9-Bz-kd7"/>
+                            <constraint firstItem="DD6-7Z-Ftc" firstAttribute="leading" secondItem="kxj-Hw-zX2" secondAttribute="leading" id="kOA-cv-1pZ"/>
+                            <constraint firstItem="HZW-Lk-jL1" firstAttribute="top" secondItem="iTG-Sb-iwh" secondAttribute="top" constant="46" id="ouj-OH-9Vh"/>
+                            <constraint firstItem="7DF-JK-8p0" firstAttribute="top" secondItem="SmZ-w2-ZdI" secondAttribute="bottom" constant="20" id="pc5-3z-iqR"/>
+                            <constraint firstItem="DD6-7Z-Ftc" firstAttribute="top" secondItem="iTG-Sb-iwh" secondAttribute="top" id="uoJ-H9-Hg0"/>
+                            <constraint firstItem="SmZ-w2-ZdI" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="vhe-kf-UqS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iTG-Sb-iwh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nzd-OE-YXo"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="documentNumberField" destination="7DF-JK-8p0" id="bc0-m4-0qM"/>
+                        <outlet property="emailField" destination="Sxi-fJ-Kh9" id="2ae-02-6dT"/>
+                        <segue destination="8Oi-bW-grw" kind="show" identifier="RegisterUpdateToMainSegue" id="Lut-cw-abX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGa-qY-JZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3953.6231884057975" y="328.79464285714283"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lut-cw-abX"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="divider 1" width="349" height="18"/>
+        <image name="icon" width="191" height="157"/>
+        <image name="splashscreen" width="213.5" height="320.5"/>
+    </resources>
+</document>

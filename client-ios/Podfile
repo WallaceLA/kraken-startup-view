@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.0'
+
+target 'Parken' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Parken
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'PhoneNumberKit', '~> 3.1'
+  pod "SGCodeTextField"
+  pod 'Jelly', '~> 2.0'
+end
+

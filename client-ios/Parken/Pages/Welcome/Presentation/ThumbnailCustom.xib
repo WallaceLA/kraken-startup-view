@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ThumbnailCustom" customModule="Parken" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="552"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJ2-Pu-FIE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="325"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="325" id="loz-P9-LlY"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adr-l9-NRB">
+                    <rect key="frame" x="0.0" y="393" width="414" height="159"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcU-dd-1Vl">
+                    <rect key="frame" x="0.0" y="345" width="414" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="DAd-SY-eEZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="adr-l9-NRB" firstAttribute="top" secondItem="GcU-dd-1Vl" secondAttribute="bottom" constant="20" id="5X2-sr-tHc"/>
+                <constraint firstItem="NJ2-Pu-FIE" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="8Lv-QK-WH6"/>
+                <constraint firstItem="GcU-dd-1Vl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ee2-eh-KbR"/>
+                <constraint firstItem="adr-l9-NRB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="FRu-9N-kkA"/>
+                <constraint firstItem="NJ2-Pu-FIE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JWy-6B-N94"/>
+                <constraint firstItem="adr-l9-NRB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Khw-u5-7o0"/>
+                <constraint firstItem="GcU-dd-1Vl" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="hYc-Vg-cpR"/>
+                <constraint firstItem="adr-l9-NRB" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="lrm-jW-XrN"/>
+                <constraint firstItem="NJ2-Pu-FIE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="u3v-3T-aFH"/>
+                <constraint firstItem="GcU-dd-1Vl" firstAttribute="top" secondItem="NJ2-Pu-FIE" secondAttribute="bottom" constant="20" id="xHy-CO-rKk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="NJ2-Pu-FIE" id="LMC-3u-ikd"/>
+                <outlet property="textLabel" destination="adr-l9-NRB" id="4P0-kY-Pd2"/>
+                <outlet property="titleLabel" destination="GcU-dd-1Vl" id="j3r-mj-bHn"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+        </view>
+    </objects>
+</document>
