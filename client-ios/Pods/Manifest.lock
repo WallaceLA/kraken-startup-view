@@ -1,0 +1,29 @@
+PODS:
+  - Jelly (2.2.2)
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - SGCodeTextField (0.1.2)
+
+DEPENDENCIES:
+  - Jelly (~> 2.0)
+  - PhoneNumberKit (~> 3.1)
+  - SGCodeTextField
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Jelly
+    - PhoneNumberKit
+    - SGCodeTextField
+
+SPEC CHECKSUMS:
+  Jelly: 0576a8fd3b3bea78f6c2d952acdc30b0835dda71
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  SGCodeTextField: 5ce926886f3d0cad14b833d4bba16c0162f259d3
+
+PODFILE CHECKSUM: 2be419ded55a5509cb4200b62e9411ab0ba85dfc
+
+COCOAPODS: 1.9.3
