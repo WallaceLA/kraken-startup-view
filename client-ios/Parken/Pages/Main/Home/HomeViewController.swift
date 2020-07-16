@@ -6,18 +6,27 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var mapView: MapViewLite!
     
+     var animator: Jelly.Animator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        /*
-        let viewController = HomeViewController()
-        var slidePresentation = SlidePresentation(direction: .left)
-        let animator = Animator(presentation: slidePresentation)
-        animator.prepare(presentedViewController: viewController)
+        
+        let viewController = DealActionsViewController()
+        //let viewController = storyboard!.instantiateViewController(withIdentifier: "DealActionsViewController")
+        
+        let slidePresentation = SlidePresentation(
+            direction: .bottom,
+            size: .halfscreen
+        )
+        
+        
+        animator = Animator(presentation: slidePresentation)
+        animator?.prepare(presentedViewController: viewController)
         present(viewController, animated: true, completion: nil)
-        */
+        
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadScene)
     }
     

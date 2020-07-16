@@ -32,6 +32,7 @@
                     <navigationItem key="navigationItem" id="1Dy-VV-nGH"/>
                     <connections>
                         <outlet property="mapView" destination="b0B-Iu-HHY" id="wo4-Rj-mUB"/>
+                        <segue destination="MVr-yd-bUx" kind="presentation" id="m4U-4C-s9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -46,7 +47,34 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7c-O8-IVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="542"/>
+            <point key="canvasLocation" x="51" y="713"/>
+        </scene>
+        <!--Deal Actions View Controller-->
+        <scene sceneID="mpU-IE-RRK">
+            <objects>
+                <viewController id="MVr-yd-bUx" customClass="DealActionsViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="idS-h5-Jkl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va8-QR-Zi8">
+                                <rect key="frame" x="173.5" y="387" width="67" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Va8-QR-Zi8" firstAttribute="centerY" secondItem="9Ne-dd-hZK" secondAttribute="centerY" id="AHC-P9-Oqp"/>
+                            <constraint firstItem="Va8-QR-Zi8" firstAttribute="centerX" secondItem="9Ne-dd-hZK" secondAttribute="centerX" id="BeY-ir-BHi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Ne-dd-hZK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQz-Hv-Zoc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="915"/>
         </scene>
         <!--Deal View Controller-->
         <scene sceneID="6WC-3j-0ow">

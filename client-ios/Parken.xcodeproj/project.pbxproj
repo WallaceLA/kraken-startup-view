@@ -39,6 +39,7 @@
 		4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */; };
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4D9FD86824BFC79D00298E47 /* DealActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD86724BFC79D00298E47 /* DealActionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +92,7 @@
 		4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCustom.swift; sourceTree = "<group>"; };
 		4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCustom.xib; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
+		4D9FD86724BFC79D00298E47 /* DealActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealActionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				4D4FE9C5248D793C00CA9D1C /* HomeViewController.swift */,
+				4D9FD86724BFC79D00298E47 /* DealActionsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				4D4D2D2E248C697400574595 /* Parken.xcdatamodeld in Sources */,
 				4D4FE9BD248D601800CA9D1C /* RegisterViewController.swift in Sources */,
 				4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */,
+				4D9FD86824BFC79D00298E47 /* DealActionsViewController.swift in Sources */,
 				4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */,
 				4D4FE9C1248D770200CA9D1C /* TermsViewController.swift in Sources */,
 				4D4FE9CF248D7ABC00CA9D1C /* HistoryViewController.swift in Sources */,
