@@ -1,19 +1,26 @@
 import UIKit
-import Jelly
 
 class DealActionsViewController: UIViewController {
 
-     var jellyAnimator: Animator?
+    var interactionAction: (() -> ())?
     
      override func viewDidLoad() {
          super.viewDidLoad()
-
-        let slidePresentation = SlidePresentation(direction: .top)
-        let animator = Animator(presentation: slidePresentation)
-        
-         self.jellyAnimator = animator
+         modalPresentationCapturesStatusBarAppearance = true
      }
 
+    @IBAction func actionButtonPressed(_ sender: Any) {
+           if let interactionAction = interactionAction {
+               interactionAction()
+           } else {
+               self.dismiss(animated: true, completion: nil)
+           }
+       }
+       
+       override var prefersStatusBarHidden: Bool {
+           return true
+       }
+    
     /*
     // MARK: - Navigation
 
