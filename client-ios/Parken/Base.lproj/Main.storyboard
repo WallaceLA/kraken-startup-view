@@ -53,29 +53,76 @@
             <objects>
                 <viewController storyboardIdentifier="DealActions" id="MVr-yd-bUx" customClass="DealActionsViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="idS-h5-Jkl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va8-QR-Zi8">
-                                <rect key="frame" x="173.5" y="105" width="67" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7q9-ct-tFD">
+                                <rect key="frame" x="20" y="140" width="374" height="240"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" textLabel="GKi-MJ-WKK" style="IBUITableViewCellStyleDefault" id="wLg-c4-dTu">
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLg-c4-dTu" id="B6f-es-uSC">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GKi-MJ-WKK">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MVr-yd-bUx" id="kiE-lh-by5"/>
+                                    <outlet property="delegate" destination="MVr-yd-bUx" id="qhU-nH-UV2"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by address" translatesAutoresizingMaskIntoConstraints="NO" id="nTU-lD-ULO">
+                                <rect key="frame" x="20" y="64" width="374" height="56"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <textInputTraits key="textInputTraits" textContentType="location"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="MVr-yd-bUx" id="j2t-C8-NVs"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.56390625240000003" green="0.1756201684" blue="0.78898620610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Va8-QR-Zi8" firstAttribute="centerY" secondItem="9Ne-dd-hZK" secondAttribute="centerY" id="AHC-P9-Oqp"/>
-                            <constraint firstItem="Va8-QR-Zi8" firstAttribute="centerX" secondItem="9Ne-dd-hZK" secondAttribute="centerX" id="BeY-ir-BHi"/>
+                            <constraint firstItem="9Ne-dd-hZK" firstAttribute="trailing" secondItem="nTU-lD-ULO" secondAttribute="trailing" constant="20" id="6Dd-bp-0ms"/>
+                            <constraint firstItem="7q9-ct-tFD" firstAttribute="top" secondItem="nTU-lD-ULO" secondAttribute="bottom" constant="20" id="7tq-ug-2gc"/>
+                            <constraint firstItem="nTU-lD-ULO" firstAttribute="top" secondItem="9Ne-dd-hZK" secondAttribute="top" constant="20" id="a3U-Ff-FR5"/>
+                            <constraint firstItem="9Ne-dd-hZK" firstAttribute="trailing" secondItem="7q9-ct-tFD" secondAttribute="trailing" constant="20" id="agc-fF-gwR"/>
+                            <constraint firstItem="7q9-ct-tFD" firstAttribute="leading" secondItem="9Ne-dd-hZK" secondAttribute="leading" constant="20" id="p2j-JE-q0Y"/>
+                            <constraint firstItem="nTU-lD-ULO" firstAttribute="leading" secondItem="9Ne-dd-hZK" secondAttribute="leading" constant="20" id="pIG-hv-KTj"/>
+                            <constraint firstItem="9Ne-dd-hZK" firstAttribute="bottom" secondItem="7q9-ct-tFD" secondAttribute="bottom" constant="20" id="r71-UU-k7X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ne-dd-hZK"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="200"/>
+                    <size key="freeformSize" width="414" height="400"/>
+                    <connections>
+                        <outlet property="addressTable" destination="7q9-ct-tFD" id="TGl-4f-Bo7"/>
+                        <outlet property="searchAddress" destination="nTU-lD-ULO" id="LV9-Gb-NLb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQz-Hv-Zoc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="654"/>
+            <point key="canvasLocation" x="1079.7101449275362" y="653.57142857142856"/>
         </scene>
         <!--Deal View Controller-->
         <scene sceneID="6WC-3j-0ow">

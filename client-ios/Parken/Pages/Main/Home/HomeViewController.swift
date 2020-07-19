@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
     
     func onLoadCustomPresentation() {
          let uiConfiguration = PresentationUIConfiguration(
-             cornerRadius: 10,
+             cornerRadius: 25,
              backgroundStyle: .dimmed(alpha: 0.0),
              isTapBackgroundToDismissEnabled: false,
              corners: [.layerMaxXMinYCorner,.layerMinXMinYCorner])
@@ -68,15 +68,19 @@ class HomeViewController: UIViewController {
          dealActionsAnimator?.prepare(presentedViewController: viewController)
          present(viewController, animated: true, completion: nil)
          
-         if false {
-             viewController.interactionAction = { [weak self] in
-                let newSize = PresentationSize(
-                    width: .fullscreen,
-                    height: .custom(value: (self!.view.frame.height * 0.8)))
-                try! self?.dealActionsAnimator?.updateSize(presentationSize: newSize, duration: .medium)
-             }
+         viewController.interactionActionMaxime = { [weak self] in
+            let newSize = PresentationSize(
+                width: .fullscreen,
+                height: .custom(value: (self!.view.frame.height * 0.5)))
+            try! self?.dealActionsAnimator?.updateSize(presentationSize: newSize, duration: .medium)
          }
         
+        viewController.interactionActionMinimize = { [weak self] in
+           let newSize = PresentationSize(
+               width: .fullscreen,
+               height: .custom(value: (self!.view.frame.height * 0.2)))
+           try! self?.dealActionsAnimator?.updateSize(presentationSize: newSize, duration: .medium)
+        }
     }
     
     override func didReceiveMemoryWarning() {
