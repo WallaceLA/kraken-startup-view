@@ -1,21 +1,13 @@
-//
-//  AppDelegate.swift
-//  Parken
-//
-//  Created by Julio Avila on 06/06/20.
-//  Copyright © 2020 Julio Avila. All rights reserved.
-//
-
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
         return true
     }
 

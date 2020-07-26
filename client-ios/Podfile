@@ -10,5 +10,6 @@ target 'Parken' do
   pod 'PhoneNumberKit', '~> 3.1'
   pod "SGCodeTextField"
   pod 'Jelly', '~> 2.0'
+  pod 'IQKeyboardManagerSwift'
 end
 
