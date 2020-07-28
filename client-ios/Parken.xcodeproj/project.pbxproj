@@ -37,6 +37,7 @@
 		4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */; };
 		4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */; };
 		4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */; };
+		4D5ECD7724CF9C4500392D11 /* PrimaryNavButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5ECD7624CF9C4500392D11 /* PrimaryNavButtonStyle.swift */; };
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
@@ -91,6 +92,7 @@
 		4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUpdateViewController.swift; sourceTree = "<group>"; };
 		4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCustom.swift; sourceTree = "<group>"; };
 		4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCustom.xib; sourceTree = "<group>"; };
+		4D5ECD7624CF9C4500392D11 /* PrimaryNavButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryNavButtonStyle.swift; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 				4D4FE9E0248D9C8600CA9D1C /* PrimaryButtonStyle.swift */,
 				4D534AAB24AD844000782651 /* SecondButtonStyle.swift */,
 				4D4F6EB624BA490D00A01C59 /* PrimaryTextFieldStyle.swift */,
+				4D5ECD7624CF9C4500392D11 /* PrimaryNavButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */,
 				4D4FE9C3248D773400CA9D1C /* PrivacyViewController.swift in Sources */,
 				4D4D2D45248C6C2D00574595 /* AccessViewController.swift in Sources */,
+				4D5ECD7724CF9C4500392D11 /* PrimaryNavButtonStyle.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,
 				4D4FE9E1248D9C8600CA9D1C /* PrimaryButtonStyle.swift in Sources */,
 				4D4FE9DD248D7B5300CA9D1C /* DealViewController.swift in Sources */,

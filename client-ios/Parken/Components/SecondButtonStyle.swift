@@ -1,11 +1,3 @@
-//
-//  SecondButtonStyle.swift
-//  Parken
-//
-//  Created by Julio Avila on 01/07/20.
-//  Copyright © 2020 Julio Avila. All rights reserved.
-//
-
 import UIKit
 
 class SecondButtonStyle: UIButton {
