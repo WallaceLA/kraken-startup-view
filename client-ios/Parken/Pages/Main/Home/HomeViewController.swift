@@ -1,8 +1,9 @@
 import UIKit
 import heresdk
 import Jelly
+import CoreLocation
 
-class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var dealPopupSafeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
@@ -19,12 +20,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     var navCustomAnimator: Jelly.Animator?
     var customNavViewController: CustomNavViewController?
     
-    let addressListMock = ["Ezra Sloan", "Melie Edwards", "Melinda Taylor", "Hester Case"]
-    
     let dealPopupMinHeight = CGFloat(0.2)
     let dealPopupMaxHeight = CGFloat(0.8)
+    
     var isSearching = false
+    var locationManager = CLLocationManager()
     var addressList: [String] = []
+    let addressListMock = ["Ezra Sloan", "Melie Edwards", "Melinda Taylor", "Hester Case"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +38,19 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         addressTable.delegate = self
         addressTable.dataSource = self
         
+        self.locationManager.delegate = self
+        
         onLoadCustomNavPresentation()
         loadDealPopup()
+        
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
+    }
+    
+    func requestGPSAuthorization() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     func onLoadCustomNavPresentation() {
@@ -159,10 +171,31 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         if let error = errorCode {
             print("Error: Map scene not loaded, \(error)")
         } else {
+            requestGPSAuthorization()
+            
             // Configure the map.
-            mapView.camera.setTarget(GeoCoordinates(latitude: 52.518043, longitude: 13.405991))
             mapView.camera.setZoomLevel(13)
+            
+            guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+            print("Location: " + locValue.longitude.debugDescription)
+            
+            // TODO - CRIAR ICON PARA POSICAO DO USUARIO
+            mapView.camera.setTarget(GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude))
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.last
+        print("Location update: " + location!.coordinate.latitude.debugDescription)
+        
+        // TODO - CRIAR ICON PARA POSICAO DO USUARIO
+        //mapView.camera.setTarget(GeoCoordinates(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude))
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Errors: " + error.localizedDescription)
     }
     
     @IBAction func openNavClick(_ sender: Any) {
