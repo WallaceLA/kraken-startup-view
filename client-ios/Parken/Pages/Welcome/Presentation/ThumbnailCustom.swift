@@ -6,10 +6,10 @@ class ThumbnailCustom: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
 
-    var _imageName = ""
-    var _title = ""
-    var _message = ""
-    var _color: UIColor?
+    private var imageName = ""
+    private var title = ""
+    private var message = ""
+    private var color: UIColor?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -20,10 +20,10 @@ class ThumbnailCustom: UIView {
     }
     
     func setInformation(imageName: String, title: String, message: String, color: UIColor) {
-        _imageName = imageName
-        _title = title
-        _message = message
-        _color = color
+        self.imageName = imageName
+        self.title = title
+        self.message = message
+        self.color = color
     }
 
     func loadNib() -> UIView {        
@@ -34,12 +34,12 @@ class ThumbnailCustom: UIView {
     }
     
     override func didMoveToSuperview() {
-        imageView.image = UIImage(named: _imageName)
+        imageView.image = UIImage(named: imageName)
         
-        titleLabel.text = _title
-        //titleLabel.textColor = _color
+        titleLabel.text = title
+        //titleLabel.textColor = color
         
-        textLabel.text = _message
+        textLabel.text = message
     }
     
     /*

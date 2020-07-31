@@ -6,7 +6,7 @@ class AccessViewController: UIViewController {
     @IBOutlet weak var phoneNumberField: PhoneNumberTextField!
     @IBOutlet weak var signInButton: UIButton!
     
-    let phoneNumberKit = PhoneNumberKit()
+    private let phoneNumberKit = PhoneNumberKit()
     
     override func viewDidLoad() {
         super.viewDidLoad()

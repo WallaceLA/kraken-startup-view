@@ -34,6 +34,7 @@
 		4D4FE9E1248D9C8600CA9D1C /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4FE9E0248D9C8600CA9D1C /* PrimaryButtonStyle.swift */; };
 		4D534AAA24AD76C800782651 /* PhoneNumberCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D534AA924AD76C800782651 /* PhoneNumberCustomButton.swift */; };
 		4D534AAC24AD844000782651 /* SecondButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D534AAB24AD844000782651 /* SecondButtonStyle.swift */; };
+		4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5667A124D3AF18008EF702 /* HereSdkController.swift */; };
 		4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */; };
 		4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */; };
 		4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */; };
@@ -89,6 +90,7 @@
 		4D4FE9E0248D9C8600CA9D1C /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		4D534AA924AD76C800782651 /* PhoneNumberCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCustomButton.swift; sourceTree = "<group>"; };
 		4D534AAB24AD844000782651 /* SecondButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondButtonStyle.swift; sourceTree = "<group>"; };
+		4D5667A124D3AF18008EF702 /* HereSdkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereSdkController.swift; sourceTree = "<group>"; };
 		4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUpdateViewController.swift; sourceTree = "<group>"; };
 		4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCustom.swift; sourceTree = "<group>"; };
 		4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCustom.xib; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				4D4FE9C5248D793C00CA9D1C /* HomeViewController.swift */,
 				4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */,
+				4D5667A124D3AF18008EF702 /* HereSdkController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				4D4D2D45248C6C2D00574595 /* AccessViewController.swift in Sources */,
 				4D5ECD7724CF9C4500392D11 /* PrimaryNavButtonStyle.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,
+				4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */,
 				4D4FE9E1248D9C8600CA9D1C /* PrimaryButtonStyle.swift in Sources */,
 				4D4FE9DD248D7B5300CA9D1C /* DealViewController.swift in Sources */,
 				4D4FE9D6248D7AFD00CA9D1C /* ParkingViewController.swift in Sources */,

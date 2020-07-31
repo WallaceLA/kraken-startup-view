@@ -2,12 +2,12 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    var phoneNumber = ""
-    
     @IBOutlet weak var firstNameField: PrimaryTextFieldStyle!
     @IBOutlet weak var lastNameField: PrimaryTextFieldStyle!
     @IBOutlet weak var documentNumberField: PrimaryTextFieldStyle!
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
+
+    var phoneNumber = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

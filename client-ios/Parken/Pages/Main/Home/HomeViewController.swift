@@ -17,42 +17,33 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     @IBOutlet var mapView: MapViewLite!
     
-    var navCustomAnimator: Jelly.Animator?
-    var customNavViewController: CustomNavViewController?
+    private var navCustomAnimator: Jelly.Animator?
+    private var customNavViewController: CustomNavViewController?
     
-    let dealPopupMinHeight = CGFloat(0.2)
-    let dealPopupMaxHeight = CGFloat(0.8)
+    private let dealPopupMinHeight = CGFloat(0.2)
+    private let dealPopupMaxHeight = CGFloat(0.8)
     
-    var isSearching = false
-    var locationManager = CLLocationManager()
+    private var isSearching = false
+    private var mapController: HereSdkController!
+    private var locationManager = CLLocationManager()
     var addressList: [String] = []
-    let addressListMock = ["Ezra Sloan", "Melie Edwards", "Melinda Taylor", "Hester Case"]
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    
         searchAddress.delegate = self
         
         addressTable.delegate = self
         addressTable.dataSource = self
         
-        self.locationManager.delegate = self
+        locationManager.delegate = self
         
         onLoadCustomNavPresentation()
         loadDealPopup()
         
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
     }
-    
-    func requestGPSAuthorization() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
+
     func onLoadCustomNavPresentation() {
         let uiConfiguration = PresentationUIConfiguration(
             cornerRadius: 0,
@@ -93,7 +84,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     func loadDealPopup() {
-        PrepareAddressListMock()
         dismissPopupButton.alpha = 0
         
         dealPopupSafeTopConstraint.constant = self.view.frame.height * dealPopupMaxHeight
@@ -123,12 +113,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         })
     }
     
-    func PrepareAddressListMock() {
-        for address in addressListMock {
-             addressList.append(address)
-        }
-    }
-    
     @IBAction func dismissPopupClick(_ sender: Any) {
         closeDealPopup()
     }
@@ -139,6 +123,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             
         if isSearching {
             openDealPopup()
+            
+            mapController.getSuggest(textQuery: searchText)
         } else {
             closeDealPopup()
         }
@@ -173,22 +159,30 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         } else {
             requestGPSAuthorization()
             
-            // Configure the map.
-            mapView.camera.setZoomLevel(13)
-            
             guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
-            print("Location: " + locValue.longitude.debugDescription)
-            
+                
             // TODO - CRIAR ICON PARA POSICAO DO USUARIO
-            mapView.camera.setTarget(GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude))
+            
+            let camera = mapView.camera
+            camera.setTarget(GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude))
+            camera.setZoomLevel(14)
+            
+            mapController = HereSdkController(viewController: self, mapView: mapView!)
         }
     }
     
+    func requestGPSAuthorization() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+       
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+   
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations.last
         print("Location update: " + location!.coordinate.latitude.debugDescription)
-        
+       
         // TODO - CRIAR ICON PARA POSICAO DO USUARIO
         //mapView.camera.setTarget(GeoCoordinates(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude))
     }

@@ -8,7 +8,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
     var phoneNumber = ""
-    var retryCodeTime = 60
+    private var retryCodeTime = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
