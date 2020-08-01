@@ -1,7 +1,7 @@
 import UIKit
 
 class SecondButtonStyle: UIButton {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupDefaults()

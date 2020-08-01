@@ -1,11 +1,11 @@
 import UIKit
 
 class ThumbnailCustom: UIView {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
-
+    
     private var imageName = ""
     private var title = ""
     private var message = ""
@@ -25,7 +25,7 @@ class ThumbnailCustom: UIView {
         self.message = message
         self.color = color
     }
-
+    
     func loadNib() -> UIView {        
         let bundle = Bundle(for: type(of: self))
         let nibName = type(of: self).description().components(separatedBy: ".").last!
@@ -43,11 +43,11 @@ class ThumbnailCustom: UIView {
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }

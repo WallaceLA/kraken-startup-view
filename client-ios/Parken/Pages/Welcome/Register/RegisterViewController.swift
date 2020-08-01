@@ -1,17 +1,17 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
     @IBOutlet weak var firstNameField: PrimaryTextFieldStyle!
     @IBOutlet weak var lastNameField: PrimaryTextFieldStyle!
     @IBOutlet weak var documentNumberField: PrimaryTextFieldStyle!
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
-
+    
     var phoneNumber = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
@@ -28,5 +28,5 @@ class RegisterViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
+    
 }

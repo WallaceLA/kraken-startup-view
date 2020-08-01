@@ -1,7 +1,7 @@
 import UIKit
 
 class PresentationViewController: UIViewController, UIScrollViewDelegate {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -14,7 +14,7 @@ class PresentationViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         pageControl.numberOfPages = imageList.count

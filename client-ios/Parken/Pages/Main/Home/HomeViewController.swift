@@ -8,7 +8,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var dealPopupSafeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupVerticalConstraint: NSLayoutConstraint!
-
+    
     @IBOutlet weak var dismissPopupButton: UIButton!
     
     @IBOutlet weak var searchAddress: UISearchBar!
@@ -26,11 +26,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     private var isSearching = false
     private var mapController: HereSdkController!
     private var locationManager = CLLocationManager()
-    var addressList: [String] = []
-   
+    private var addressList: [String] = []
+    var suggestAddressList: [Suggestion] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         searchAddress.delegate = self
         
         addressTable.delegate = self
@@ -41,16 +42,18 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         onLoadCustomNavPresentation()
         loadDealPopup()
         
+        
+        mapController = HereSdkController(viewController: self, mapView: mapView!)
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
     }
-
+    
     func onLoadCustomNavPresentation() {
         let uiConfiguration = PresentationUIConfiguration(
             cornerRadius: 0,
             backgroundStyle: .dimmed(alpha: 0.5),
             isTapBackgroundToDismissEnabled: true)
         
-         let size = PresentationSize(
+        let size = PresentationSize(
             width: .custom(value: self.view.frame.width * 0.8),
             height: .fullscreen)
         
@@ -120,7 +123,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // funcoes da SearchBar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearching = !searchText.isEmpty
-            
+        
         if isSearching {
             openDealPopup()
             
@@ -128,31 +131,40 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         } else {
             closeDealPopup()
         }
-            
+        
         addressTable.reloadData()
     }
     
     // funcoes da TableViewCell
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isSearching ? addressList.count : 0
+        return isSearching ? suggestAddressList.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let addressCell = addressTable.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
         
-        let address = addressList[indexPath.row]
+        let address = suggestAddressList[indexPath.row]
         
-        addressCell.textLabel?.text = address
-    
+        addressCell.textLabel?.text = address.title
+        
         return addressCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let address = suggestAddressList[indexPath.row]
+        
+        if let locValue = address.place {
+            print("coordinate lat: \(locValue.coordinates.latitude)")
+            print("coordinate long: \(locValue.coordinates.longitude)")
+        }
     }
     
     // funcoes da classe
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-         super.touchesBegan(touches, with: event)
-         view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
-       
+    
     func onLoadMap(errorCode: MapSceneLite.ErrorCode?) {
         if let error = errorCode {
             print("Error: Map scene not loaded, \(error)")
@@ -160,33 +172,39 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             requestGPSAuthorization()
             
             guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
-                
-            // TODO - CRIAR ICON PARA POSICAO DO USUARIO
+            
+            let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
             
             let camera = mapView.camera
-            camera.setTarget(GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude))
-            camera.setZoomLevel(14)
+            camera.setTarget(userLocate)
+            camera.setZoomLevel(13)
             
-            mapController = HereSdkController(viewController: self, mapView: mapView!)
+            print("user locate initial")
+            
+            mapController.setUserLocateMarker(geoCoordinates: userLocate)
         }
     }
     
     func requestGPSAuthorization() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-       
+        
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-   
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations.last
-        print("Location update: " + location!.coordinate.latitude.debugDescription)
-       
-        // TODO - CRIAR ICON PARA POSICAO DO USUARIO
-        //mapView.camera.setTarget(GeoCoordinates(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude))
+        
+        print("user locate updating")
+        
+        guard let locValue: CLLocationCoordinate2D = location?.coordinate else { return }
+        
+        let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
+        
+        mapController.setUserLocateMarker(geoCoordinates: userLocate)
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Errors: " + error.localizedDescription)
@@ -206,13 +224,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

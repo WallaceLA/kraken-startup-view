@@ -2,7 +2,7 @@ import UIKit
 import PhoneNumberKit
 
 class AccessViewController: UIViewController {
-
+    
     @IBOutlet weak var phoneNumberField: PhoneNumberTextField!
     @IBOutlet weak var signInButton: UIButton!
     
@@ -16,7 +16,7 @@ class AccessViewController: UIViewController {
         phoneNumberField.withFlag = true
         phoneNumberField.withExamplePlaceholder = true
     }
-   
+    
     @IBAction func signInClick(_ sender: Any) {
         // TODO: Validar telefone
         
