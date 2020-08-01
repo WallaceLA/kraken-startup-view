@@ -88,7 +88,7 @@
                                     <constraint firstItem="APm-9N-KSH" firstAttribute="top" secondItem="bk8-1N-CCD" secondAttribute="top" constant="20" id="vjq-Aq-Qf5"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWJ-vN-Ymf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWJ-vN-Ymf" userLabel="navBarButton">
                                 <rect key="frame" x="30" y="119.5" width="30" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="9yg-2q-oS4"/>
@@ -97,6 +97,14 @@
                                 <state key="normal" backgroundImage="text.justify" catalog="system"/>
                                 <connections>
                                     <action selector="openNavClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Bv-bg-eXF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYR-mt-CIq" userLabel="centralizeUserMap">
+                                <rect key="frame" x="359" y="244" width="20" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" image="arrowtriangle.up.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="centralizeUserMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzp-lS-kMr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,6 +121,8 @@
                             <constraint firstItem="BI8-ZT-NnB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P88-tC-Eby"/>
                             <constraint firstItem="bk8-1N-CCD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SM9-KS-b9J"/>
                             <constraint firstItem="BI8-ZT-NnB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Scy-I5-bjK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IYR-mt-CIq" secondAttribute="trailing" constant="35" id="fPC-EC-Nf5"/>
+                            <constraint firstItem="bk8-1N-CCD" firstAttribute="top" secondItem="IYR-mt-CIq" secondAttribute="bottom" constant="15" id="oUR-17-SMp"/>
                             <constraint firstItem="CWJ-vN-Ymf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="t4D-x0-CV4"/>
                             <constraint firstItem="b0B-Iu-HHY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vOx-x3-kKT"/>
                             <constraint firstItem="bk8-1N-CCD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="y5S-q3-o72"/>
@@ -347,6 +357,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowtriangle.up.circle" catalog="system" width="128" height="121"/>
         <image name="greaterthan" catalog="system" width="128" height="111"/>
         <image name="splashscreen" width="213.5" height="320.5"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>

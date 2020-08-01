@@ -24,9 +24,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     private let dealPopupMaxHeight = CGFloat(0.8)
     
     private var isSearching = false
+    private var isSelecting = false
     private var mapController: HereSdkController!
     private var locationManager = CLLocationManager()
     private var addressList: [String] = []
+    
     var suggestAddressList: [Suggestion] = []
     
     override func viewDidLoad() {
@@ -42,7 +44,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         onLoadCustomNavPresentation()
         loadDealPopup()
         
-        
+        requestGPSAuthorization()
         mapController = HereSdkController(viewController: self, mapView: mapView!)
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
     }
@@ -153,10 +155,22 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let address = suggestAddressList[indexPath.row]
         
-        if let locValue = address.place {
-            print("coordinate lat: \(locValue.coordinates.latitude)")
-            print("coordinate long: \(locValue.coordinates.longitude)")
-        }
+        guard let locValue: GeoCoordinates = address.place?.coordinates else { return }
+        
+        let addressLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
+        
+        print("focus on address selected")
+        
+        isSearching = false
+        isSelecting = true
+        searchAddress.text = ""
+        
+        let camera = mapView.camera
+        camera.setTarget(addressLocate)
+        camera.setZoomLevel(13)
+        
+        mapController.cleanDestineLocateMarker()
+        mapController.setDestineLocateMarker(geoCoordinates: addressLocate)
     }
     
     // funcoes da classe
@@ -169,8 +183,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         if let error = errorCode {
             print("Error: Map scene not loaded, \(error)")
         } else {
-            requestGPSAuthorization()
-            
             guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
             
             let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
@@ -203,6 +215,14 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
         
         mapController.setUserLocateMarker(geoCoordinates: userLocate)
+    }
+    
+    @IBAction func centralizeUserMap(_ sender: Any) {
+        guard let userLocate: GeoCoordinates = mapController.userLocateMapMarker?.coordinates else { return }
+        
+        let camera = mapView.camera
+        camera.setTarget(userLocate)
+        camera.setZoomLevel(13)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)

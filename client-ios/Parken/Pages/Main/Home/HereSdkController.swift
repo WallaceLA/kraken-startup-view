@@ -5,9 +5,11 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     
     private var viewController: HomeViewController//UIViewController
     private var mapView: MapViewLite
-    private var userLocateMapMarker: MapMarkerLite?
-    private var mapMarkers = [MapMarkerLite]()
     private var searchEngine: SearchEngine
+    private var mapMarkers = [MapMarkerLite]()
+    
+    var userLocateMapMarker: MapMarkerLite?
+    var destineLocateMapMarker: MapMarkerLite?
     
     init(viewController: HomeViewController/*UIViewController*/, mapView: MapViewLite) {
         self.viewController = viewController
@@ -32,7 +34,7 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     }
     
     func getSuggest(textQuery: String) {
-        clearMap(riseMemory: true)
+        clearMapMarkers()
         
         let centerGeoCoordinates = getMapViewCenter()
         let autosuggestOptions = SearchOptions(languageCode: LanguageCode.ptBr,
@@ -84,12 +86,10 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     
     // Conforming to LongPressDelegate protocol.
     func onLongPress(state: GestureState, origin: Point2D) {
-        // TODO: Pegar endereco e definir no label de busca
         
         if (state == .begin) {
             let geoCoordinates = mapView.camera.viewToGeoCoordinates(viewCoordinates: origin)
-            addPoiMapMarker(geoCoordinates: geoCoordinates)
-            getAddressForCoordinates(geoCoordinates: geoCoordinates)
+            setDestineLocateMarker(geoCoordinates: geoCoordinates)
         }
     }
     
@@ -135,35 +135,51 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     }
     
     func setUserLocateMarker(geoCoordinates: GeoCoordinates) {
-        let mapMarker = createCircleMapMarker(geoCoordinates: geoCoordinates)
+        let mapMarker = createCircleMapMarker(geoCoordinates: geoCoordinates, imageName: "green_dot")
         
-        print("user locate updated")
+        if let userLocateMapMarker = userLocateMapMarker {
+            mapView.mapScene.removeMapMarker(userLocateMapMarker)
+        }
         
         userLocateMapMarker = mapMarker
-        
-        clearMap(riseMemory: false)
-        
-        drawMap()
-        
         mapView.mapScene.addMapMarker(mapMarker)
     }
     
-    private func addCircleMapMarker(geoCoordinates: GeoCoordinates) {
-        let mapMarker = createCircleMapMarker(geoCoordinates: geoCoordinates)
+    func setDestineLocateMarker(geoCoordinates: GeoCoordinates) {
+        let mapMarker = createCircleMapMarker(geoCoordinates: geoCoordinates, imageName: "red_dot")
         
+        if let destineLocateMapMarker = destineLocateMapMarker {
+            mapView.mapScene.removeMapMarker(destineLocateMapMarker)
+        }
+        
+        destineLocateMapMarker = mapMarker
         mapView.mapScene.addMapMarker(mapMarker)
-        mapMarkers.append(mapMarker)
     }
     
-    private func createCircleMapMarker(geoCoordinates: GeoCoordinates) -> MapMarkerLite {
+    func cleanDestineLocateMarker() {
+        if let mapMarker = destineLocateMapMarker {
+            destineLocateMapMarker = nil
+            mapView.mapScene.removeMapMarker(mapMarker)
+        }
+    }
+    
+    private func createCircleMapMarker(geoCoordinates: GeoCoordinates, imageName: String) -> MapMarkerLite {
         let mapMarker = MapMarkerLite(at: geoCoordinates)
         
-        let image = UIImage(named: "red_dot")
+        let image = UIImage(named: imageName)
         
         let mapImage = MapImageLite(image!)
         mapMarker.addImage(mapImage!, style: MapMarkerImageStyleLite())
         
         return mapMarker
+    }
+    
+    private func clearMapMarkers() {
+        for mapMarker in mapMarkers {
+            mapView.mapScene.removeMapMarker(mapMarker)
+        }
+        
+        mapMarkers.removeAll()
     }
     
     private func getMapViewCenter() -> GeoCoordinates {
@@ -178,22 +194,6 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         viewController.present(alertController, animated: true, completion: nil)
-    }
-    
-    private func drawMap() {
-        for mapMarker in mapMarkers {
-            mapView.mapScene.addMapMarker(mapMarker)
-        }
-    }
-    
-    private func clearMap(riseMemory: Bool) {
-        for mapMarker in mapMarkers {
-            mapView.mapScene.removeMapMarker(mapMarker)
-        }
-        
-        if riseMemory {
-            mapMarkers.removeAll()
-        }
     }
     
     private class SearchResultMetadata : CustomMetadataValue {
