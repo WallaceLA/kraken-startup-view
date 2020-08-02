@@ -49,7 +49,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
     }
     
-    func onLoadCustomNavPresentation() {
+    private func onLoadCustomNavPresentation() {
         let uiConfiguration = PresentationUIConfiguration(
             cornerRadius: 0,
             backgroundStyle: .dimmed(alpha: 0.5),
@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         navCustomAnimator?.prepare(presentedViewController: customNavViewController!)
     }
     
-    func loadDealPopup() {
+    private func loadDealPopup() {
         dismissPopupButton.alpha = 0
         
         dealPopupSafeTopConstraint.constant = self.view.frame.height * dealPopupMaxHeight
@@ -96,7 +96,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         dealPopupVerticalConstraint.constant = (self.view.frame.height * (dealPopupMaxHeight - dealPopupMinHeight)) * -1
     }
     
-    func openDealPopup() {
+    private func openDealPopup() {
         dismissPopupButton.alpha = 0.1
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -107,7 +107,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         })
     }
     
-    func closeDealPopup() {
+    private func closeDealPopup() {
         dismissPopupButton.alpha = 0
         
         UIView.animate(withDuration: 0.2, animations: {
@@ -169,6 +169,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         camera.setTarget(addressLocate)
         camera.setZoomLevel(13)
         
+        mapController.generateRandomMapMarkers(quantity: Int.random(in: 2...5))
+        
         mapController.cleanDestineLocateMarker()
         mapController.setDestineLocateMarker(geoCoordinates: addressLocate)
     }
@@ -179,7 +181,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         view.endEditing(true)
     }
     
-    func onLoadMap(errorCode: MapSceneLite.ErrorCode?) {
+    private func onLoadMap(errorCode: MapSceneLite.ErrorCode?) {
         if let error = errorCode {
             print("Error: Map scene not loaded, \(error)")
         } else {
@@ -197,13 +199,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         }
     }
     
-    func requestGPSAuthorization() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations.last
@@ -217,17 +212,24 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         mapController.setUserLocateMarker(geoCoordinates: userLocate)
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Errors: " + error.localizedDescription)
+    }
+    
+    private func requestGPSAuthorization() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     @IBAction func centralizeUserMap(_ sender: Any) {
         guard let userLocate: GeoCoordinates = mapController.userLocateMapMarker?.coordinates else { return }
         
         let camera = mapView.camera
         camera.setTarget(userLocate)
         camera.setZoomLevel(13)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("Errors: " + error.localizedDescription)
     }
     
     @IBAction func openNavClick(_ sender: Any) {

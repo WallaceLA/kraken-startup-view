@@ -35,6 +35,7 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     
     func getSuggest(textQuery: String) {
         clearMapMarkers()
+        cleanDestineLocateMarker()
         
         let centerGeoCoordinates = getMapViewCenter()
         let autosuggestOptions = SearchOptions(languageCode: LanguageCode.ptBr,
@@ -180,6 +181,32 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         }
         
         mapMarkers.removeAll()
+    }
+    
+    func generateRandomMapMarkers(quantity: Int) {
+        for _ in 1...quantity {
+            addPoiMapMarker(geoCoordinates: getRandomGeoCoordinatesInViewport())
+        }
+    }
+    
+    private func getRandomGeoCoordinatesInViewport() -> GeoCoordinates {
+        let geoBox = getMapViewGeoBox()
+        let northEast = geoBox.northEastCorner
+        let southWest = geoBox.southWestCorner
+        
+        let minLat = southWest.latitude
+        let maxLat = northEast.latitude
+        let lat = getRandom(min: minLat, max: maxLat)
+        
+        let minLon = southWest.longitude
+        let maxLon = northEast.longitude
+        let lon = getRandom(min: minLon, max: maxLon)
+        
+        return GeoCoordinates(latitude: lat, longitude: lon)
+    }
+    
+    private func getRandom(min: Double, max: Double) -> Double {
+        return Double.random(in: min ... max)
     }
     
     private func getMapViewCenter() -> GeoCoordinates {
