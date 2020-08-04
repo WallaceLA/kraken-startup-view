@@ -11,7 +11,7 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     var userLocateMapMarker: MapMarkerLite?
     var destineLocateMapMarker: MapMarkerLite?
     
-    init(viewController: HomeViewController/*UIViewController*/, mapView: MapViewLite) {
+    init(viewController: HomeViewController, mapView: MapViewLite) {
         self.viewController = viewController
         self.mapView = mapView
         
@@ -33,6 +33,17 @@ class HereSdkController: TapDelegate, LongPressDelegate {
                                 completion: onReverseGeocodingCompleted)
     }
     
+    func onReverseGeocodingCompleted(error: SearchError?, items: [Place]?) {
+        if let searchError = error {
+            showDialog(title: "ReverseGeocodingError", message: "Error: \(searchError)")
+            return
+        }
+        
+        // If error is nil, it is guaranteed that the place list will not be empty.
+        let addressText = items!.first!.address.addressText
+        showDialog(title: "Reverse geocoded address:", message: addressText)
+    }
+    
     func getSuggest(textQuery: String) {
         clearMapMarkers()
         cleanDestineLocateMarker()
@@ -46,7 +57,6 @@ class HereSdkController: TapDelegate, LongPressDelegate {
                                  completion: onSearchCompleted)
     }
     
-    // Completion handler to receive auto suggestion results.
     func onSearchCompleted(error: SearchError?, items: [Suggestion]?) {
         if let searchError = error {
             print("Autosuggest Error: \(searchError)")
@@ -59,13 +69,12 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         viewController.suggestAddressList = items!
     }
     
+
     // Conforming to TapDelegate protocol.
     func onTap(origin: Point2D) {
-        // TODO: ???
         mapView.pickMapItems(at: origin, radius: 2, completion: onMapItemsPicked)
     }
     
-    // Completion handler to pick itmes from map.
     func onMapItemsPicked(pickedMapItems: PickMapItemsResultLite?) {
         guard let topmostMapMarker = pickedMapItems?.topmostMarker else {
             return
@@ -92,18 +101,6 @@ class HereSdkController: TapDelegate, LongPressDelegate {
             let geoCoordinates = mapView.camera.viewToGeoCoordinates(viewCoordinates: origin)
             setDestineLocateMarker(geoCoordinates: geoCoordinates)
         }
-    }
-    
-    // Completion handler to receive reverse geocoding results.
-    func onReverseGeocodingCompleted(error: SearchError?, items: [Place]?) {
-        if let searchError = error {
-            showDialog(title: "ReverseGeocodingError", message: "Error: \(searchError)")
-            return
-        }
-        
-        // If error is nil, it is guaranteed that the place list will not be empty.
-        let addressText = items!.first!.address.addressText
-        showDialog(title: "Reverse geocoded address:", message: addressText)
     }
     
     func addPoiMapMarker(geoCoordinates: GeoCoordinates) {

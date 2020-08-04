@@ -11,25 +11,41 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     @IBOutlet weak var dismissPopupButton: UIButton!
     
+    @IBOutlet var mapView: MapViewLite!
+    
+    // first step
+    @IBOutlet weak var firstStepView: UIView!
     @IBOutlet weak var searchAddress: UISearchBar!
     @IBOutlet weak var addressTable: UITableView!
     @IBOutlet weak var placesFoundedLabel: UILabel!
     
-    @IBOutlet var mapView: MapViewLite!
+    // second step
+    @IBOutlet weak var secondStepView: UIView!
+    @IBOutlet weak var addressSelectedLabel: UILabel!
     
+    
+    // navbar definitions
     private var navCustomAnimator: Jelly.Animator?
     private var customNavViewController: CustomNavViewController?
     
+    // modal definitions
     private let dealPopupMinHeight = CGFloat(0.2)
     private let dealPopupMaxHeight = CGFloat(0.8)
     
-    private var isSearching = false
-    private var isSelecting = false
+    // map definitions
     private var mapController: HereSdkController!
     private var locationManager = CLLocationManager()
-    private var addressList: [String] = []
     
+    
+    // first step
+    private var isSelecting = false
+    private var parkingAddressList: [String] = []
     var suggestAddressList: [Suggestion] = []
+    
+    
+    // second step
+    private var isSearching = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +57,24 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         locationManager.delegate = self
         
-        onLoadCustomNavPresentation()
-        loadDealPopup()
+        loadNavPresentation()
+        loadDealModal()
         
         requestGPSAuthorization()
         mapController = HereSdkController(viewController: self, mapView: mapView!)
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
     }
     
-    private func onLoadCustomNavPresentation() {
+    // NavBar Definitions
+    @IBAction func openNavClick(_ sender: Any) {
+        present(customNavViewController!, animated: true, completion: nil)
+    }
+    
+    @IBAction func dismissPopupClick(_ sender: Any) {
+        MinimizeDealModal()
+    }
+    
+    private func loadNavPresentation() {
         let uiConfiguration = PresentationUIConfiguration(
             cornerRadius: 0,
             backgroundStyle: .dimmed(alpha: 0.5),
@@ -88,7 +113,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         navCustomAnimator?.prepare(presentedViewController: customNavViewController!)
     }
     
-    private func loadDealPopup() {
+    private func loadDealModal() {
+        firstStepView.isHidden = false
+        secondStepView.isHidden = true
+        
+        secondStepView.frame.origin.x = 0
+        
         dismissPopupButton.alpha = 0
         
         dealPopupSafeTopConstraint.constant = self.view.frame.height * dealPopupMaxHeight
@@ -96,7 +126,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         dealPopupVerticalConstraint.constant = (self.view.frame.height * (dealPopupMaxHeight - dealPopupMinHeight)) * -1
     }
     
-    private func openDealPopup() {
+    private func maximizeDealModal() {
         dismissPopupButton.alpha = 0.1
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -107,7 +137,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         })
     }
     
-    private func closeDealPopup() {
+    private func MinimizeDealModal() {
         dismissPopupButton.alpha = 0
         
         UIView.animate(withDuration: 0.2, animations: {
@@ -116,34 +146,34 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             self.placesFoundedLabel.isHidden = true
             self.addressTable.isHidden = true
         })
+        
     }
     
-    @IBAction func dismissPopupClick(_ sender: Any) {
-        closeDealPopup()
-    }
     
-    // funcoes da SearchBar
+    // ------ First Step
+    // Conforming to SearchBarDelegate protocol.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearching = !searchText.isEmpty
         
         if isSearching {
-            openDealPopup()
+            maximizeDealModal()
             
             mapController.getSuggest(textQuery: searchText)
         } else {
-            closeDealPopup()
+            MinimizeDealModal()
         }
         
         addressTable.reloadData()
     }
     
-    // funcoes da TableViewCell
+    // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isSearching ? suggestAddressList.count : 0
     }
     
+    // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let addressCell = addressTable.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+        let addressCell = addressTable.dequeueReusableCell(withIdentifier: "suggestAddressCell", for: indexPath)
         
         let address = suggestAddressList[indexPath.row]
         
@@ -152,6 +182,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         return addressCell
     }
     
+    // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let address = suggestAddressList[indexPath.row]
         
@@ -165,6 +196,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         isSelecting = true
         searchAddress.text = ""
         
+        firstStepView.isHidden = true
+        secondStepView.isHidden = false
+        
+        addressSelectedLabel.text = address.title
+        
         let camera = mapView.camera
         camera.setTarget(addressLocate)
         camera.setZoomLevel(13)
@@ -175,12 +211,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         mapController.setDestineLocateMarker(geoCoordinates: addressLocate)
     }
     
-    // funcoes da classe
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
     
+    // ------ Second Step
+    
+    
+    
+    // Map Definitions
     private func onLoadMap(errorCode: MapSceneLite.ErrorCode?) {
         if let error = errorCode {
             print("Error: Map scene not loaded, \(error)")
@@ -232,12 +268,14 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         camera.setZoomLevel(13)
     }
     
-    @IBAction func openNavClick(_ sender: Any) {
-        present(customNavViewController!, animated: true, completion: nil)
-    }
-    
+    // Native Definitions
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
