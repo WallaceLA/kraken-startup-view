@@ -3,13 +3,11 @@ import UIKit
 
 class HereSdkController: TapDelegate, LongPressDelegate {
     
-    private var viewController: HomeViewController//UIViewController
+    private var viewController: HomeViewController
     private var mapView: MapViewLite
     private var searchEngine: SearchEngine
-    private var mapMarkers = [MapMarkerLite]()
     
     var userLocateMapMarker: MapMarkerLite?
-    var destineLocateMapMarker: MapMarkerLite?
     
     init(viewController: HomeViewController, mapView: MapViewLite) {
         self.viewController = viewController
@@ -23,25 +21,6 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         
         mapView.gestures.tapDelegate = self
         mapView.gestures.longPressDelegate = self
-    }
-    
-    func getAddressForCoordinates(geoCoordinates: GeoCoordinates) {
-        let reverseGeocodingOptions = SearchOptions(languageCode: LanguageCode.ptBr,
-                                                    maxItems: 1)
-        _ = searchEngine.search(coordinates: geoCoordinates,
-                                options: reverseGeocodingOptions,
-                                completion: onReverseGeocodingCompleted)
-    }
-    
-    func onReverseGeocodingCompleted(error: SearchError?, items: [Place]?) {
-        if let searchError = error {
-            showDialog(title: "ReverseGeocodingError", message: "Error: \(searchError)")
-            return
-        }
-        
-        // If error is nil, it is guaranteed that the place list will not be empty.
-        let addressText = items!.first!.address.addressText
-        showDialog(title: "Reverse geocoded address:", message: addressText)
     }
     
     func getSuggest(textQuery: String) {
@@ -67,9 +46,10 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         print("Autosuggest: Found \(items!.count) result(s).")
         
         viewController.suggestAddressList = items!
+        viewController.suggestAddressTable.reloadData()
     }
     
-
+    
     // Conforming to TapDelegate protocol.
     func onTap(origin: Point2D) {
         mapView.pickMapItems(at: origin, radius: 2, completion: onMapItemsPicked)
@@ -103,22 +83,7 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         }
     }
     
-    func addPoiMapMarker(geoCoordinates: GeoCoordinates) {
-        let mapMarker = createPoiMapMarker(geoCoordinates: geoCoordinates)
-        
-        mapView.mapScene.addMapMarker(mapMarker)
-        mapMarkers.append(mapMarker)
-    }
-    
-    private func addPoiMapMarker(geoCoordinates: GeoCoordinates, metadata: Metadata) {
-        let mapMarker = createPoiMapMarker(geoCoordinates: geoCoordinates)
-        mapMarker.metadata = metadata
-        
-        mapView.mapScene.addMapMarker(mapMarker)
-        mapMarkers.append(mapMarker)
-    }
-    
-    private func createPoiMapMarker(geoCoordinates: GeoCoordinates) -> MapMarkerLite {
+    func createPoiMapMarker(geoCoordinates: GeoCoordinates) -> MapMarkerLite {
         let mapMarker = MapMarkerLite(at: geoCoordinates)
         
         let image = UIImage(named: "poi")
@@ -146,17 +111,17 @@ class HereSdkController: TapDelegate, LongPressDelegate {
     func setDestineLocateMarker(geoCoordinates: GeoCoordinates) {
         let mapMarker = createCircleMapMarker(geoCoordinates: geoCoordinates, imageName: "red_dot")
         
-        if let destineLocateMapMarker = destineLocateMapMarker {
+        if let destineLocateMapMarker = viewController.destineLocateMapMarker {
             mapView.mapScene.removeMapMarker(destineLocateMapMarker)
         }
         
-        destineLocateMapMarker = mapMarker
+        viewController.destineLocateMapMarker = mapMarker
         mapView.mapScene.addMapMarker(mapMarker)
     }
     
     func cleanDestineLocateMarker() {
-        if let mapMarker = destineLocateMapMarker {
-            destineLocateMapMarker = nil
+        if let mapMarker = viewController.destineLocateMapMarker {
+            viewController.destineLocateMapMarker = nil
             mapView.mapScene.removeMapMarker(mapMarker)
         }
     }
@@ -172,45 +137,25 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         return mapMarker
     }
     
-    private func clearMapMarkers() {
-        for mapMarker in mapMarkers {
-            mapView.mapScene.removeMapMarker(mapMarker)
-        }
-        
-        mapMarkers.removeAll()
-    }
-    
-    func generateRandomMapMarkers(quantity: Int) {
-        for _ in 1...quantity {
-            addPoiMapMarker(geoCoordinates: getRandomGeoCoordinatesInViewport())
+    func drawMapMarkers(markerList: [MapMarkerLite]) {
+        for mapMarker in markerList {
+            mapView.mapScene.addMapMarker(mapMarker)
         }
     }
     
-    private func getRandomGeoCoordinatesInViewport() -> GeoCoordinates {
-        let geoBox = getMapViewGeoBox()
-        let northEast = geoBox.northEastCorner
-        let southWest = geoBox.southWestCorner
+    func clearMapMarkers() {
+        for mapMarker in viewController.parkingLocateList {
+            mapView.mapScene.removeMapMarker(mapMarker.Localization)
+        }
         
-        let minLat = southWest.latitude
-        let maxLat = northEast.latitude
-        let lat = getRandom(min: minLat, max: maxLat)
-        
-        let minLon = southWest.longitude
-        let maxLon = northEast.longitude
-        let lon = getRandom(min: minLon, max: maxLon)
-        
-        return GeoCoordinates(latitude: lat, longitude: lon)
+        viewController.parkingLocateList.removeAll()
     }
     
-    private func getRandom(min: Double, max: Double) -> Double {
-        return Double.random(in: min ... max)
-    }
-    
-    private func getMapViewCenter() -> GeoCoordinates {
+    func getMapViewCenter() -> GeoCoordinates {
         return mapView.camera.getTarget()
     }
     
-    private func getMapViewGeoBox() -> GeoBox {
+    func getMapViewGeoBox() -> GeoBox {
         return mapView.camera.boundingBox
     }
     
