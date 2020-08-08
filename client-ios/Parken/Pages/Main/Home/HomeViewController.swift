@@ -58,6 +58,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         suggestAddressTable.delegate = self
         suggestAddressTable.dataSource = self
         
+        parkingLocateTable.delegate = self
+        parkingLocateTable.dataSource = self
+        
         locationManager.delegate = self
         
         loadNavPresentation()
@@ -228,29 +231,29 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let suggestAddresTable = tableView as? SuggestAddressTableView {
-            return suggestAddressTableView(suggestAddresTable, numberOfRowsInSection: section)
+        if tableView == parkingLocateTable {
+            return parkingLocateTableView(tableView as! ParkingLocateTableView , numberOfRowsInSection: section)
         }
         
-        return parkingLocateTableView(tableView as! ParkingLocateTableView , numberOfRowsInSection: section)
+        return suggestAddressTableView(tableView as! SuggestAddressTableView , numberOfRowsInSection: section)
     }
     
     // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let suggestAddresTable = tableView as? SuggestAddressTableView {
-            return suggestAddressTableView(suggestAddresTable, cellForRowAt: indexPath)
+        if tableView == parkingLocateTable {
+            return parkingLocateTableView(tableView as! ParkingLocateTableView, cellForRowAt: indexPath)
         }
         
-        return parkingLocateTableView(tableView as! ParkingLocateTableView, cellForRowAt: indexPath)
+        return suggestAddressTableView(tableView as! SuggestAddressTableView, cellForRowAt: indexPath)
     }
     
     // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let suggestAddresTable = tableView as? SuggestAddressTableView {
-            suggestAddressTableView(suggestAddresTable, didSelectRowAt: indexPath)
+        if tableView == parkingLocateTable {
+            parkingLocateTableView(tableView as! ParkingLocateTableView, didSelectRowAt: indexPath)
         }
         else {
-            return parkingLocateTableView(tableView as! ParkingLocateTableView, didSelectRowAt: indexPath)
+            suggestAddressTableView(tableView as! SuggestAddressTableView, didSelectRowAt: indexPath)
         }
     }
     
@@ -321,8 +324,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         let addressLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
         
-        print("focus on address selected")
-        
         loadParkingLocateNear(addressTitle: address.title, geoCoordinates: addressLocate)
     }
     
@@ -330,6 +331,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // ------ Second Step
     private func loadParkingLocateNear(addressTitle: String, geoCoordinates: GeoCoordinates) {
         goToStep(step: 2)
+        print("focus on address selected")
         
         addressSelectedLabel.text = addressTitle
         
@@ -339,6 +341,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         mapController.cleanDestineLocateMarker()
         mapController.setDestineLocateMarker(geoCoordinates: geoCoordinates)
+        
+        parkingLocateList.removeAll()
         
         // TODO: Obter estacionamentos do servidor
         for _ in 1...Int.random(in: 2...5) {
@@ -366,6 +370,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         parkingCell.AddressNameLabel?.text = "test"
         parkingCell.AmmountLabel?.text = parking.Ammount
+        parkingCell.RatesLabel?.text = parking.Rates
         
         return parkingCell
     }
