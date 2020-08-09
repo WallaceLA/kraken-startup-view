@@ -5,6 +5,7 @@ import CoreLocation
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
+    @IBOutlet weak var dealPopup: UIView!
     @IBOutlet weak var dealPopupSafeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupVerticalConstraint: NSLayoutConstraint!
@@ -23,6 +24,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var secondStepView: UIView!
     @IBOutlet weak var parkingLocateTable: UITableView!
     @IBOutlet weak var addressSelectedLabel: UILabel!
+    @IBOutlet weak var goFirstStepButton: UIButton!
+    
+    // third setp
+    @IBOutlet weak var addressParkChoosedLabel: UILabel!
+    @IBOutlet weak var favoriteParkChoosedButton: UIButton!
+    @IBOutlet weak var distanceParkChoosedLabel: UILabel!
+    
     
     
     // navbar definitions
@@ -30,7 +38,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     private var customNavViewController: CustomNavViewController?
     
     // modal definitions
-    private let dealPopupMinHeight = CGFloat(0.23)
+    private let dealPopupMinHeight = CGFloat(0.25)
     private let dealPopupMaxHeight = CGFloat(0.75)
     
     // map definitions
@@ -45,7 +53,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     
     // second step
-    private var isSelecting = false
     private var destineLocateMapMarker: MapMarkerLite?
     private var parkingLocateList: [ParkingLocateModel] = []
     
@@ -123,9 +130,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // DealModal definitions
     private func loadDealModal() {
-        goToStep(step: 1)
-        
-        dismissPopupButton.alpha = 0
+        dealPopup.layer.cornerRadius = 25
+        dealPopup.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        dealPopup.layer.masksToBounds = true;
         
         dealPopupSafeTopConstraint.constant = self.view.frame.height * dealPopupMaxHeight
         dealPopupHeightConstraint.constant = self.view.frame.height * dealPopupMaxHeight
@@ -256,25 +263,42 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         switch (step) {
         case 1:
             isSearching = false
-            isSelecting = false
             
             firstStepView.isHidden = false;
             secondStepView.isHidden = true;
             
             secondStepView.frame.origin.x = 0;
+            
+            MinimizeDealModal()
+            
+            if let mapController = mapController {
+                mapController.clearMarkerList(markerList: parkingLocateList.map { $0.Localization } )
+                parkingLocateList.removeAll()
+            }
+            
+            if let destineMarker = destineLocateMapMarker {
+                mapController.cleanMarker(mapMarker: destineMarker)
+                destineLocateMapMarker = nil
+            }
+            
             break;
         case 2:
             searchAddress.text = ""
+            isSearching = false
+            
             suggestAddressList.removeAll()
             suggestAddressTable.reloadData()
             
-            parkingLocateList.removeAll()
-            
-            isSearching = false
-            isSelecting = true
-            
             firstStepView.isHidden = true;
             secondStepView.isHidden = false;
+            
+            if let mapMarker = destineLocateMapMarker {
+                mapController.cleanMarker(mapMarker: mapMarker)
+                destineLocateMapMarker = nil
+            }
+            
+            parkingLocateList.removeAll()
+            
             break;
         default:
             break;
@@ -285,14 +309,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // Conforming to SearchBarDelegate protocol.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearching = !searchText.isEmpty
-        
-        mapController.clearMarkerList(markerList: parkingLocateList.map { $0.Localization } )
-        parkingLocateList.removeAll()
-        
-        if let destineMarker = destineLocateMapMarker {
-            mapController.cleanMarker(mapMarker: destineMarker)
-            destineLocateMapMarker = nil
-        }
         
         if isSearching {
             maximizeDealModal()
@@ -359,17 +375,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         print("focus on address selected")
         
         addressSelectedLabel.text = addressTitle
-
-        mapController.centralize(geoCoordinates: geoCoordinates)
-        
-        if let mapMarker = destineLocateMapMarker {            
-            mapController.cleanMarker(mapMarker: mapMarker)
-            destineLocateMapMarker = nil
-        }
         
         setDestineLocateMarker(geoCoordinates: geoCoordinates)
-        
-        parkingLocateList.removeAll()
         
         // TODO: Obter estacionamentos do servidor
         for _ in 1...Int.random(in: 2...5) {
@@ -413,6 +420,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let imageName = "red_dot"
         
         destineLocateMapMarker = mapController.addCircleMarker(imageName: imageName, geoCoordinates: geoCoordinates, lastMarker: destineLocateMapMarker)
+        
+        mapController.centralize(geoCoordinates: geoCoordinates)
+    }
+    
+    @IBAction func backToFirstStepClick(_ sender: Any) {
+        goToStep(step: 1)
     }
     
     
