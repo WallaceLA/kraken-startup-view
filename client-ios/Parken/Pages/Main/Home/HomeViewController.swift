@@ -30,8 +30,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     private var customNavViewController: CustomNavViewController?
     
     // modal definitions
-    private let dealPopupMinHeight = CGFloat(0.2)
-    private let dealPopupMaxHeight = CGFloat(0.8)
+    private let dealPopupMinHeight = CGFloat(0.23)
+    private let dealPopupMaxHeight = CGFloat(0.75)
     
     // map definitions
     private var mapController: HereSdkController!
@@ -39,15 +39,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     
     // first step
-    private var isSelecting = false
-    var suggestAddressList: [Suggestion] = []
+    private var isSearching = false
+    private var userLocateMapMarker: MapMarkerLite?
+    private var suggestAddressList: [Suggestion] = []
     
     
     // second step
-    private var isSearching = false
-    var destineLocateMapMarker: MapMarkerLite?
-    var parkingLocateList: [ParkingLocateModel] = []
-    
+    private var isSelecting = false
+    private var destineLocateMapMarker: MapMarkerLite?
+    private var parkingLocateList: [ParkingLocateModel] = []
     
     
     override func viewDidLoad() {
@@ -66,8 +66,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         loadNavPresentation()
         loadDealModal()
         
+        goToStep(step: 1)
+        
         requestGPSAuthorization()
-        mapController = HereSdkController(viewController: self, mapView: mapView!)
+        mapController = HereSdkController(mapView: mapView!)
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
     }
     
@@ -169,26 +171,39 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             
             let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
             
-            let camera = mapView.camera
-            camera.setTarget(userLocate)
-            camera.setZoomLevel(13)
-            
             print("user locate initial")
-            
-            mapController.setUserLocateMarker(geoCoordinates: userLocate)
+            setUserLocateMarker(geoCoordinates: userLocate, centralize: true)
         }
     }
     
     @IBAction func centralizeUserMap(_ sender: Any) {
-        guard let userLocate: GeoCoordinates = mapController.userLocateMapMarker?.coordinates else { return }
+        guard let userLocate: GeoCoordinates = userLocateMapMarker?.coordinates else { return }
         
-        let camera = mapView.camera
-        camera.setTarget(userLocate)
-        camera.setZoomLevel(13)
+        mapController.centralize(geoCoordinates: userLocate)
     }
     
+    // Conforming to CLLocationManagerDelegate protocol.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.last
+        
+        guard let locValue: CLLocationCoordinate2D = location?.coordinate else { return }
+        
+        let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
+        
+        print("user locate updating")
+        setUserLocateMarker(geoCoordinates: userLocate, centralize: false)
+    }
+    
+    // Conforming to CLLocationManagerDelegate protocol.
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Errors: " + error.localizedDescription)
+    }
+    
+    
     private func getRandomGeoCoordinatesInViewport() -> GeoCoordinates {
-        let geoBox = mapController.getMapViewGeoBox()
+        let geoBox = mapController.getViewGeoBox()
         let northEast = geoBox.northEastCorner
         let southWest = geoBox.southWestCorner
         
@@ -202,27 +217,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         return GeoCoordinates(latitude: lat, longitude: lon)
     }
-    
-    // Conforming to CLLocationManagerDelegate protocol.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        let location = locations.last
-        
-        print("user locate updating")
-        
-        guard let locValue: CLLocationCoordinate2D = location?.coordinate else { return }
-        
-        let userLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
-        
-        mapController.setUserLocateMarker(geoCoordinates: userLocate)
-    }
-    
-    // Conforming to CLLocationManagerDelegate protocol.
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("Errors: " + error.localizedDescription)
-    }
-    
     
     private func getRandom(min: Double, max: Double) -> Double {
         return Double.random(in: min ... max)
@@ -292,9 +286,30 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isSearching = !searchText.isEmpty
         
+        mapController.clearMarkerList(markerList: parkingLocateList.map { $0.Localization } )
+        parkingLocateList.removeAll()
+        
+        if let destineMarker = destineLocateMapMarker {
+            mapController.cleanMarker(mapMarker: destineMarker)
+            destineLocateMapMarker = nil
+        }
+        
         if isSearching {
             maximizeDealModal()
-            mapController.getSuggest(textQuery: searchText)
+            mapController.getSuggest(
+                textQuery: searchText,
+                action: { (error: SearchError?, items: [Suggestion]?) -> () in
+                    if let searchError = error {
+                        print("Autosuggest Error: \(searchError)")
+                        return
+                    }
+                    
+                    // If error is nil, it is guaranteed that the items will not be nil.
+                    print("Autosuggest: Found \(items!.count) result(s).")
+                    
+                    self.suggestAddressList = items!
+                    self.suggestAddressTable.reloadData()
+            })
         } else {
             MinimizeDealModal()
         }
@@ -327,6 +342,16 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         loadParkingLocateNear(addressTitle: address.title, geoCoordinates: addressLocate)
     }
     
+    private func setUserLocateMarker(geoCoordinates: GeoCoordinates, centralize: Bool) {
+        let imageName = "green_dot"
+        
+        userLocateMapMarker = mapController.addCircleMarker(imageName: imageName, geoCoordinates: geoCoordinates, lastMarker: userLocateMapMarker)
+        
+        if centralize {
+            mapController.centralize(geoCoordinates: geoCoordinates)
+        }
+    }
+    
     
     // ------ Second Step
     private func loadParkingLocateNear(addressTitle: String, geoCoordinates: GeoCoordinates) {
@@ -334,13 +359,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         print("focus on address selected")
         
         addressSelectedLabel.text = addressTitle
+
+        mapController.centralize(geoCoordinates: geoCoordinates)
         
-        let camera = mapView.camera
-        camera.setTarget(geoCoordinates)
-        camera.setZoomLevel(13)
+        if let mapMarker = destineLocateMapMarker {            
+            mapController.cleanMarker(mapMarker: mapMarker)
+            destineLocateMapMarker = nil
+        }
         
-        mapController.cleanDestineLocateMarker()
-        mapController.setDestineLocateMarker(geoCoordinates: geoCoordinates)
+        setDestineLocateMarker(geoCoordinates: geoCoordinates)
         
         parkingLocateList.removeAll()
         
@@ -348,13 +375,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         for _ in 1...Int.random(in: 2...5) {
             let randomCoordenates = getRandomGeoCoordinatesInViewport()
             
-            let parking = ParkingLocateModel("R$ 7,40", "7 Avaliações", mapController.createPoiMapMarker(geoCoordinates: randomCoordenates))
+            let parking = ParkingLocateModel("R$ 7,40", "7 Avaliações", mapController.createPointMarker(geoCoordinates: randomCoordenates))
             
             parkingLocateList.append(parking)
         }
         parkingLocateTable.reloadData()
         
-        mapController.drawMapMarkers(markerList: parkingLocateList.map { $0.Localization } )
+        mapController.addMarkerList(markerList: parkingLocateList.map { $0.Localization } )
     }
     
     private func parkingLocateTableView(_ tableView: ParkingLocateTableView, numberOfRowsInSection section: Int) -> Int {
@@ -382,6 +409,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         print("focus on parking selected")
     }
     
+    private func setDestineLocateMarker(geoCoordinates: GeoCoordinates) {
+        let imageName = "red_dot"
+        
+        destineLocateMapMarker = mapController.addCircleMarker(imageName: imageName, geoCoordinates: geoCoordinates, lastMarker: destineLocateMapMarker)
+    }
     
     
     // Native Definitions
