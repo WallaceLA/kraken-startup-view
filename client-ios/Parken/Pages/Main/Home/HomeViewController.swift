@@ -10,6 +10,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupVerticalConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var maximizePopupButton: UIButton!
     @IBOutlet weak var dismissPopupButton: UIButton!
     
     @IBOutlet var mapView: MapViewLite!
@@ -27,10 +28,14 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var goFirstStepButton: UIButton!
     
     // third setp
+    @IBOutlet weak var thirdStepView: UIView!
     @IBOutlet weak var addressParkChoosedLabel: UILabel!
     @IBOutlet weak var favoriteParkChoosedButton: UIButton!
     @IBOutlet weak var distanceParkChoosedLabel: UILabel!
-    
+    @IBOutlet weak var ammountParkChoosedLabel: UILabel!
+    @IBOutlet weak var ratesParkChoosedLabel: UILabel!
+    @IBOutlet weak var goSecondStepButton: SecondButtonStyle!
+    @IBOutlet weak var requestParkChoosedButton: PrimaryButtonStyle!
     
     
     // navbar definitions
@@ -56,6 +61,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     private var destineLocateMapMarker: MapMarkerLite?
     private var parkingLocateList: [ParkingLocateModel] = []
     
+    
+    // third step
+    private var parkChoosed: ParkingLocateModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,8 +93,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         present(customNavViewController!, animated: true, completion: nil)
     }
     
+    
+    @IBAction func maximizePopupClick(_ sender: Any) {
+        maximizeDealModal()
+    }
+    
     @IBAction func dismissPopupClick(_ sender: Any) {
-        MinimizeDealModal()
+        minimizeDealModal()
     }
     
     private func loadNavPresentation() {
@@ -145,17 +158,19 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         UIView.animate(withDuration: 0.5, animations: {
             self.dealPopupSafeTopConstraint.constant = self.view.frame.height * self.dealPopupMinHeight
             self.dealPopupVerticalConstraint.constant = 0
+            
             self.placesFoundedLabel.isHidden = false
             self.suggestAddressTable.isHidden = false
         })
     }
     
-    private func MinimizeDealModal() {
+    private func minimizeDealModal() {
         dismissPopupButton.alpha = 0
         
         UIView.animate(withDuration: 0.2, animations: {
             self.dealPopupSafeTopConstraint.constant = self.view.frame.height * self.dealPopupMaxHeight
             self.dealPopupVerticalConstraint.constant = (self.view.frame.height * (self.dealPopupMaxHeight - self.dealPopupMinHeight)) * -1
+            
             self.placesFoundedLabel.isHidden = true
             self.suggestAddressTable.isHidden = true
         })
@@ -264,12 +279,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         case 1:
             isSearching = false
             
-            firstStepView.isHidden = false;
-            secondStepView.isHidden = true;
+            firstStepView.isHidden = false
+            secondStepView.isHidden = true
+            thirdStepView.isHidden = true
             
+            firstStepView.frame.origin.x = 0;
             secondStepView.frame.origin.x = 0;
+            thirdStepView.frame.origin.x = 0;
             
-            MinimizeDealModal()
+            minimizeDealModal()
             
             if let mapController = mapController {
                 mapController.clearMarkerList(markerList: parkingLocateList.map { $0.Localization } )
@@ -289,15 +307,24 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             suggestAddressList.removeAll()
             suggestAddressTable.reloadData()
             
-            firstStepView.isHidden = true;
-            secondStepView.isHidden = false;
+            firstStepView.isHidden = true
+            secondStepView.isHidden = false
+            thirdStepView.isHidden = true
             
-            if let mapMarker = destineLocateMapMarker {
-                mapController.cleanMarker(mapMarker: mapMarker)
-                destineLocateMapMarker = nil
-            }
+            firstStepView.frame.origin.x = 0;
+            secondStepView.frame.origin.x = 0;
+            thirdStepView.frame.origin.x = 0;
             
-            parkingLocateList.removeAll()
+            break;
+        case 3:
+            
+            firstStepView.isHidden = true
+            secondStepView.isHidden = true
+            thirdStepView.isHidden = false
+            
+            firstStepView.frame.origin.x = 0;
+            secondStepView.frame.origin.x = 0;
+            thirdStepView.frame.origin.x = 0;
             
             break;
         default:
@@ -327,7 +354,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     self.suggestAddressTable.reloadData()
             })
         } else {
-            MinimizeDealModal()
+            minimizeDealModal()
         }
     }
     
@@ -372,6 +399,14 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // ------ Second Step
     private func loadParkingLocateNear(addressTitle: String, geoCoordinates: GeoCoordinates) {
         goToStep(step: 2)
+        
+        if let mapMarker = destineLocateMapMarker {
+            mapController.cleanMarker(mapMarker: mapMarker)
+            destineLocateMapMarker = nil
+        }
+        
+        parkingLocateList.removeAll()
+        
         print("focus on address selected")
         
         addressSelectedLabel.text = addressTitle
@@ -382,7 +417,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         for _ in 1...Int.random(in: 2...5) {
             let randomCoordenates = getRandomGeoCoordinatesInViewport()
             
-            let parking = ParkingLocateModel("R$ 7,40", "7 Avaliações", mapController.createPointMarker(geoCoordinates: randomCoordenates))
+            let parking = ParkingLocateModel("Test address", "1.2 KM", "R$ 7,40", "7 Avaliações", mapController.createPointMarker(geoCoordinates: randomCoordenates))
             
             parkingLocateList.append(parking)
         }
@@ -402,7 +437,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         let parking = parkingLocateList[indexPath.row]
         
-        parkingCell.AddressNameLabel?.text = "test"
+        parkingCell.AddressNameLabel?.text = parking.Address
+        parkingCell.DistanceLabel?.text = parking.Distance
         parkingCell.AmmountLabel?.text = parking.Ammount
         parkingCell.RatesLabel?.text = parking.Rates
         
@@ -414,6 +450,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let parking = parkingLocateList[indexPath.row]
         
         print("focus on parking selected")
+        
+        loadParkChoosed(park: parking)
     }
     
     private func setDestineLocateMarker(geoCoordinates: GeoCoordinates) {
@@ -428,6 +466,44 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         goToStep(step: 1)
     }
     
+    
+    // ------ Third Step
+    private func loadParkChoosed(park: ParkingLocateModel) {
+        goToStep(step: 3)
+        
+        parkChoosed = park
+        
+        addressParkChoosedLabel?.text = park.Address
+        distanceParkChoosedLabel?.text = park.Distance
+        ammountParkChoosedLabel?.text = park.Ammount
+        ratesParkChoosedLabel?.text = park.Rates
+    }
+    
+    @IBAction func favoriteParkClick(_ sender: Any) {
+        // TODO: call backend to save
+        
+        print("park choosed was favorited")
+    }
+    
+    @IBAction func backToSecondStepClick(_ sender: Any) {
+        goToStep(step: 2)
+    }
+    
+    @IBAction func requestParkClick(_ sender: Any) {
+        // TODO: call backend
+        print("requested park choosed")
+        
+        showDialog(title: "Request successful", message: "Your park will approved")
+        
+        goToStep(step: 1)
+    }
+    
+    
+    private func showDialog(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
     
     // Native Definitions
     override var prefersStatusBarHidden: Bool {
