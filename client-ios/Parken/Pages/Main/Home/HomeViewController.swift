@@ -1,7 +1,8 @@
 import UIKit
-import heresdk
-import Jelly
 import CoreLocation
+import Jelly
+import heresdk
+import Alamofire
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
@@ -414,6 +415,28 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         setDestineLocateMarker(geoCoordinates: geoCoordinates)
         
         // TODO: Obter estacionamentos do servidor
+        let parameters: Parameters = [
+            "latitude": "\(geoCoordinates.latitude)",
+            "longitude": "\(geoCoordinates.longitude)",
+            "maxDistance": "10.0",
+            "maxResult": "10"
+        ]
+        
+        AF.request("\(ParkenConstants.apiEndpoint)/Parking/GetParkingListByPerimeter",
+            method: .get,
+            parameters: parameters,
+            encoding: JSONEncoding.default).responseJSON { response in
+            print("request API")
+                
+            //if let json = response.result.value {
+            //    print("JSON: \(json)") // serialized json response
+            //}
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        }
+        
         for _ in 1...Int.random(in: 2...5) {
             let randomCoordenates = getRandomGeoCoordinatesInViewport()
             

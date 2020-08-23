@@ -36,6 +36,7 @@
 		4D534AAA24AD76C800782651 /* PhoneNumberCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D534AA924AD76C800782651 /* PhoneNumberCustomButton.swift */; };
 		4D534AAC24AD844000782651 /* SecondButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D534AAB24AD844000782651 /* SecondButtonStyle.swift */; };
 		4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5667A124D3AF18008EF702 /* HereSdkController.swift */; };
+		4D570DE824E21F23004A6541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D570DE724E21F23004A6541 /* GoogleService-Info.plist */; };
 		4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */; };
 		4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */; };
 		4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */; };
@@ -45,6 +46,7 @@
 		4D65CC3924DCD9060002CA86 /* ParkingLocateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */; };
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D20224F30BCF0051321E /* ParkenConstants.swift */; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,7 @@
 		4D534AA924AD76C800782651 /* PhoneNumberCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCustomButton.swift; sourceTree = "<group>"; };
 		4D534AAB24AD844000782651 /* SecondButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondButtonStyle.swift; sourceTree = "<group>"; };
 		4D5667A124D3AF18008EF702 /* HereSdkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereSdkController.swift; sourceTree = "<group>"; };
+		4D570DE724E21F23004A6541 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUpdateViewController.swift; sourceTree = "<group>"; };
 		4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCustom.swift; sourceTree = "<group>"; };
 		4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCustom.xib; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		4D65CC3624DCD8DC0002CA86 /* SuggestAddressTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestAddressTableView.swift; sourceTree = "<group>"; };
 		4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocateTableView.swift; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
+		4D91D20224F30BCF0051321E /* ParkenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkenConstants.swift; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,9 +156,11 @@
 				4D4D2D2F248C697B00574595 /* Assets.xcassets */,
 				4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */,
 				4D4D2D34248C697B00574595 /* Info.plist */,
+				4D570DE724E21F23004A6541 /* GoogleService-Info.plist */,
 				4D4D2D2C248C697400574595 /* Parken.xcdatamodeld */,
 				4D4D2D42248C6BE300574595 /* Welcome.storyboard */,
 				4D4D2D4F248C7E6A00574595 /* Account.storyboard */,
+				4D91D20224F30BCF0051321E /* ParkenConstants.swift */,
 			);
 			path = Parken;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				4D4D2D50248C7E6A00574595 /* Account.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
 				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
+				4D570DE824E21F23004A6541 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +519,7 @@
 				4D4D2D2E248C697400574595 /* Parken.xcdatamodeld in Sources */,
 				4D4FE9BD248D601800CA9D1C /* RegisterViewController.swift in Sources */,
 				4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */,
+				4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */,
 				4D65CC3524DCCB200002CA86 /* ParkingLocateModel.swift in Sources */,
 				4D65CC3724DCD8DC0002CA86 /* SuggestAddressTableView.swift in Sources */,
 				4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */,
