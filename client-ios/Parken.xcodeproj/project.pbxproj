@@ -47,6 +47,14 @@
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D20224F30BCF0051321E /* ParkenConstants.swift */; };
+		4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */ = {isa = PBXBuildFile; fileRef = 4DCEB6A524F5D3BC001B5BBE /* TestFairySDK-1 */; };
+		4DCEB6A824F5D3FD001B5BBE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6A724F5D3FC001B5BBE /* SystemConfiguration.framework */; };
+		4DCEB6AA24F5D439001B5BBE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6A924F5D438001B5BBE /* CoreMedia.framework */; };
+		4DCEB6AC24F5D446001B5BBE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6AB24F5D446001B5BBE /* CoreMotion.framework */; };
+		4DCEB6AE24F5D453001B5BBE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6AD24F5D453001B5BBE /* OpenGLES.framework */; };
+		4DCEB6B024F5D45D001B5BBE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6AF24F5D45C001B5BBE /* AVFoundation.framework */; };
+		4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */; };
+		4DCEB6B524F5E627001B5BBE /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6B424F5E627001B5BBE /* libTestFairy.a */; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +116,15 @@
 		4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocateTableView.swift; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
 		4D91D20224F30BCF0051321E /* ParkenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkenConstants.swift; sourceTree = "<group>"; };
+		4DCEB6A524F5D3BC001B5BBE /* TestFairySDK-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "TestFairySDK-1"; sourceTree = "<group>"; };
+		4DCEB6A724F5D3FC001B5BBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4DCEB6A924F5D438001B5BBE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4DCEB6AB24F5D446001B5BBE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4DCEB6AD24F5D453001B5BBE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		4DCEB6AF24F5D45C001B5BBE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4DCEB6B124F5D4B7001B5BBE /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLog.swift; sourceTree = "<group>"; };
+		4DCEB6B424F5E627001B5BBE /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFairy.a; path = "../Parken/TestFairySDK-1/libTestFairy.a"; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +133,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCEB6AA24F5D439001B5BBE /* CoreMedia.framework in Frameworks */,
 				4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */,
+				4DCEB6A824F5D3FD001B5BBE /* SystemConfiguration.framework in Frameworks */,
+				4DCEB6AC24F5D446001B5BBE /* CoreMotion.framework in Frameworks */,
 				4D47D53324A93A69006E24EA /* Pods_Parken.framework in Frameworks */,
+				4DCEB6B024F5D45D001B5BBE /* AVFoundation.framework in Frameworks */,
+				4DCEB6AE24F5D453001B5BBE /* OpenGLES.framework in Frameworks */,
+				4DCEB6B524F5E627001B5BBE /* libTestFairy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +184,9 @@
 				4D4D2D42248C6BE300574595 /* Welcome.storyboard */,
 				4D4D2D4F248C7E6A00574595 /* Account.storyboard */,
 				4D91D20224F30BCF0051321E /* ParkenConstants.swift */,
+				4DCEB6B124F5D4B7001B5BBE /* Bridging.h */,
+				4DCEB6A524F5D3BC001B5BBE /* TestFairySDK-1 */,
+				4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */,
 			);
 			path = Parken;
 			sourceTree = "<group>";
@@ -235,8 +261,14 @@
 		4D4D2D46248C738D00574595 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DCEB6AF24F5D45C001B5BBE /* AVFoundation.framework */,
+				4DCEB6AD24F5D453001B5BBE /* OpenGLES.framework */,
+				4DCEB6AB24F5D446001B5BBE /* CoreMotion.framework */,
+				4DCEB6A924F5D438001B5BBE /* CoreMedia.framework */,
+				4DCEB6A724F5D3FC001B5BBE /* SystemConfiguration.framework */,
 				4D6780A024BD19B5009141D6 /* heresdk.xcframework */,
 				2924520FD2771C4A688895DF /* Pods_Parken.framework */,
+				4DCEB6B424F5E627001B5BBE /* libTestFairy.a */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -452,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */,
+				4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */,
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D50248C7E6A00574595 /* Account.storyboard in Resources */,
@@ -519,6 +552,7 @@
 				4D4D2D2E248C697400574595 /* Parken.xcdatamodeld in Sources */,
 				4D4FE9BD248D601800CA9D1C /* RegisterViewController.swift in Sources */,
 				4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */,
+				4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */,
 				4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */,
 				4D65CC3524DCCB200002CA86 /* ParkingLocateModel.swift in Sources */,
 				4D65CC3724DCD8DC0002CA86 /* SuggestAddressTableView.swift in Sources */,
@@ -686,14 +720,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parken/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parken",
+					"$(PROJECT_DIR)/Parken/TestFairySDK-1",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.krakenstartup.Parken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Parken/Bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -705,11 +746,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parken/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parken",
+					"$(PROJECT_DIR)/Parken/TestFairySDK-1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.krakenstartup.Parken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
