@@ -16,4 +16,5 @@ class ParkingLocateModel: NSObject {
         Rates = rates
         Localization = localization
     }
+    
 }

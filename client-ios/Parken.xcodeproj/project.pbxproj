@@ -46,6 +46,8 @@
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
+		7202E88C24FAFA3500020A71 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202E88B24FAFA3500020A71 /* PresentationModel.swift */; };
+		7202E88E24FAFC1800020A71 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202E88D24FAFC1800020A71 /* SignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +107,8 @@
 		4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocateTableView.swift; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
+		7202E88B24FAFA3500020A71 /* PresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
+		7202E88D24FAFC1800020A71 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 			children = (
 				4D4FE9DE248D80B800CA9D1C /* UserProfileModel.swift */,
 				4D65CC3424DCCB200002CA86 /* ParkingLocateModel.swift */,
+				7202E88B24FAFA3500020A71 /* PresentationModel.swift */,
+				7202E88D24FAFC1800020A71 /* SignIn.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,10 +524,12 @@
 				4D4FE9C1248D770200CA9D1C /* TermsViewController.swift in Sources */,
 				4D4FE9CF248D7ABC00CA9D1C /* HistoryViewController.swift in Sources */,
 				4D4F6EB724BA490D00A01C59 /* PrimaryTextFieldStyle.swift in Sources */,
+				7202E88E24FAFC1800020A71 /* SignIn.swift in Sources */,
 				4D4FE9C6248D793C00CA9D1C /* HomeViewController.swift in Sources */,
 				4D4FE9DF248D80B800CA9D1C /* UserProfileModel.swift in Sources */,
 				4D534AAC24AD844000782651 /* SecondButtonStyle.swift in Sources */,
 				4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */,
+				7202E88C24FAFA3500020A71 /* PresentationModel.swift in Sources */,
 				4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */,
 				4D4FE9C3248D773400CA9D1C /* PrivacyViewController.swift in Sources */,
 				4D4D2D45248C6C2D00574595 /* AccessViewController.swift in Sources */,
