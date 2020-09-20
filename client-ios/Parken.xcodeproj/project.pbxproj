@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D19732425166BBB001B4E07 /* FavoriteAddressTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D19732325166BBB001B4E07 /* FavoriteAddressTableView.swift */; };
 		4D47D53324A93A69006E24EA /* Pods_Parken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924520FD2771C4A688895DF /* Pods_Parken.framework */; };
 		4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D23248C697400574595 /* AppDelegate.swift */; };
 		4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D25248C697400574595 /* SceneDelegate.swift */; };
@@ -76,6 +77,7 @@
 		11917EBFC7FA23AE2651727F /* Pods-Parken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parken.release.xcconfig"; path = "Target Support Files/Pods-Parken/Pods-Parken.release.xcconfig"; sourceTree = "<group>"; };
 		2538C39AFA3B87A1302FEE0F /* Pods-Parken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parken.debug.xcconfig"; path = "Target Support Files/Pods-Parken/Pods-Parken.debug.xcconfig"; sourceTree = "<group>"; };
 		2924520FD2771C4A688895DF /* Pods_Parken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D19732325166BBB001B4E07 /* FavoriteAddressTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddressTableView.swift; sourceTree = "<group>"; };
 		4D4D2D20248C697400574595 /* Parken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4D2D23248C697400574595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4D2D25248C697400574595 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				4D527F4C24DB96D90088AC7A /* ParkingLocateTableViewCell.swift */,
 				4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */,
 				4D65CC3624DCD8DC0002CA86 /* SuggestAddressTableView.swift */,
+				4D19732325166BBB001B4E07 /* FavoriteAddressTableView.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				4D534AAA24AD76C800782651 /* PhoneNumberCustomButton.swift in Sources */,
 				4D4FE9D3248D7AE000CA9D1C /* AutomotiveViewController.swift in Sources */,
 				4D4D2D4C248C7A1A00574595 /* SignInViewController.swift in Sources */,
+				4D19732425166BBB001B4E07 /* FavoriteAddressTableView.swift in Sources */,
 				4D4FE9DA248D7B1C00CA9D1C /* ChatViewController.swift in Sources */,
 				4D527F4D24DB96D90088AC7A /* ParkingLocateTableViewCell.swift in Sources */,
 				4D4D2D49248C74CE00574595 /* PresentationViewController.swift in Sources */,
