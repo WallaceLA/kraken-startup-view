@@ -11,7 +11,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupVerticalConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var maximizePopupButton: UIButton!
+    @IBOutlet weak var togglePopupButton: UIButton!
     @IBOutlet weak var dismissPopupButton: UIButton!
     
     @IBOutlet var mapView: MapViewLite!
@@ -19,14 +19,17 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // first step
     @IBOutlet weak var firstStepView: UIView!
     @IBOutlet weak var searchAddress: UISearchBar!
+    
+    @IBOutlet weak var searchResultView: UIView!
     @IBOutlet weak var suggestAddressTable: UITableView!
-    @IBOutlet weak var placesFoundedLabel: UILabel!
+    
+    @IBOutlet weak var favoriteView: UIView!
+    @IBOutlet weak var favoriteAddressTable: UITableView!
     
     // second step
     @IBOutlet weak var secondStepView: UIView!
     @IBOutlet weak var parkingLocateTable: UITableView!
     @IBOutlet weak var addressSelectedLabel: UILabel!
-    @IBOutlet weak var goFirstStepButton: UIButton!
     
     // third setp
     @IBOutlet weak var thirdStepView: UIView!
@@ -35,9 +38,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var distanceParkChoosedLabel: UILabel!
     @IBOutlet weak var ammountParkChoosedLabel: UILabel!
     @IBOutlet weak var ratesParkChoosedLabel: UILabel!
-    @IBOutlet weak var goSecondStepButton: SecondButtonStyle!
-    @IBOutlet weak var requestParkChoosedButton: PrimaryButtonStyle!
-    
     
     // navbar definitions
     private var navCustomAnimator: Jelly.Animator?
@@ -46,25 +46,26 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // modal definitions
     private let dealPopupMinHeight = CGFloat(0.25)
     private let dealPopupMaxHeight = CGFloat(0.75)
+    private var isPopupOpen = false
+    private var maximizeButtonIconName = "chevron.compact"
     
     // map definitions
     private var mapController: HereSdkController!
     private var locationManager = CLLocationManager()
     
-    
     // first step
     private var isSearching = false
     private var userLocateMapMarker: MapMarkerLite?
     private var suggestAddressList: [Suggestion] = []
-    
+    private var favoriteAddressList: [String] = []
     
     // second step
     private var destineLocateMapMarker: MapMarkerLite?
     private var parkingLocateList: [ParkingLocateModel] = []
     
-    
     // third step
     private var parkChoosed: ParkingLocateModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         suggestAddressTable.delegate = self
         suggestAddressTable.dataSource = self
         
+        favoriteAddressTable.delegate = self
+        favoriteAddressTable.dataSource = self
+        
         parkingLocateTable.delegate = self
         parkingLocateTable.dataSource = self
         
@@ -81,6 +85,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         loadNavPresentation()
         loadDealModal()
+        
+        loadFavoriteAddress()
         
         goToStep(step: 1)
         
@@ -94,9 +100,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         present(customNavViewController!, animated: true, completion: nil)
     }
     
-    
-    @IBAction func maximizePopupClick(_ sender: Any) {
-        maximizeDealModal()
+    @IBAction func togglePopupClick(_ sender: Any) {
+        if isPopupOpen {
+            minimizeDealModal()
+        } else {
+            maximizeDealModal()
+        }
     }
     
     @IBAction func dismissPopupClick(_ sender: Any) {
@@ -154,28 +163,36 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     private func maximizeDealModal() {
+        isPopupOpen = true
         dismissPopupButton.alpha = 0.1
+        togglePopupButton.setImage(UIImage(systemName: "\(maximizeButtonIconName).down"), for: .normal)
         
         UIView.animate(withDuration: 0.5, animations: {
             self.dealPopupSafeTopConstraint.constant = self.view.frame.height * self.dealPopupMinHeight
             self.dealPopupVerticalConstraint.constant = 0
             
-            self.placesFoundedLabel.isHidden = false
-            self.suggestAddressTable.isHidden = false
+            if self.isSearching {
+                self.searchResultView.isHidden = false
+                self.favoriteView.isHidden = true
+            } else {
+                self.searchResultView.isHidden = true
+                self.favoriteView.isHidden = false
+            }
         })
     }
     
     private func minimizeDealModal() {
+        isPopupOpen = false
         dismissPopupButton.alpha = 0
+        togglePopupButton.setImage(UIImage(systemName: "\(maximizeButtonIconName).up"), for: .normal)
         
         UIView.animate(withDuration: 0.2, animations: {
             self.dealPopupSafeTopConstraint.constant = self.view.frame.height * self.dealPopupMaxHeight
             self.dealPopupVerticalConstraint.constant = (self.view.frame.height * (self.dealPopupMaxHeight - self.dealPopupMinHeight)) * -1
             
-            self.placesFoundedLabel.isHidden = true
-            self.suggestAddressTable.isHidden = true
+            self.searchResultView.isHidden = true
+            self.favoriteView.isHidden = true
         })
-        
     }
     
     // Map Definitions
@@ -197,6 +214,16 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             print("user locate initial")
             setUserLocateMarker(geoCoordinates: userLocate, centralize: true)
         }
+    }
+    
+    private func loadFavoriteAddress() {
+        favoriteAddressList = [
+            "Guarulhos",
+            "Sé",
+            "Fiap"
+        ]
+        
+        favoriteAddressTable.reloadData()
     }
     
     @IBAction func centralizeUserMap(_ sender: Any) {
@@ -249,16 +276,22 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == parkingLocateTable {
-            return parkingLocateTableView(tableView as! ParkingLocateTableView , numberOfRowsInSection: section)
+            return parkingLocateTableView(tableView as! ParkingLocateTableView, numberOfRowsInSection: section)
+        }
+        else if tableView == favoriteAddressTable {
+            return favoriteAddressTableView(tableView as! FavoriteAddressTableView, numberOfRowsInSection: section)
         }
         
-        return suggestAddressTableView(tableView as! SuggestAddressTableView , numberOfRowsInSection: section)
+        return suggestAddressTableView(tableView as! SuggestAddressTableView, numberOfRowsInSection: section)
     }
     
     // Conforming to TableViewDelegate protocol.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == parkingLocateTable {
             return parkingLocateTableView(tableView as! ParkingLocateTableView, cellForRowAt: indexPath)
+        }
+        else if tableView == favoriteAddressTable {
+            return favoriteAddressTableView(tableView as! FavoriteAddressTableView, cellForRowAt: indexPath)
         }
         
         return suggestAddressTableView(tableView as! SuggestAddressTableView, cellForRowAt: indexPath)
@@ -268,6 +301,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == parkingLocateTable {
             parkingLocateTableView(tableView as! ParkingLocateTableView, didSelectRowAt: indexPath)
+        }
+        else if tableView == favoriteAddressTable {
+            favoriteAddressTableView(tableView as! FavoriteAddressTableView, didSelectRowAt: indexPath)
         }
         else {
             suggestAddressTableView(tableView as! SuggestAddressTableView, didSelectRowAt: indexPath)
@@ -287,6 +323,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             firstStepView.frame.origin.x = 0;
             secondStepView.frame.origin.x = 0;
             thirdStepView.frame.origin.x = 0;
+            
+            favoriteView.frame.origin.x = 0;
+            searchResultView.frame.origin.x = 0;
             
             minimizeDealModal()
             
@@ -312,20 +351,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             secondStepView.isHidden = false
             thirdStepView.isHidden = true
             
-            firstStepView.frame.origin.x = 0;
-            secondStepView.frame.origin.x = 0;
-            thirdStepView.frame.origin.x = 0;
-            
             break;
         case 3:
-            
             firstStepView.isHidden = true
             secondStepView.isHidden = true
             thirdStepView.isHidden = false
-            
-            firstStepView.frame.origin.x = 0;
-            secondStepView.frame.origin.x = 0;
-            thirdStepView.frame.origin.x = 0;
             
             break;
         default:
@@ -336,12 +366,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // ------ First Step
     // Conforming to SearchBarDelegate protocol.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        isSearching = !searchText.isEmpty
+        searchAddress(addressName: searchText)
+    }
+    
+    private func searchAddress(addressName: String) {
+        isSearching = !addressName.isEmpty
         
         if isSearching {
-            maximizeDealModal()
             mapController.getSuggest(
-                textQuery: searchText,
+                textQuery: addressName,
                 action: { (error: SearchError?, items: [Suggestion]?) -> () in
                     if let searchError = error {
                         print("Autosuggest Error: \(searchError)")
@@ -354,6 +387,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     self.suggestAddressList = items!
                     self.suggestAddressTable.reloadData()
             })
+            maximizeDealModal()
         } else {
             minimizeDealModal()
         }
@@ -384,6 +418,30 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let addressLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
         
         loadParkingLocateNear(addressTitle: address.title, geoCoordinates: addressLocate)
+    }
+    
+    private func favoriteAddressTableView(_ tableView: FavoriteAddressTableView, numberOfRowsInSection section: Int) -> Int {
+        print("favoriteAddressTableView numberOfRowsInSection")
+        return favoriteAddressList.count
+    }
+    
+    private func favoriteAddressTableView(_ tableView: FavoriteAddressTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("favoriteAddressTableView cellForRowAt")
+        let addressCell = favoriteAddressTable.dequeueReusableCell(withIdentifier: "favoriteAddressCell", for: indexPath) as! FavoriteAddressTableViewCell
+        
+        let address = favoriteAddressList[indexPath.row]
+        
+        addressCell.addressNameLabel?.text = address
+        
+        return addressCell
+    }
+    
+    private func favoriteAddressTableView(_ tableView: FavoriteAddressTableView, didSelectRowAt indexPath: IndexPath) {
+        print("favoriteAddressTableView didSelectRowAt")
+        let address = favoriteAddressList[indexPath.row]
+        
+        searchAddress.text = address
+        searchAddress(addressName: address)
     }
     
     private func setUserLocateMarker(geoCoordinates: GeoCoordinates, centralize: Bool) {
