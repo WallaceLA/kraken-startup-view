@@ -47,6 +47,7 @@
 		4D65CC3924DCD9060002CA86 /* ParkingLocateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */; };
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4D7D39BE251AD54000024F5A /* FavoriteAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D39BD251AD54000024F5A /* FavoriteAddressTableViewCell.swift */; };
 		4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D20224F30BCF0051321E /* ParkenConstants.swift */; };
 		4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */ = {isa = PBXBuildFile; fileRef = 4DCEB6A524F5D3BC001B5BBE /* TestFairySDK-1 */; };
 		4DCEB6A824F5D3FD001B5BBE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6A724F5D3FC001B5BBE /* SystemConfiguration.framework */; };
@@ -117,6 +118,7 @@
 		4D65CC3624DCD8DC0002CA86 /* SuggestAddressTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestAddressTableView.swift; sourceTree = "<group>"; };
 		4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocateTableView.swift; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
+		4D7D39BD251AD54000024F5A /* FavoriteAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddressTableViewCell.swift; sourceTree = "<group>"; };
 		4D91D20224F30BCF0051321E /* ParkenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkenConstants.swift; sourceTree = "<group>"; };
 		4DCEB6A524F5D3BC001B5BBE /* TestFairySDK-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "TestFairySDK-1"; sourceTree = "<group>"; };
 		4DCEB6A724F5D3FC001B5BBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -412,6 +414,7 @@
 				4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */,
 				4D65CC3624DCD8DC0002CA86 /* SuggestAddressTableView.swift */,
 				4D19732325166BBB001B4E07 /* FavoriteAddressTableView.swift */,
+				4D7D39BD251AD54000024F5A /* FavoriteAddressTableViewCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				4D4FE9C3248D773400CA9D1C /* PrivacyViewController.swift in Sources */,
 				4D4D2D45248C6C2D00574595 /* AccessViewController.swift in Sources */,
 				4D65CC3924DCD9060002CA86 /* ParkingLocateTableView.swift in Sources */,
+				4D7D39BE251AD54000024F5A /* FavoriteAddressTableViewCell.swift in Sources */,
 				4D5ECD7724CF9C4500392D11 /* PrimaryNavButtonStyle.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,
 				4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */,

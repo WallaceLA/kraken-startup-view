@@ -109,25 +109,46 @@
                                                         <rect key="frame" x="20" y="36.5" width="374" height="508.5"/>
                                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteAddressCell" textLabel="9WJ-vi-swQ" style="IBUITableViewCellStyleDefault" id="cRe-Gm-bWd">
-                                                                <rect key="frame" x="0.0" y="55.5" width="374" height="43.5"/>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteAddressCell" rowHeight="40" id="cRe-Gm-bWd" customClass="FavoriteAddressTableViewCell" customModule="Parken" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="55.5" width="374" height="40"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cRe-Gm-bWd" id="SWK-sc-RIt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9WJ-vi-swQ">
-                                                                            <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
-                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doK-9c-yKp">
+                                                                            <rect key="frame" x="85" y="0.0" width="289" height="40"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="60" id="vXM-J6-3Ij"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Lym-hd-5iH">
+                                                                            <rect key="frame" x="0.0" y="4.5" width="80" height="30.5"/>
+                                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="80" id="zkW-bd-2h8"/>
+                                                                            </constraints>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="Lym-hd-5iH" firstAttribute="leading" secondItem="SWK-sc-RIt" secondAttribute="leading" id="4c5-vD-4ai"/>
+                                                                        <constraint firstItem="Lym-hd-5iH" firstAttribute="top" secondItem="SWK-sc-RIt" secondAttribute="top" constant="5" id="CqP-S6-VR4"/>
+                                                                        <constraint firstItem="doK-9c-yKp" firstAttribute="leading" secondItem="Lym-hd-5iH" secondAttribute="trailing" constant="5" id="ZdI-oc-Rcw"/>
+                                                                        <constraint firstItem="doK-9c-yKp" firstAttribute="top" secondItem="SWK-sc-RIt" secondAttribute="top" id="cL2-FJ-LYa"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Lym-hd-5iH" secondAttribute="bottom" constant="5" id="gQi-RD-Hj5"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="doK-9c-yKp" secondAttribute="trailing" id="jEP-Pe-6cE"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="doK-9c-yKp" secondAttribute="bottom" id="lwL-cV-Wlw"/>
+                                                                    </constraints>
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <connections>
+                                                                    <outlet property="addressNameLabel" destination="doK-9c-yKp" id="iCM-5c-YWO"/>
+                                                                </connections>
                                                             </tableViewCell>
                                                         </prototypes>
                                                         <sections/>
@@ -711,6 +732,7 @@
     <resources>
         <image name="arrowtriangle.up.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.compact.up" catalog="system" width="128" height="43"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>
     </resources>

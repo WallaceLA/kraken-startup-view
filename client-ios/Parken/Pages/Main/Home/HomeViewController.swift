@@ -366,11 +366,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // ------ First Step
     // Conforming to SearchBarDelegate protocol.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        isSearching = !searchText.isEmpty
+        searchAddress(addressName: searchText)
+    }
+    
+    private func searchAddress(addressName: String) {
+        isSearching = !addressName.isEmpty
         
         if isSearching {
             mapController.getSuggest(
-                textQuery: searchText,
+                textQuery: addressName,
                 action: { (error: SearchError?, items: [Suggestion]?) -> () in
                     if let searchError = error {
                         print("Autosuggest Error: \(searchError)")
@@ -423,11 +427,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     private func favoriteAddressTableView(_ tableView: FavoriteAddressTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("favoriteAddressTableView cellForRowAt")
-        let addressCell = favoriteAddressTable.dequeueReusableCell(withIdentifier: "favoriteAddressCell", for: indexPath)
+        let addressCell = favoriteAddressTable.dequeueReusableCell(withIdentifier: "favoriteAddressCell", for: indexPath) as! FavoriteAddressTableViewCell
         
         let address = favoriteAddressList[indexPath.row]
         
-        addressCell.textLabel?.text = address
+        addressCell.addressNameLabel?.text = address
         
         return addressCell
     }
@@ -436,18 +440,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         print("favoriteAddressTableView didSelectRowAt")
         let address = favoriteAddressList[indexPath.row]
         
-        // TODO: Pode salvar endereços e vagas
-        // precisa criar uma classe com apelido, tipo, endereco e coordenadas
-        
-        // TODO: Utilizar service HERE passando nome do local e receber as coordenadas
-        
-        /*
-        guard let locValue: GeoCoordinates = address.place?.coordinates else { return }
-        
-        let addressLocate = GeoCoordinates(latitude: locValue.latitude, longitude: locValue.longitude)
-        
-        loadParkingLocateNear(addressTitle: address, geoCoordinates: addressLocate)
-        */
+        searchAddress.text = address
+        searchAddress(addressName: address)
     }
     
     private func setUserLocateMarker(geoCoordinates: GeoCoordinates, centralize: Bool) {
