@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AC01B2512F66F00355918 /* Garage.storyboard */; };
 		4D19732425166BBB001B4E07 /* FavoriteAddressTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D19732325166BBB001B4E07 /* FavoriteAddressTableView.swift */; };
 		4D47D53324A93A69006E24EA /* Pods_Parken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924520FD2771C4A688895DF /* Pods_Parken.framework */; };
 		4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D23248C697400574595 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F3AC01B2512F66F00355918 /* Garage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Garage.storyboard; sourceTree = "<group>"; };
 		11917EBFC7FA23AE2651727F /* Pods-Parken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parken.release.xcconfig"; path = "Target Support Files/Pods-Parken/Pods-Parken.release.xcconfig"; sourceTree = "<group>"; };
 		2538C39AFA3B87A1302FEE0F /* Pods-Parken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parken.debug.xcconfig"; path = "Target Support Files/Pods-Parken/Pods-Parken.debug.xcconfig"; sourceTree = "<group>"; };
 		2924520FD2771C4A688895DF /* Pods_Parken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 				4D4D2D3B248C6ABA00574595 /* Models */,
 				4D4D2D3A248C6AAD00574595 /* Components */,
 				4D4D2D23248C697400574595 /* AppDelegate.swift */,
+				0F3AC01B2512F66F00355918 /* Garage.storyboard */,
 				4D4D2D29248C697400574595 /* Main.storyboard */,
 				4D4D2D25248C697400574595 /* SceneDelegate.swift */,
 				4D4D2D2F248C697B00574595 /* Assets.xcassets */,
@@ -496,6 +499,7 @@
 				4D4D2D50248C7E6A00574595 /* Account.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
 				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
+				0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */,
 				4D570DE824E21F23004A6541 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
