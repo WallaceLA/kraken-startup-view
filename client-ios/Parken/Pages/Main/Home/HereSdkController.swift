@@ -90,7 +90,7 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         if let lastMarker = lastMarker {
             mapView.mapScene.removeMapMarker(lastMarker)
         }
-    
+        
         mapView.mapScene.addMapMarker(mapMarker)
         
         return mapMarker
