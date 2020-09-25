@@ -374,16 +374,16 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         isSearching = !addressName.isEmpty
         
         if isSearching {
-            mapController.getSuggest(
+            mapController.getAutoSuggest(
                 textQuery: addressName,
                 action: { (error: SearchError?, items: [Suggestion]?) -> () in
                     if let searchError = error {
-                        print("Autosuggest Error: \(searchError)")
+                        print("AutoSuggest Error: \(searchError)")
                         return
                     }
                     
                     // If error is nil, it is guaranteed that the items will not be nil.
-                    print("Autosuggest: Found \(items!.count) result(s).")
+                    print("AutoSuggest: Found \(items!.count) result(s).")
                     
                     self.suggestAddressList = items!
                     self.suggestAddressTable.reloadData()
@@ -498,15 +498,29 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         }
         
         for _ in 1...Int.random(in: 2...5) {
-            let randomCoordenates = getRandomGeoCoordinatesInViewport()
+            let randomCoordinates = getRandomGeoCoordinatesInViewport()
             
-            let parking = ParkingLocateModel("Test address", "1.2 KM", "R$ 7,40", "7 Avaliações", mapController.createPointMarker(geoCoordinates: randomCoordenates))
+            mapController.getAddressByCoordinates(
+                geoCoordinates: randomCoordinates,
+                action: { (error: SearchError?, item: [Place]?) -> () in
+                    if let searchError = error {
+                        print("AddressByCoordinates Error: \(searchError)")
+                        return
+                    }
+                    
+                    // If error is nil, it is guaranteed that the place list will not be empty.
+                    print("AddressByCoordinates: Found \(item!.count) result(s).")
             
-            parkingLocateList.append(parking)
+                    let addressText = item!.first!.title
+                    
+                    let parkingModel = ParkingLocateModel(addressText, "\(Int.random(in: 0..<2)),\(Int.random(in: 1..<10)) KM", "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0", "\(Int.random(in: 10..<100)) Avaliações", self.mapController.createPointMarker(geoCoordinates: randomCoordinates))
+                    
+                    self.parkingLocateList.append(parkingModel)
+                    self.parkingLocateTable.reloadData()
+                    
+                    self.mapController.addMarkerList(markerList: self.parkingLocateList.map { $0.Localization } )
+            })
         }
-        parkingLocateTable.reloadData()
-        
-        mapController.addMarkerList(markerList: parkingLocateList.map { $0.Localization } )
     }
     
     @IBAction func toggleFavoriteAddressSelectedClick(_ sender: Any) {
