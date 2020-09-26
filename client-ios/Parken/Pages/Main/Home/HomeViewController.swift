@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     @IBOutlet weak var secondStepView: UIView!
     @IBOutlet weak var parkingLocateTable: UITableView!
     @IBOutlet weak var addressSelectedLabel: UILabel!
+    @IBOutlet weak var addressSelectedStartButton: UIButton!
     
     // third setp
     @IBOutlet weak var thirdStepView: UIView!
@@ -47,7 +48,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     private let dealPopupMinHeight = CGFloat(0.25)
     private let dealPopupMaxHeight = CGFloat(0.75)
     private var isPopupOpen = false
-    private var maximizeButtonIconName = "chevron.compact"
+    private let maximizeButtonIconName = "chevron.compact"
     
     // map definitions
     private var mapController: HereSdkController!
@@ -62,6 +63,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // second step
     private var destineLocateMapMarker: MapMarkerLite?
     private var parkingLocateList: [ParkingLocateModel] = []
+    private let favoriteSelectedStartIcon = "star"
     
     // third step
     private var parkChoosed: ParkingLocateModel?
@@ -218,9 +220,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     private func loadFavoriteAddress() {
         favoriteAddressList = [
-            "Guarulhos",
-            "Sé",
-            "Fiap"
+            "São Paulo, SP, Brasil",
+            "Guarulhos, SP, Brasil"
         ]
         
         favoriteAddressTable.reloadData()
@@ -373,16 +374,16 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         isSearching = !addressName.isEmpty
         
         if isSearching {
-            mapController.getSuggest(
+            mapController.getAutoSuggest(
                 textQuery: addressName,
                 action: { (error: SearchError?, items: [Suggestion]?) -> () in
                     if let searchError = error {
-                        print("Autosuggest Error: \(searchError)")
+                        print("AutoSuggest Error: \(searchError)")
                         return
                     }
                     
                     // If error is nil, it is guaranteed that the items will not be nil.
-                    print("Autosuggest: Found \(items!.count) result(s).")
+                    print("AutoSuggest: Found \(items!.count) result(s).")
                     
                     self.suggestAddressList = items!
                     self.suggestAddressTable.reloadData()
@@ -469,6 +470,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         print("focus on address selected")
         
         addressSelectedLabel.text = addressTitle
+        setFavoriteSelectedIcon(addressName: addressTitle, changeIcon: false)
         
         setDestineLocateMarker(geoCoordinates: geoCoordinates)
         
@@ -484,27 +486,72 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             method: .get,
             parameters: parameters,
             encoding: JSONEncoding.default).responseJSON { response in
-            print("request API")
+                print("request API")
                 
-            //if let json = response.result.value {
-            //    print("JSON: \(json)") // serialized json response
-            //}
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
+                //if let json = response.result.value {
+                //    print("JSON: \(json)") // serialized json response
+                //}
+                
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                }
         }
         
         for _ in 1...Int.random(in: 2...5) {
-            let randomCoordenates = getRandomGeoCoordinatesInViewport()
+            let randomCoordinates = getRandomGeoCoordinatesInViewport()
             
-            let parking = ParkingLocateModel("Test address", "1.2 KM", "R$ 7,40", "7 Avaliações", mapController.createPointMarker(geoCoordinates: randomCoordenates))
+            mapController.getAddressByCoordinates(
+                geoCoordinates: randomCoordinates,
+                action: { (error: SearchError?, item: [Place]?) -> () in
+                    if let searchError = error {
+                        print("AddressByCoordinates Error: \(searchError)")
+                        return
+                    }
+                    
+                    // If error is nil, it is guaranteed that the place list will not be empty.
+                    print("AddressByCoordinates: Found \(item!.count) result(s).")
             
-            parkingLocateList.append(parking)
+                    let addressText = item!.first!.title
+                    
+                    let parkingModel = ParkingLocateModel(addressText, "\(Int.random(in: 0..<2)),\(Int.random(in: 1..<10)) KM", "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0", "\(Int.random(in: 10..<100)) Avaliações", self.mapController.createPointMarker(geoCoordinates: randomCoordinates))
+                    
+                    self.parkingLocateList.append(parkingModel)
+                    self.parkingLocateTable.reloadData()
+                    
+                    self.mapController.addMarkerList(markerList: self.parkingLocateList.map { $0.Localization } )
+            })
         }
-        parkingLocateTable.reloadData()
+    }
+    
+    @IBAction func toggleFavoriteAddressSelectedClick(_ sender: Any) {
+        let addressName = addressSelectedLabel.text!
+        setFavoriteSelectedIcon(addressName: addressName, changeIcon: true)
+    }
+    
+    private func setFavoriteSelectedIcon(addressName: String, changeIcon: Bool) {
+        var startIcon: UIImage?
         
-        mapController.addMarkerList(markerList: parkingLocateList.map { $0.Localization } )
+        if favoriteAddressList.contains(addressName) {
+            if changeIcon {
+                startIcon = UIImage(systemName: favoriteSelectedStartIcon)
+                
+                favoriteAddressList = favoriteAddressList.filter(){$0 != addressName}
+                favoriteAddressTable.reloadData()
+            } else {
+                startIcon = UIImage(systemName: "\(favoriteSelectedStartIcon).fill")
+            }
+        } else {
+            if changeIcon {
+                startIcon = UIImage(systemName: "\(favoriteSelectedStartIcon).fill")
+                
+                favoriteAddressList.append(addressName)
+                favoriteAddressTable.reloadData()
+            } else {
+                startIcon = UIImage(systemName: favoriteSelectedStartIcon)
+            }
+        }
+        
+        addressSelectedStartButton.setImage(startIcon!, for: .normal)
     }
     
     private func parkingLocateTableView(_ tableView: ParkingLocateTableView, numberOfRowsInSection section: Int) -> Int {

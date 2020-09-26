@@ -19,14 +19,23 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         mapView.gestures.longPressDelegate = self
     }
     
-    func getSuggest(textQuery: String, action: @escaping (SearchError?, [Suggestion]?)-> () ) {
+    func getAutoSuggest(textQuery: String, action: @escaping (SearchError?, [Suggestion]?)-> ()) {
         let centerGeoCoordinates = getViewCenter()
-        let autosuggestOptions = SearchOptions(languageCode: LanguageCode.ptBr,
+        let autoSuggestOptions = SearchOptions(languageCode: LanguageCode.ptBr,
                                                maxItems: 5)
         
         _ = searchEngine.suggest(textQuery: TextQuery(textQuery, near: centerGeoCoordinates),
-                                 options: autosuggestOptions,
+                                 options: autoSuggestOptions,
                                  completion: action)
+    }
+    
+    func getAddressByCoordinates(geoCoordinates: GeoCoordinates, action: @escaping (SearchError?, [Place]?)-> ()) {
+        let reverseGeocodingOptions = SearchOptions(languageCode: LanguageCode.ptBr,
+                                                    maxItems: 1)
+        
+        _ = searchEngine.search(coordinates: geoCoordinates,
+                                options: reverseGeocodingOptions,
+                                completion: action)
     }
     
     // Conforming to TapDelegate protocol.
@@ -90,7 +99,7 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         if let lastMarker = lastMarker {
             mapView.mapScene.removeMapMarker(lastMarker)
         }
-    
+        
         mapView.mapScene.addMapMarker(mapMarker)
         
         return mapMarker
