@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Oj-Nd-LsI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -10,7 +10,7 @@
         <!--Suas Vagas-->
         <scene sceneID="2WK-Hn-zxI">
             <objects>
-                <tableViewController id="GSN-Pc-3Gb" sceneMemberID="viewController">
+                <tableViewController id="GSN-Pc-3Gb" customClass="VagasTableViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L8R-y3-n6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="34I-0c-jgT" kind="show" id="TOP-46-GJP"/>
+                                    <segue destination="34I-0c-jgT" kind="show" identifier="VisualizarVagaSegue" id="TOP-46-GJP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,15 +50,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Suas Vagas" id="StM-0H-LFl">
-                        <barButtonItem key="rightBarButtonItem" title="Nova Vaga" style="plain" id="zF2-U3-IrU">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rqH-Gy-FJ8">
-                                <rect key="frame" x="302" y="5.5" width="92" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Nova Vaga"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0if-yD-Gx6">
                             <connections>
-                                <segue destination="xgb-nn-SKU" kind="show" id="Vz0-nl-ykQ"/>
+                                <segue destination="xgb-nn-SKU" kind="show" identifier="NovaVagaSegue" id="sNb-00-ZKc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -70,7 +64,7 @@
         <!--Nova Vaga-->
         <scene sceneID="WFN-c6-ePX">
             <objects>
-                <viewController id="xgb-nn-SKU" sceneMemberID="viewController">
+                <viewController id="xgb-nn-SKU" customClass="NovaVagaViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nTa-XX-QrW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +194,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-rp-CPm">
                                 <rect key="frame" x="345" y="679" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quinta-feira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snS-0x-6cE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexta-feira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snS-0x-6cE">
                                 <rect key="frame" x="20" y="718" width="320" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="YeS-iO-P2b"/>
@@ -212,7 +206,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TmW-3R-pW6">
                                 <rect key="frame" x="345" y="718" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexta-feira" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g46-XW-9Uc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sábado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g46-XW-9Uc">
                                 <rect key="frame" x="20" y="757" width="320" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="60E-JK-xZE"/>
@@ -223,6 +217,18 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J6U-fQ-Xjp">
                                 <rect key="frame" x="345" y="757" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domingo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DI-To-YPJ">
+                                <rect key="frame" x="20" y="796" width="320" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="M14-1n-nEB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2Y-s3-SKm">
+                                <rect key="frame" x="345" y="796" width="51" height="31"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -237,6 +243,7 @@
                             <constraint firstItem="EKw-rp-CPm" firstAttribute="top" secondItem="tQj-yq-A6K" secondAttribute="bottom" constant="8" id="5yW-5n-BRG"/>
                             <constraint firstItem="PDf-2d-JBc" firstAttribute="top" secondItem="Ot0-SG-kfE" secondAttribute="bottom" constant="20" id="6fZ-8Y-R1d"/>
                             <constraint firstItem="fa3-ML-Kdo" firstAttribute="top" secondItem="gGf-Gw-SB0" secondAttribute="bottom" constant="8" id="6uJ-en-sOA"/>
+                            <constraint firstItem="RKt-cr-KBP" firstAttribute="trailing" secondItem="v2Y-s3-SKm" secondAttribute="trailing" constant="20" id="7IB-7y-Whw"/>
                             <constraint firstItem="tQj-yq-A6K" firstAttribute="top" secondItem="3mH-XB-Mse" secondAttribute="bottom" constant="8" id="7YH-eA-vtj"/>
                             <constraint firstItem="Ot0-SG-kfE" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="8io-x3-W9F"/>
                             <constraint firstItem="qM3-Eg-gES" firstAttribute="top" secondItem="SzM-MV-9OF" secondAttribute="bottom" constant="15" id="9hZ-Iu-A7O"/>
@@ -267,6 +274,7 @@
                             <constraint firstItem="g46-XW-9Uc" firstAttribute="top" secondItem="snS-0x-6cE" secondAttribute="bottom" constant="8" id="UbN-HW-e4z"/>
                             <constraint firstItem="RKt-cr-KBP" firstAttribute="trailing" secondItem="tQj-yq-A6K" secondAttribute="trailing" constant="20" id="V8f-gh-EWx"/>
                             <constraint firstItem="I7S-iz-rc3" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="Wqc-VH-Zlz"/>
+                            <constraint firstItem="9DI-To-YPJ" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="Xci-pn-x1Q"/>
                             <constraint firstItem="RKt-cr-KBP" firstAttribute="trailing" secondItem="9tT-zO-pFn" secondAttribute="trailing" constant="20" id="aTg-jy-mGx"/>
                             <constraint firstItem="9tT-zO-pFn" firstAttribute="leading" secondItem="gGf-Gw-SB0" secondAttribute="trailing" constant="5" id="acQ-oV-uGh"/>
                             <constraint firstItem="RKt-cr-KBP" firstAttribute="trailing" secondItem="SzM-MV-9OF" secondAttribute="trailing" constant="20" id="acb-1q-4WX"/>
@@ -281,6 +289,7 @@
                             <constraint firstItem="snS-0x-6cE" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="mbb-Oc-BZE"/>
                             <constraint firstItem="cj4-ou-IwX" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="mgL-cm-yXP"/>
                             <constraint firstItem="fa3-ML-Kdo" firstAttribute="leading" secondItem="3mH-XB-Mse" secondAttribute="trailing" constant="5" id="nXk-he-5H2"/>
+                            <constraint firstItem="v2Y-s3-SKm" firstAttribute="leading" secondItem="9DI-To-YPJ" secondAttribute="trailing" constant="5" id="nbA-Mc-eME"/>
                             <constraint firstItem="adz-q1-UIi" firstAttribute="top" secondItem="RJc-me-U6w" secondAttribute="bottom" constant="8" id="o0J-u6-oHZ"/>
                             <constraint firstItem="2Yj-hY-Ct6" firstAttribute="top" secondItem="mig-lV-ifg" secondAttribute="bottom" constant="8" id="pKf-6u-OMe"/>
                             <constraint firstItem="RnJ-Jd-nH9" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="pci-hV-EFv"/>
@@ -290,23 +299,37 @@
                             <constraint firstItem="SzM-MV-9OF" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="t5m-fy-Hd9"/>
                             <constraint firstItem="PDf-2d-JBc" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="uDX-vk-InG"/>
                             <constraint firstItem="tQj-yq-A6K" firstAttribute="leading" secondItem="RJc-me-U6w" secondAttribute="trailing" constant="5" id="v9K-qm-inK"/>
+                            <constraint firstItem="v2Y-s3-SKm" firstAttribute="top" secondItem="J6U-fQ-Xjp" secondAttribute="bottom" constant="8" id="vc0-UI-mAm"/>
                             <constraint firstItem="gGf-Gw-SB0" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="vrO-ba-r0l"/>
                             <constraint firstItem="RKt-cr-KBP" firstAttribute="trailing" secondItem="cj4-ou-IwX" secondAttribute="trailing" constant="20" id="xEq-Kv-fKh"/>
                             <constraint firstItem="sEm-SA-DLM" firstAttribute="leading" secondItem="RKt-cr-KBP" secondAttribute="leading" constant="20" id="xf3-su-ch0"/>
+                            <constraint firstItem="9DI-To-YPJ" firstAttribute="top" secondItem="g46-XW-9Uc" secondAttribute="bottom" constant="8" id="yzB-6a-htK"/>
                             <constraint firstItem="RKt-cr-KBP" firstAttribute="trailing" secondItem="J6U-fQ-Xjp" secondAttribute="trailing" constant="20" id="z6Z-MP-ezX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RKt-cr-KBP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nova Vaga" id="rMK-wE-Nbs">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="5QL-7S-djo">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K7x-fR-7oc">
-                                <rect key="frame" x="302" y="5.5" width="92" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Confirmar"/>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" style="plain" id="5QL-7S-djo"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="switchDomingo" destination="v2Y-s3-SKm" id="2lv-49-PYA"/>
+                        <outlet property="switchQuarta" destination="tQj-yq-A6K" id="c68-mr-dhG"/>
+                        <outlet property="switchQuinta" destination="EKw-rp-CPm" id="A6O-G1-x1Q"/>
+                        <outlet property="switchSabado" destination="J6U-fQ-Xjp" id="ZVp-Bd-qjs"/>
+                        <outlet property="switchSegunda" destination="9tT-zO-pFn" id="hNC-BT-j8P"/>
+                        <outlet property="switchSexta" destination="TmW-3R-pW6" id="VCg-s2-vpw"/>
+                        <outlet property="switchTerca" destination="fa3-ML-Kdo" id="Txj-ZM-eG5"/>
+                        <outlet property="txtAltura" destination="cj4-ou-IwX" id="CFy-6W-xrm"/>
+                        <outlet property="txtBairro" destination="mig-lV-ifg" id="DMt-oR-KuH"/>
+                        <outlet property="txtCep" destination="sEm-SA-DLM" id="Ih6-qu-Ryw"/>
+                        <outlet property="txtCidade" destination="Ot0-SG-kfE" id="OW1-VW-xLl"/>
+                        <outlet property="txtComprimento" destination="I7S-iz-rc3" id="B4J-QI-Mm2"/>
+                        <outlet property="txtLargura" destination="zhn-nQ-wKh" id="2Rr-Va-p70"/>
+                        <outlet property="txtNumero" destination="vol-Av-epd" id="tHt-l1-feo"/>
+                        <outlet property="txtRua" destination="p3x-Nu-oCH" id="bOw-eF-zWB"/>
+                        <outlet property="txtTitulo" destination="SzM-MV-9OF" id="UuT-vQ-0fC"/>
+                        <outlet property="txtUF" destination="2Yj-hY-Ct6" id="fYP-Tj-ddj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wx5-c8-QGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,7 +338,7 @@
         <!--Nome da Vaga-->
         <scene sceneID="TpD-XO-vxb">
             <objects>
-                <viewController id="34I-0c-jgT" sceneMemberID="viewController">
+                <viewController id="34I-0c-jgT" customClass="VisualizarVagaViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nO2-DM-iLp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,8 +405,7 @@
         <!--Atualizar Frequência-->
         <scene sceneID="52c-qZ-zfX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jBp-Uw-aWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController id="KiP-be-7c8" sceneMemberID="viewController">
+                <tableViewController id="KiP-be-7c8" customClass="AtualizarFrequenciaTableViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iX4-lg-2uu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,6 +442,7 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="U4r-LF-JwV"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBp-Uw-aWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1959" y="319"/>
         </scene>
