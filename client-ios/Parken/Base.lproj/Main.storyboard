@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbm-SR-ozh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cbm-SR-ozh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -575,7 +575,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j96-nk-IFI">
-                                <rect key="frame" x="0.0" y="150" width="414" height="171"/>
+                                <rect key="frame" x="0.0" y="150" width="414" height="114"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIz-ed-Jlv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
@@ -585,7 +585,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Notifications"/>
+                                        <state key="normal" title="Notificações"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkc-J7-Ng4">
                                         <rect key="frame" x="0.0" y="57" width="414" height="57"/>
@@ -595,22 +595,15 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="My Parking"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmU-jF-ixp">
-                                        <rect key="frame" x="0.0" y="114" width="414" height="57"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="qIB-AP-aft"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Language"/>
+                                        <state key="normal" title="Garagens"/>
+                                        <connections>
+                                            <segue destination="s5c-2X-4eQ" kind="show" identifier="GarageSegue" id="fgJ-go-aEA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-5G-X1K">
-                                <rect key="frame" x="0.0" y="341" width="414" height="171"/>
+                                <rect key="frame" x="0.0" y="573" width="414" height="171"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTc-xj-rDP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
@@ -620,7 +613,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Terms of service"/>
+                                        <state key="normal" title="Termos de Uso"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-9H-9nA">
                                         <rect key="frame" x="0.0" y="57" width="414" height="57"/>
@@ -630,7 +623,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Terms of privacy"/>
+                                        <state key="normal" title="Termos de Privacidade"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-ZB-ViJ">
                                         <rect key="frame" x="0.0" y="114" width="414" height="57"/>
@@ -640,7 +633,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Contact us"/>
+                                        <state key="normal" title="Entre em contato"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -653,13 +646,13 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
-                                <state key="normal" title="Log out"/>
+                                <state key="normal" title="Sair"/>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="a9V-3w-WgD" firstAttribute="top" secondItem="QbG-5G-X1K" secondAttribute="bottom" constant="50" id="3JT-4g-U2Y"/>
                             <constraint firstItem="a9V-3w-WgD" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="3eJ-83-YRX"/>
                             <constraint firstItem="QbG-5G-X1K" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="A3Z-vc-8dX"/>
-                            <constraint firstItem="QbG-5G-X1K" firstAttribute="top" secondItem="j96-nk-IFI" secondAttribute="bottom" constant="20" id="AFO-Te-fLW"/>
                             <constraint firstItem="arG-7U-Fz6" firstAttribute="top" secondItem="CRF-A9-mQI" secondAttribute="top" constant="30" id="E3F-KN-jB8"/>
                             <constraint firstItem="a9V-3w-WgD" firstAttribute="trailing" secondItem="Q0J-L3-VYI" secondAttribute="trailing" id="Muz-Ab-rsV"/>
                             <constraint firstItem="arG-7U-Fz6" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="Wp5-MZ-Xm9"/>
@@ -676,7 +669,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUX-oe-9xO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="827.67857142857144"/>
+            <point key="canvasLocation" x="133" y="848"/>
+        </scene>
+        <!--Garage-->
+        <scene sceneID="dTw-88-R2e">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Garage" id="s5c-2X-4eQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Fgc-XA-UHx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DxL-FT-GAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="731" y="820"/>
         </scene>
         <!--Deal View Controller-->
         <scene sceneID="6WC-3j-0ow">
