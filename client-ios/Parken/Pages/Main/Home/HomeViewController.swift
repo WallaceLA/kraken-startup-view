@@ -35,10 +35,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // third setp
     @IBOutlet weak var thirdStepView: UIView!
     @IBOutlet weak var addressParkChoosedLabel: UILabel!
-    @IBOutlet weak var favoriteParkChoosedButton: UIButton!
     @IBOutlet weak var distanceParkChoosedLabel: UILabel!
     @IBOutlet weak var ammountParkChoosedLabel: UILabel!
     @IBOutlet weak var ratesParkChoosedLabel: UILabel!
+    @IBOutlet weak var descriptionParkChoosedLabal: UITextView!
     
     // navbar definitions
     private var navCustomAnimator: Jelly.Animator?
@@ -512,8 +512,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     print("AddressByCoordinates: Found \(item!.count) result(s).")
             
                     let addressText = item!.first!.title
+                    let distance = item!.first!.distanceInMeters!
                     
-                    let parkingModel = ParkingLocateModel(addressText, "\(Int.random(in: 0..<2)),\(Int.random(in: 1..<10)) KM", "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0", "\(Int.random(in: 10..<100)) Avaliações", self.mapController.createPointMarker(geoCoordinates: randomCoordinates))
+                    let parkingModel = ParkingLocateModel(
+                        addressText,
+                        "\(distance) M",
+                        "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0",
+                        "\(Int.random(in: 10..<100)) Avaliações",
+                        self.mapController.createPointMarker(geoCoordinates: randomCoordinates),
+                        "")
                     
                     self.parkingLocateList.append(parkingModel)
                     self.parkingLocateTable.reloadData()
@@ -605,12 +612,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         distanceParkChoosedLabel?.text = park.Distance
         ammountParkChoosedLabel?.text = park.Ammount
         ratesParkChoosedLabel?.text = park.Rates
-    }
-    
-    @IBAction func favoriteParkClick(_ sender: Any) {
-        // TODO: call backend to save
-        
-        print("park choosed was favorited")
+        //descriptionParkChoosedLabal?.text = park.Description
     }
     
     @IBAction func backToSecondStepClick(_ sender: Any) {
