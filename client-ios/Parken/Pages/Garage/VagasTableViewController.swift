@@ -11,11 +11,11 @@ import CoreData
 
 class VagasTableViewController: UITableViewController {
 
+    var vagas : [NSManagedObject] = []
     //Listar todas as vagas.
     
     //A string abaixo é só para testar, n considerar.
-    var vagas:[String] = ["Teste", "Hosp. Sapopemba"]
-    //var vagas:[NSManagegObject] = []
+    //var vagas:[String] = ["Teste", "Hosp. Sapopemba"]
     
     
     override func viewDidLoad() {
@@ -26,6 +26,24 @@ class VagasTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Vaga")
+
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "titulo", ascending: true)]
+        //fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "rua", ascending: true)]
+        //fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "numero", ascending: true)]
+
+        do {
+            vagas = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Não foi possível buscar os dados \(error), \(error.userInfo)")
+        }
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -42,12 +60,17 @@ class VagasTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let vaga = vagas[indexPath.row]
 
-        cell.textLabel?.text = vagas[indexPath.row]
+        //cell.textLabel?.text = vagas[indexPath.row]
         //cell.imageView?.image = UIImage(color: .red)
         
+        let endereco = "\(vaga.value(forKeyPath: "rua")), \(vaga.value(forKeyPath: "numero"))"
         
         // Configure the cell...
+        cell.textLabel?.text = vaga.value(forKeyPath: "titulo") as? String
+        cell.detailTextLabel?.text = endereco
 
         return cell
     }

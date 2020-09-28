@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Vaga" representedClassName="Vaga" syncable="YES" codeGenerationType="class">
+        <attribute name="altura" optional="YES" attributeType="String"/>
+        <attribute name="bairro" optional="YES" attributeType="String"/>
+        <attribute name="cep" optional="YES" attributeType="String"/>
+        <attribute name="cidade" optional="YES" attributeType="String"/>
+        <attribute name="complemento" optional="YES" attributeType="String"/>
+        <attribute name="comprimento" optional="YES" attributeType="String"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="frequencia" optional="YES" attributeType="String"/>
+        <attribute name="largura" optional="YES" attributeType="String"/>
+        <attribute name="numero" optional="YES" attributeType="String"/>
+        <attribute name="reservado" optional="YES" attributeType="String"/>
+        <attribute name="rua" optional="YES" attributeType="String"/>
+        <attribute name="titulo" optional="YES" attributeType="String"/>
+        <attribute name="uf" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="253"/>
+    </elements>
 </model>
