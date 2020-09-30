@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class VisualizarVagaViewController: UIViewController, UITextViewDelegate {
+class VisualizarVagaViewController: UIViewController {
 
     var vaga:NSManagedObject? = nil
     
@@ -26,15 +26,15 @@ class VisualizarVagaViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         if (vaga != nil){
-            lblStatus.text = vaga?.value(forKeyPath: "reservada") as? String
+            lblStatus.text = vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
             if(lblStatus.text == "true"){
                 lblStatus.tintColor = UIColor.green
             } else {
                 lblStatus.tintColor = UIColor.red
             }
             
-            lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String
-            lblDescricao.text = vaga?.value(forKeyPath: "descricao") as? String
+            lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
+            lblDescricao.text = vaga?.value(forKeyPath: "descricao") as? String ?? "Descricao"
                         
             let rua = vaga?.value(forKeyPath: "rua") as? String ?? "Rua"
             let num = vaga?.value(forKeyPath: "numero") as? String ?? "N/D"
@@ -51,17 +51,11 @@ class VisualizarVagaViewController: UIViewController, UITextViewDelegate {
             let com = vaga?.value(forKeyPath: "comprimento") as? String ?? "0m"
             lblTamanho.text = "\(lar)m x \(com)m x \(alt)"
             
-            buttonFrequencia.setTitle("TODO", for: .normal)
+            //buttonFrequencia.setTitle("TODO", for: .normal)
         }
 
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func apagar(_ sender: Any) {
-        //TODO
-    }
-    
-    
+    }    
     
 
     /*

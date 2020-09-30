@@ -572,14 +572,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OPn-Ab-ndx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Vaga" id="efP-q7-tEM">
-                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="trash" catalog="system" systemItem="trash" id="2D5-mh-WR7">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="apagar:" destination="3Uc-Xx-mpS" id="F07-Lw-fne"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Vaga" id="efP-q7-tEM"/>
                     <connections>
                         <outlet property="buttonFrequencia" destination="c58-3L-018" id="Z6m-wR-x1g"/>
                         <outlet property="lblCidade" destination="J4S-yY-K0n" id="BQW-AU-z7A"/>
@@ -595,7 +588,4 @@
             <point key="canvasLocation" x="1058" y="458"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="trash" catalog="system" width="60" height="64"/>
-    </resources>
 </document>
