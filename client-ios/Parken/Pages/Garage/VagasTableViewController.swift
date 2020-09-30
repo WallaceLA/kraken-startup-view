@@ -66,8 +66,12 @@ class VagasTableViewController: UITableViewController {
         //cell.textLabel?.text = vagas[indexPath.row]
         //cell.imageView?.image = UIImage(color: .red)
         
-        let endereco = "\(vaga.value(forKeyPath: "rua")), \(vaga.value(forKeyPath: "numero"))"
+        let rua = vaga.value(forKeyPath: "rua") as? String ?? "Rua não encontrada"
+        let num = vaga.value(forKeyPath: "numero") as? String ?? "Sem Número"
+        let compl = vaga.value(forKeyPath: "complemento") as? String ?? ""
+        let endereco:String = "\(rua), \(num) \(compl)"
         
+        //, \(vaga.value(forKeyPath: "numero"))"
         // Configure the cell...
         cell.textLabel?.text = vaga.value(forKeyPath: "titulo") as? String
         cell.detailTextLabel?.text = endereco
@@ -111,31 +115,20 @@ class VagasTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if(segue.identifier == "VisualizarVagaSegue"){
+            let vc = segue.destination as! VisualizarVagaViewController
+            let vagaSelecionada:NSManagedObject = vagas[self.tableView.indexPathForSelectedRow!.item]
+            vc.vaga = vagaSelecionada
+        }
     }
-    */
+    
     
 }
-
-// USAR COR COMO UIIMAGE
-/*
-public extension UIImage {
-  public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
-    let rect = CGRect(origin: .zero, size: size)
-    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-    color.setFill()
-    UIRectFill(rect)
-    let image = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    
-    guard let cgImage = image?.cgImage else { return nil }
-    self.init(cgImage: cgImage)
-  }
-}
-*/

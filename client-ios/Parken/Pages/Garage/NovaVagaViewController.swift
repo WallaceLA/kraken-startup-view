@@ -56,6 +56,14 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
+        /*var freq = ["Segunda-feira":true,
+                    "Terça-feira":false,
+                    "Quarta-feira":true,
+                    "Quinta-feira":false,
+                    "Sexta-feira":true,
+                    "Sábado":false,
+                    "Domingo":false]*/
+        
         self.save(
             titulo: txtTitulo.text!,
             descricao: txtDescricao.text!,

@@ -17,6 +17,6 @@
         <attribute name="uf" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="253"/>
+        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="28"/>
     </elements>
 </model>

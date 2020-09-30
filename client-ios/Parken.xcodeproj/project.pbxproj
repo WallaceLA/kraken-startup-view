@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F0498F62521639000E82705 /* VisualizarVagasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0498F52521639000E82705 /* VisualizarVagasTableViewController.swift */; };
 		0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AC01B2512F66F00355918 /* Garage.storyboard */; };
+		0F57217F25240DBA00380564 /* VisualizarVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57217E25240DBA00380564 /* VisualizarVagaViewController.swift */; };
 		0F594603251FD7DD00357CF4 /* NovaVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F594602251FD7DD00357CF4 /* NovaVagaViewController.swift */; };
 		0F5946092520011A00357CF4 /* AtualizarFrequenciaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5946082520011A00357CF4 /* AtualizarFrequenciaTableViewController.swift */; };
 		0F5F5D4A251C3D49003B2998 /* VagasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */; };
@@ -80,8 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F0498F52521639000E82705 /* VisualizarVagasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarVagasTableViewController.swift; sourceTree = "<group>"; };
 		0F3AC01B2512F66F00355918 /* Garage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Garage.storyboard; sourceTree = "<group>"; };
+		0F57217E25240DBA00380564 /* VisualizarVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarVagaViewController.swift; sourceTree = "<group>"; };
 		0F594602251FD7DD00357CF4 /* NovaVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaVagaViewController.swift; sourceTree = "<group>"; };
 		0F5946082520011A00357CF4 /* AtualizarFrequenciaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtualizarFrequenciaTableViewController.swift; sourceTree = "<group>"; };
 		0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VagasTableViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */,
 				0F594602251FD7DD00357CF4 /* NovaVagaViewController.swift */,
 				0F5946082520011A00357CF4 /* AtualizarFrequenciaTableViewController.swift */,
-				0F0498F52521639000E82705 /* VisualizarVagasTableViewController.swift */,
+				0F57217E25240DBA00380564 /* VisualizarVagaViewController.swift */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -585,11 +585,11 @@
 				4D4FE9BD248D601800CA9D1C /* RegisterViewController.swift in Sources */,
 				0F594603251FD7DD00357CF4 /* NovaVagaViewController.swift in Sources */,
 				4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */,
+				0F57217F25240DBA00380564 /* VisualizarVagaViewController.swift in Sources */,
 				4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */,
 				4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */,
 				4D65CC3524DCCB200002CA86 /* ParkingLocateModel.swift in Sources */,
 				4D65CC3724DCD8DC0002CA86 /* SuggestAddressTableView.swift in Sources */,
-				0F0498F62521639000E82705 /* VisualizarVagasTableViewController.swift in Sources */,
 				4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */,
 				4D4FE9C1248D770200CA9D1C /* TermsViewController.swift in Sources */,
 				4D4FE9CF248D7ABC00CA9D1C /* HistoryViewController.swift in Sources */,
