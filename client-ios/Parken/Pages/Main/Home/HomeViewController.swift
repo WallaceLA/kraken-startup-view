@@ -624,7 +624,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // TODO: call backend
         print("requested park choosed")
         
-        showDialog(title: "Request successful", message: "Your park will approved")
+        showDialog(title: "Request successful", message: "Your park will be approved")
         
         goToStep(step: 1)
     }
