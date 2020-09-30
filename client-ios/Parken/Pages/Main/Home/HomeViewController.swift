@@ -5,7 +5,6 @@ import heresdk
 import Alamofire
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
-    
     @IBOutlet weak var dealPopup: UIView!
     @IBOutlet weak var dealPopupSafeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
@@ -35,10 +34,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // third setp
     @IBOutlet weak var thirdStepView: UIView!
     @IBOutlet weak var addressParkChoosedLabel: UILabel!
-    @IBOutlet weak var favoriteParkChoosedButton: UIButton!
     @IBOutlet weak var distanceParkChoosedLabel: UILabel!
     @IBOutlet weak var ammountParkChoosedLabel: UILabel!
     @IBOutlet weak var ratesParkChoosedLabel: UILabel!
+    @IBOutlet weak var descriptionParkChoosedLabal: UITextView!
     
     // navbar definitions
     private var navCustomAnimator: Jelly.Animator?
@@ -445,10 +444,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         searchAddress(addressName: address)
     }
     
-    private func setUserLocateMarker(geoCoordinates: GeoCoordinates, centralize: Bool) {
-        let imageName = "green_dot"
-        
-        userLocateMapMarker = mapController.addCircleMarker(imageName: imageName, geoCoordinates: geoCoordinates, lastMarker: userLocateMapMarker)
+    private func setUserLocateMarker(geoCoordinates: GeoCoordinates, centralize: Bool) {       
+        userLocateMapMarker = mapController.addMarker(
+            mapMarker: self.mapController.createCircleMarker(geoCoordinates: geoCoordinates, imageName: "location.north.fill", isDefaultImage: true),
+            geoCoordinates: geoCoordinates,
+            lastMarker: userLocateMapMarker)
         
         if centralize {
             mapController.centralize(geoCoordinates: geoCoordinates)
@@ -512,8 +512,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     print("AddressByCoordinates: Found \(item!.count) result(s).")
             
                     let addressText = item!.first!.title
+                    let distance = item!.first!.distanceInMeters!
                     
-                    let parkingModel = ParkingLocateModel(addressText, "\(Int.random(in: 0..<2)),\(Int.random(in: 1..<10)) KM", "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0", "\(Int.random(in: 10..<100)) Avaliações", self.mapController.createPointMarker(geoCoordinates: randomCoordinates))
+                    let parkingModel = ParkingLocateModel(
+                        addressText,
+                        "\(distance * 10) M",
+                        "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0",
+                        "\(Int.random(in: 10..<100)) Avaliações",
+                        self.mapController.createPointMarker(geoCoordinates: randomCoordinates, imageName: "parking_icon"),
+                        "")
                     
                     self.parkingLocateList.append(parkingModel)
                     self.parkingLocateTable.reloadData()
@@ -583,9 +590,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     private func setDestineLocateMarker(geoCoordinates: GeoCoordinates) {
-        let imageName = "red_dot"
-        
-        destineLocateMapMarker = mapController.addCircleMarker(imageName: imageName, geoCoordinates: geoCoordinates, lastMarker: destineLocateMapMarker)
+        destineLocateMapMarker = mapController.addMarker(
+            mapMarker: self.mapController.createPointMarker(geoCoordinates: geoCoordinates, imageName: "poi"),
+            geoCoordinates: geoCoordinates,
+            lastMarker: destineLocateMapMarker)
         
         mapController.centralize(geoCoordinates: geoCoordinates)
     }
@@ -605,12 +613,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         distanceParkChoosedLabel?.text = park.Distance
         ammountParkChoosedLabel?.text = park.Ammount
         ratesParkChoosedLabel?.text = park.Rates
-    }
-    
-    @IBAction func favoriteParkClick(_ sender: Any) {
-        // TODO: call backend to save
-        
-        print("park choosed was favorited")
+        //descriptionParkChoosedLabal?.text = park.Description
     }
     
     @IBAction func backToSecondStepClick(_ sender: Any) {
@@ -621,7 +624,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // TODO: call backend
         print("requested park choosed")
         
-        showDialog(title: "Request successful", message: "Your park will approved")
+        showDialog(title: "Request successful", message: "Your park will be approved")
         
         goToStep(step: 1)
     }
