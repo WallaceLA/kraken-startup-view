@@ -232,6 +232,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         mapController.centralize(geoCoordinates: userLocate)
     }
     
+    
     // Conforming to CLLocationManagerDelegate protocol.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {

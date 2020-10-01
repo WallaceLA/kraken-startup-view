@@ -63,6 +63,7 @@
 		4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */; };
 		4DCEB6B524F5E627001B5BBE /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6B424F5E627001B5BBE /* libTestFairy.a */; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
+		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,6 +141,7 @@
 		4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLog.swift; sourceTree = "<group>"; };
 		4DCEB6B424F5E627001B5BBE /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFairy.a; path = "../Parken/TestFairySDK-1/libTestFairy.a"; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
+		7264487D25256870008A8AF6 /* Pagamento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pagamento.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				4D4D2D23248C697400574595 /* AppDelegate.swift */,
 				0F3AC01B2512F66F00355918 /* Garage.storyboard */,
 				4D4D2D29248C697400574595 /* Main.storyboard */,
+				7264487D25256870008A8AF6 /* Pagamento.storyboard */,
 				4D4D2D25248C697400574595 /* SceneDelegate.swift */,
 				4D4D2D2F248C697B00574595 /* Assets.xcassets */,
 				4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */,
@@ -515,6 +518,7 @@
 				4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */,
 				4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */,
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
+				7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */,
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D50248C7E6A00574595 /* Account.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
