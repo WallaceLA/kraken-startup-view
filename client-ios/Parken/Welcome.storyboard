@@ -21,24 +21,22 @@
                                     <constraint firstAttribute="height" constant="260" id="Ems-9y-6yH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bem-Vindo ao Parken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-E5-wpe">
-                                <rect key="frame" x="20" y="285" width="149" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-Vindo ao Parken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-E5-wpe">
+                                <rect key="frame" x="20" y="285" width="247.5" height="37"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-KM-dNH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-KM-dNH">
                                 <rect key="frame" x="20" y="823" width="57" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Termos"/>
                                 <connections>
                                     <segue destination="lXH-Bo-QDa" kind="show" identifier="SignInToTermsSegue" id="2l9-e1-Oy8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-Ao-4p9" customClass="PhoneNumberCustomButton" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="383" width="374" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-Ao-4p9" customClass="PhoneNumberCustomButton" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="342" width="374" height="40"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dbc-hV-im3"/>
@@ -49,22 +47,22 @@
                                     <action selector="phoneNumberChangeEvent:" destination="3Ci-bP-aLz" eventType="touchUpInside" id="nYe-kf-1dn"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9T-t8-toi" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="443" width="374" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9T-t8-toi" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="402" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <action selector="signInClick:" destination="3Ci-bP-aLz" eventType="touchUpInside" id="WUx-hO-fXc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ao clicar em entrar você concorda com os " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCS-m7-h1E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao clicar em entrar você concorda com os " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCS-m7-h1E">
                                 <rect key="frame" x="20" y="793.5" width="326" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g36-aY-UzH">
-                                <rect key="frame" x="85" y="829" width="29" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g36-aY-UzH">
+                                <rect key="frame" x="85" y="829" width="9.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -77,14 +75,14 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="divider 1" translatesAutoresizingMaskIntoConstraints="NO" id="yev-Ho-gXz">
-                                <rect key="frame" x="177" y="320" width="217" height="5"/>
+                                <rect key="frame" x="35" y="320" width="359" height="5"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="AcF-6b-St1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-20-amc" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="499" width="374" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-20-amc" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="458" width="374" height="36"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Conheça o Serviço"/>
@@ -92,9 +90,8 @@
                                     <segue destination="xbe-u3-wcg" kind="show" identifier="SignInToPresentationSegue" id="Wvl-81-clh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-S0-rs5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-S0-rs5">
                                 <rect key="frame" x="107" y="823" width="173" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Política de Privacidade"/>
                                 <connections>
@@ -106,23 +103,36 @@
                         <constraints>
                             <constraint firstItem="sJw-SS-0xu" firstAttribute="trailing" secondItem="gjZ-az-xTP" secondAttribute="trailing" id="0GJ-dg-7qf"/>
                             <constraint firstItem="yev-Ho-gXz" firstAttribute="top" secondItem="sJw-SS-0xu" secondAttribute="bottom" constant="60" id="3S3-av-Hlg"/>
+                            <constraint firstItem="HFP-Ao-4p9" firstAttribute="top" secondItem="HXf-E5-wpe" secondAttribute="bottom" constant="20" id="5qQ-ci-lI7"/>
+                            <constraint firstItem="g36-aY-UzH" firstAttribute="leading" secondItem="dpj-KM-dNH" secondAttribute="trailing" constant="8" id="7vf-za-lcL"/>
                             <constraint firstItem="sJw-SS-0xu" firstAttribute="top" secondItem="WPD-cM-mP7" secondAttribute="top" id="96A-Hi-AjJ"/>
                             <constraint firstItem="PfN-20-amc" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="F0s-CP-0cP"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="Wfo-S0-rs5" secondAttribute="trailing" constant="134" id="HoH-vp-HSB"/>
                             <constraint firstItem="aCS-m7-h1E" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="LMd-P9-UXm"/>
                             <constraint firstItem="HFP-Ao-4p9" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="OwD-le-H2g"/>
+                            <constraint firstItem="aCS-m7-h1E" firstAttribute="top" secondItem="PfN-20-amc" secondAttribute="bottom" constant="299.5" id="Oyj-MC-KZ3"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="yev-Ho-gXz" secondAttribute="trailing" constant="20" id="QU2-VF-aMo"/>
-                            <constraint firstItem="g36-aY-UzH" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="T8N-b5-0nh"/>
+                            <constraint firstItem="g36-aY-UzH" firstAttribute="top" secondItem="aCS-m7-h1E" secondAttribute="bottom" constant="15" id="SFe-sC-7Ue"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="TYZ-2g-dL6"/>
                             <constraint firstItem="bin-4V-sUE" firstAttribute="centerY" secondItem="sJw-SS-0xu" secondAttribute="centerY" id="Uwr-kl-QJ0"/>
+                            <constraint firstItem="Wfo-S0-rs5" firstAttribute="leading" secondItem="g36-aY-UzH" secondAttribute="trailing" constant="12.5" id="Vfe-aX-JMh"/>
                             <constraint firstItem="bin-4V-sUE" firstAttribute="centerX" secondItem="sJw-SS-0xu" secondAttribute="centerX" id="Y6h-8p-Zsd"/>
                             <constraint firstItem="m9T-t8-toi" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="YKA-kg-OPO"/>
+                            <constraint firstItem="dpj-KM-dNH" firstAttribute="top" secondItem="aCS-m7-h1E" secondAttribute="bottom" constant="9" id="Z3p-Qo-kFF"/>
                             <constraint firstItem="PfN-20-amc" firstAttribute="top" secondItem="m9T-t8-toi" secondAttribute="bottom" constant="20" id="diu-Jn-qQT"/>
+                            <constraint firstItem="dpj-KM-dNH" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="f5v-mj-paX"/>
                             <constraint firstItem="m9T-t8-toi" firstAttribute="top" secondItem="HFP-Ao-4p9" secondAttribute="bottom" constant="20" id="fMU-M1-hZo"/>
+                            <constraint firstItem="Wfo-S0-rs5" firstAttribute="leading" secondItem="g36-aY-UzH" secondAttribute="trailing" constant="12.5" id="fWB-MA-Vd0"/>
                             <constraint firstItem="aCS-m7-h1E" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="kbT-Ko-CgE"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="m9T-t8-toi" secondAttribute="trailing" constant="20" id="m4O-qm-Ju2"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="PfN-20-amc" secondAttribute="trailing" constant="20" id="oFg-Sr-OEJ"/>
+                            <constraint firstItem="aCS-m7-h1E" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="ol7-E0-ozs"/>
+                            <constraint firstItem="g36-aY-UzH" firstAttribute="leading" secondItem="dpj-KM-dNH" secondAttribute="trailing" constant="8" id="qua-Ec-8ob"/>
+                            <constraint firstItem="Wfo-S0-rs5" firstAttribute="top" secondItem="aCS-m7-h1E" secondAttribute="bottom" constant="9" id="tcG-JM-3mf"/>
                             <constraint firstItem="sJw-SS-0xu" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" id="tkh-58-Fkm"/>
-                            <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="g36-aY-UzH" secondAttribute="bottom" constant="10" id="wEz-nL-gib"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="top" secondItem="sJw-SS-0xu" secondAttribute="bottom" constant="25" id="w17-Wd-ODi"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="HFP-Ao-4p9" secondAttribute="trailing" constant="20" id="wG0-vE-j8v"/>
+                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="aCS-m7-h1E" secondAttribute="trailing" constant="68" id="woI-XZ-Gmc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gjZ-az-xTP"/>
                     </view>
@@ -310,32 +320,26 @@
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reenviando em" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-Zd-xJw">
-                                <rect key="frame" x="20" y="809" width="125" height="23"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Reenviando em" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-Zd-xJw">
+                                <rect key="frame" x="20" y="811" width="112" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-gW-FpF">
-                                <rect key="frame" x="153" y="809" width="35" height="23"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zp-gW-FpF">
+                                <rect key="frame" x="143" y="811" width="31" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+55 91111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xll-SR-wgJ">
-                                <rect key="frame" x="239" y="809" width="134" height="23"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="para" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgg-3w-SJL">
-                                <rect key="frame" x="196" y="809" width="35" height="23"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="+55 91111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xll-SR-wgJ">
+                                <rect key="frame" x="273" y="811" width="120.5" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-Vg-TYN" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="724" width="374" height="39"/>
+                                <rect key="frame" x="20" y="485" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Verificar"/>
                                 <connections>
@@ -349,30 +353,37 @@
                                     <constraint firstAttribute="height" constant="40" id="8MU-e6-eTF"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="para" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgg-3w-SJL">
+                                <rect key="frame" x="192" y="811" width="31.5" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="5Zp-gW-FpF" secondAttribute="bottom" constant="30" id="3Fz-z8-QNX"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="hdu-Zd-xJw" secondAttribute="bottom" constant="30" id="3D7-9h-yYT"/>
                             <constraint firstItem="7mH-Oj-TiU" firstAttribute="trailing" secondItem="xjP-cH-LY4" secondAttribute="trailing" id="5rq-ew-cVe"/>
                             <constraint firstItem="gCj-DA-oaQ" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="8JZ-k1-UAy"/>
-                            <constraint firstItem="Sgg-3w-SJL" firstAttribute="leading" secondItem="5Zp-gW-FpF" secondAttribute="trailing" constant="8" id="Cjr-Cd-XN3"/>
+                            <constraint firstItem="1JF-Vg-TYN" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="8RQ-U7-OGV"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="Sgg-3w-SJL" secondAttribute="bottom" constant="30" id="DFd-dJ-rrh"/>
                             <constraint firstItem="Ap1-M0-qSQ" firstAttribute="top" secondItem="7mH-Oj-TiU" secondAttribute="bottom" constant="20" id="Ft4-9C-tsk"/>
                             <constraint firstItem="Ap1-M0-qSQ" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="Ga8-97-AeX"/>
                             <constraint firstItem="gCj-DA-oaQ" firstAttribute="top" secondItem="xjP-cH-LY4" secondAttribute="top" constant="46" id="HEs-Dk-eIT"/>
-                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="hdu-Zd-xJw" secondAttribute="bottom" constant="30" id="JlA-Cw-oZa"/>
+                            <constraint firstItem="5Zp-gW-FpF" firstAttribute="leading" secondItem="hdu-Zd-xJw" secondAttribute="trailing" constant="21" id="J2F-ll-JaU"/>
                             <constraint firstItem="raE-KF-U5m" firstAttribute="top" secondItem="gCj-DA-oaQ" secondAttribute="bottom" constant="26" id="LQo-Wz-vM1"/>
-                            <constraint firstItem="xll-SR-wgJ" firstAttribute="leading" secondItem="Sgg-3w-SJL" secondAttribute="trailing" constant="8" id="MZH-Xt-uh7"/>
-                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="xll-SR-wgJ" secondAttribute="bottom" constant="30" id="Ovk-oo-Edp"/>
-                            <constraint firstItem="hdu-Zd-xJw" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="PXX-e6-xnJ"/>
-                            <constraint firstItem="1JF-Vg-TYN" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="TVO-ZB-zW3"/>
+                            <constraint firstItem="hdu-Zd-xJw" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="QTV-ff-yh1"/>
                             <constraint firstItem="7mH-Oj-TiU" firstAttribute="top" secondItem="xjP-cH-LY4" secondAttribute="top" id="Z0n-bP-fvg"/>
-                            <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="1JF-Vg-TYN" secondAttribute="trailing" constant="20" id="ZYf-Eg-ER6"/>
                             <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="Ap1-M0-qSQ" secondAttribute="trailing" constant="20" id="bj8-EU-Dn6"/>
-                            <constraint firstItem="hdu-Zd-xJw" firstAttribute="top" secondItem="1JF-Vg-TYN" secondAttribute="bottom" constant="46" id="eVy-Jp-8DS"/>
-                            <constraint firstItem="5Zp-gW-FpF" firstAttribute="leading" secondItem="hdu-Zd-xJw" secondAttribute="trailing" constant="8" id="f3C-pl-bPE"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="5Zp-gW-FpF" secondAttribute="bottom" constant="30" id="dvV-k1-pw5"/>
                             <constraint firstItem="7mH-Oj-TiU" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" id="gZB-Se-Z6M"/>
+                            <constraint firstItem="1JF-Vg-TYN" firstAttribute="top" secondItem="Ap1-M0-qSQ" secondAttribute="bottom" constant="223" id="hAk-a9-KHh"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="xll-SR-wgJ" secondAttribute="trailing" constant="53" id="hnb-KT-77s"/>
                             <constraint firstItem="raE-KF-U5m" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="kGn-Da-D2I"/>
-                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="Sgg-3w-SJL" secondAttribute="bottom" constant="30" id="yMH-Fb-zF2"/>
+                            <constraint firstItem="xll-SR-wgJ" firstAttribute="leading" secondItem="Sgg-3w-SJL" secondAttribute="trailing" constant="19" id="qVC-IL-cei"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="1JF-Vg-TYN" secondAttribute="trailing" constant="20" id="tJc-sm-jf4"/>
+                            <constraint firstItem="Sgg-3w-SJL" firstAttribute="leading" secondItem="5Zp-gW-FpF" secondAttribute="trailing" constant="29" id="uPk-Lr-oJV"/>
+                            <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="xll-SR-wgJ" secondAttribute="bottom" constant="30" id="zDl-Qw-HfH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xjP-cH-LY4"/>
                     </view>
@@ -413,79 +424,71 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">At Parken, accessible from parken.com.br, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Parken and how we use it.
+                                        <mutableString key="content">Na Parken, acessível em parken.com.br, uma de nossas principais prioridades é a privacidade de nossos visitantes. Este documento de Política de Privacidade contém tipos de informações que são coletadas e registradas pela Parken e como as usamos.
 
-If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+Se você tiver perguntas adicionais ou precisar de mais informações sobre nossa Política de Privacidade, não hesite em nos contatar.
 
-This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Parken. This policy is not applicable to any information collected offline or via channels other than this website.
+Esta Política de Privacidade se aplica apenas às nossas atividades online e é válida para os visitantes do nosso site no que diz respeito às informações que eles compartilham e / ou coletam na Parken. Esta política não se aplica a nenhuma informação coletada offline ou por meio de outros canais que não este site.
 
-Consent
+Consentimento
 
-By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+Ao usar nosso website, você concorda com nossa Política de Privacidade e concorda com seus termos.
 
-Information we collect
+Informações que coletamos
 
-The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
-If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.
-When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.
+As informações pessoais que você deve fornecer e os motivos pelos quais você deve fornecê-las serão esclarecidos quando solicitarmos que você forneça suas informações pessoais.
+Se você nos contatar diretamente, poderemos receber informações adicionais sobre você, como seu nome, endereço de e-mail, número de telefone, o conteúdo da mensagem e / ou anexos que você pode nos enviar e qualquer outra informação que você decida fornecer.
+Quando você se registra para uma conta, podemos solicitar suas informações de contato, incluindo itens como nome, nome da empresa, endereço, endereço de e-mail e número de telefone.
 
-How we use your information
+Como usamos suas informações
 
-We use the information we collect in various ways, including to:
+Usamos as informações que coletamos de várias maneiras, incluindo para:
 
-Provide, operate, and maintain our webste
-Improve, personalize, and expand our webste
-Understand and analyze how you use our webste
-Develop new products, services, features, and functionality
-Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the webste, and for marketing and promotional purposes
-Send you emails
-Find and prevent fraud
-Log Files
+Fornecer, operar e manter nosso webste
+Melhore, personalize e expanda nosso webste
+Entenda e analise como você usa nosso webste
+Desenvolva novos produtos, serviços, recursos e funcionalidades
+Comunicar-se com você, diretamente ou por meio de um de nossos parceiros, inclusive para atendimento ao cliente, para lhe fornecer atualizações e outras informações relacionadas ao webste e para fins de marketing e promocionais
+Enviar e-mails para você
+Encontre e evite fraudes
+Arquivos de log
 
-Parken follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+Parken segue um procedimento padrão de uso de arquivos de log. Esses arquivos registram os visitantes quando eles visitam sites. Todas as empresas de hospedagem fazem isso e fazem parte da análise dos serviços de hospedagem. As informações coletadas pelos arquivos de log incluem endereços de protocolo de Internet (IP), tipo de navegador, provedor de serviços de Internet (ISP), carimbo de data e hora, páginas de referência / saída e possivelmente o número de cliques. Eles não estão vinculados a nenhuma informação de identificação pessoal. O objetivo das informações é analisar tendências, administrar o site, rastrear o movimento dos usuários no site e coletar informações demográficas.
 
-Advertising Partners Privacy Policies
+Políticas de privacidade de parceiros de publicidade
 
-You may consult this list to find the Privacy Policy for each of the advertising partners of Parken.
+Você pode consultar esta lista para encontrar a Política de Privacidade de cada um dos parceiros de publicidade da Parken.
 
-Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Parken, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+Servidores de anúncios de terceiros ou redes de anúncios usam tecnologias como cookies, JavaScript ou Web Beacons que são usados ​​em seus respectivos anúncios e links que aparecem no Parken, que são enviados diretamente para o navegador dos usuários. Eles recebem automaticamente o seu endereço IP quando isso ocorre. Essas tecnologias são usadas para medir a eficácia de suas campanhas publicitárias e / ou para personalizar o conteúdo publicitário que você vê nos sites que visita.
 
-Note that Parken has no access to or control over these cookies that are used by third-party advertisers.
+Observe que a Parken não tem acesso ou controle sobre esses cookies que são usados ​​por anunciantes terceiros.
 
-Third Party Privacy Policies
+Políticas de privacidade de terceiros
 
-Parken's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. 
+A Política de Privacidade da Parken não se aplica a outros anunciantes ou sites. Assim, aconselhamos você a consultar as respectivas Políticas de Privacidade desses servidores de anúncios de terceiros para obter informações mais detalhadas. Pode incluir suas práticas e instruções sobre como cancelar certas opções.
 
-You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
+Você pode optar por desabilitar os cookies por meio das opções individuais do navegador. Para saber informações mais detalhadas sobre o gerenciamento de cookies com navegadores da web específicos, elas podem ser encontradas nos respectivos sites dos navegadores.
 
-CCPA Privacy Rights (Do Not Sell My Personal Information)
+Direitos de proteção de dados LGPD.
 
-Under the CCPA, among other rights, California consumers have the right to:
-Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
-Request that a business delete any personal data about the consumer that a business has collected.
-Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
-If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+Gostaríamos de ter certeza de que você está totalmente ciente de todos os seus direitos de proteção de dados. Cada usuário tem direito ao seguinte:
+O direito de acesso - você tem o direito de solicitar cópias de seus dados pessoais. Podemos cobrar uma pequena taxa por este serviço.
+O direito de retificação - você tem o direito de solicitar que corrijamos qualquer informação que você acredite ser imprecisa. Você também tem o direito de solicitar que completemos as informações que você acredita estar incompletas.
+O direito de apagamento - Você tem o direito de solicitar o apagamento de seus dados pessoais, sob certas condições.
+O direito de restringir o processamento - Você tem o direito de solicitar que restrinjamos o processamento de seus dados pessoais, sob certas condições.
+O direito de se opor ao processamento - Você tem o direito de se opor ao nosso processamento de seus dados pessoais, sob certas condições.
+O direito à portabilidade dos dados - Você tem o direito de solicitar a transferência dos dados que coletamos para outra organização ou diretamente para você, sob certas condições.
+Se você fizer uma solicitação, temos um mês para responder a você. Se você deseja exercer algum desses direitos, entre em contato conosco.
 
-GDPR Data Protection Rights
+Informação infantil
 
-We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
-The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.
-The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.
-The right to erasure – You have the right to request that we erase your personal data, under certain conditions.
-The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.
-The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.
-The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
-If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+Outra parte de nossa prioridade é adicionar proteção para crianças enquanto usam a internet. Incentivamos os pais e responsáveis ​​a observar, participar e / ou monitorar e orientar suas atividades online.
 
-Children's Information
-
-Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
-
-Parken does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</string>
+A Parken não coleta intencionalmente qualquer informação pessoal identificável de crianças menores de 13 anos. Se você acha que seu filho forneceu este tipo de informação em nosso site, nós o encorajamos a nos contatar imediatamente e nós faremos nossos melhores esforços para remover imediatamente tais informações de nossos registros.
+</mutableString>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="22" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="424.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -555,172 +558,13 @@ O Parken Startup pode revisar estes Termos de Uso de seu site a qualquer momento
 Leia &lt;https://www.privacypolicygenerator.info/ "&gt; nossa Política de Privacidade &lt;&gt;
 8. Lei Aplicável
 
-Qualquer reclamação relacionada ao site do Parken Startup será regida pelas leis de br, independentemente de seu conflito de provisões legais.
-</mutableString>
+Qualquer reclamação relacionada ao site do Parken Startup será regida pelas leis de br, independentemente de seu conflito de provisões legais.</mutableString>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="22" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="441.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">1. Use License
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">
-Permission is granted to temporarily download one copy of the materials on Parken Startup's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
-
-    Modify or copy the materials;
-    Use the materials for any commercial purpose or for any public display;
-    Attempt to reverse engineer any software contained on Parken Startup's Website;
-    Remove any copyright or other proprietary notations from the materials; or
-    Transferring the materials to another person or "mirror" the materials on any other server.
-
-This will let Parken Startup to terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format. 
-</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">2. Disclaimer
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">
-All the materials on Parken Startup’s Website are provided "as is". Parken Startup makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, Parken Startup does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website. 
-</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">3. Limitations
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">
-Parken Startup or its suppliers will not be hold accountable for any damages that will arise with the use or inability to use the materials on Parken Startup’s Website, even if Parken Startup or an authorize representative of this Website has been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on implied warranties or limitations of liability for incidental damages, these limitations may not apply to you. 
-</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">4. Revisions and Errata
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">
-The materials appearing on Parken Startup’s Website may include technical, typographical, or photographic errors. Parken Startup will not promise that any of the materials in this Website are accurate, complete, or current. Parken Startup may change the materials contained on its Website at any time without notice. Parken Startup does not make any commitment to update the materials. 
-</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">5. Links
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <mutableString key="content">
-Parken Startup has not reviewed all of the sites linked to its Website and is not responsible for the contents of any such linked site. The presence of any link does not imply endorsement by Parken Startup of the site. The use of any linked website is at the user’s own risk. 
-</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">6. Site Terms of Use Modifications
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Parken Startup may revise these Terms of Use for its Website at any time without prior notice. By using this Website, you are agreeing to be bound by the current version of these Terms and Conditions of Use. 
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">7. Your Privacy
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Please read  &lt;https://www.privacypolicygenerator.info/"&gt;our Privacy Policy&lt;&gt; 
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">8. Governing Law
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Any claim related to Parken Startup's Website shall be governed by the laws of br without regards to its conflict of law provisions.	</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="22" name="GillSans"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -924,7 +768,7 @@ Any claim related to Parken Startup's Website shall be governed by the laws of b
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lut-cw-abX"/>
+        <segue reference="fWN-Ll-ZtF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="divider 1" width="349" height="18"/>

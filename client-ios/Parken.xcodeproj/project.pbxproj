@@ -64,6 +64,7 @@
 		4DCEB6B524F5E627001B5BBE /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6B424F5E627001B5BBE /* libTestFairy.a */; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
 		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
+		728A89362526244700C69089 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A89352526244700C69089 /* PagamentoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -142,6 +143,7 @@
 		4DCEB6B424F5E627001B5BBE /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFairy.a; path = "../Parken/TestFairySDK-1/libTestFairy.a"; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
 		7264487D25256870008A8AF6 /* Pagamento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pagamento.storyboard; sourceTree = "<group>"; };
+		728A89352526244700C69089 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +375,7 @@
 				4D4FE9C5248D793C00CA9D1C /* HomeViewController.swift */,
 				4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */,
 				4D5667A124D3AF18008EF702 /* HereSdkController.swift */,
+				728A89352526244700C69089 /* PagamentoViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				4D65CC3924DCD9060002CA86 /* ParkingLocateTableView.swift in Sources */,
 				4D7D39BE251AD54000024F5A /* FavoriteAddressTableViewCell.swift in Sources */,
 				4D5ECD7724CF9C4500392D11 /* PrimaryNavButtonStyle.swift in Sources */,
+				728A89362526244700C69089 /* PagamentoViewController.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,
 				4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */,
 				4D4FE9E1248D9C8600CA9D1C /* PrimaryButtonStyle.swift in Sources */,

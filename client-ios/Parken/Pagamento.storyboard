@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="-965.21739130434787" y="-32.142857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Pagamento View Controller-->
         <scene sceneID="wCN-Ip-ca1">
             <objects>
-                <viewController id="d8m-Vl-AZb" sceneMemberID="viewController">
+                <viewController id="d8m-Vl-AZb" customClass="PagamentoViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rBh-Za-zIp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,6 +110,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Voltar"/>
+                                <connections>
+                                    <action selector="voltarAction:" destination="Tah-He-mvQ" eventType="touchUpInside" id="BfX-Cz-jP3"/>
+                                    <action selector="voltarAction:" destination="d8m-Vl-AZb" eventType="touchUpInside" id="KiN-YH-M0k"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -118,6 +122,7 @@
                     <navigationItem key="navigationItem" id="KhU-qW-r3b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1Z-LC-EIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Tah-He-mvQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-84" y="-26"/>
         </scene>

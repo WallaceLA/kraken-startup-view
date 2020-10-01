@@ -706,59 +706,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Escolha seu Plano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eG-bh-Hlb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha seu Plano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eG-bh-Hlb">
                                 <rect key="frame" x="65" y="63" width="285" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgE-64-hMX">
-                                <rect key="frame" x="20" y="320" width="182" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Plano Essential 
-</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-s3-TwB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-s3-TwB">
                                 <rect key="frame" x="20" y="362" width="294" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">- Acesso a até 2 estacionamentos 
 </string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Valor mensal: R$ 149,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgk-mp-lG5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Valor mensal: R$ 149,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgk-mp-lG5">
                                 <rect key="frame" x="20" y="394" width="228" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrF-St-6Tl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrF-St-6Tl">
                                 <rect key="frame" x="20" y="538" width="149" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Plano GOLD
 </string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2n-kA-1G5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2n-kA-1G5">
                                 <rect key="frame" x="20" y="580" width="294" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">- Acesso a até 5 estacionamentos 
 </string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Valor mensal: R$ 199,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EO-hN-Hha">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Valor mensal: R$ 199,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EO-hN-Hha">
                                 <rect key="frame" x="20" y="612" width="228" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -770,37 +755,71 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDd-JA-qxq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDd-JA-qxq">
                                 <rect key="frame" x="20" y="426" width="149" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Quero Essential"/>
                                 <connections>
                                     <segue destination="OE0-vL-4Uy" kind="show" id="Png-NY-iNg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-N8-Jbc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-N8-Jbc">
                                 <rect key="frame" x="20" y="644" width="123" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Quero GOLD"/>
                                 <connections>
                                     <segue destination="OE0-vL-4Uy" kind="show" id="Kn9-HS-1AT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cancele quando quiser, sem taxas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-FS-RBF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancele quando quiser, sem taxas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCJ-FS-RBF">
                                 <rect key="frame" x="76" y="112" width="262" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_est" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-fh-w8Q">
-                                <rect key="frame" x="87" y="159" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_est" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-fh-w8Q">
+                                <rect key="frame" x="87" y="160" width="240" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="FMW-TK-zjx"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgE-64-hMX">
+                                <rect key="frame" x="20" y="320" width="182" height="34"/>
+                                <string key="text">Plano Essential 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pcw-fh-w8Q" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="87" id="1fj-iR-ZAg"/>
+                            <constraint firstItem="aCJ-FS-RBF" firstAttribute="top" secondItem="6eG-bh-Hlb" secondAttribute="bottom" constant="8" id="5vt-9A-WMj"/>
+                            <constraint firstItem="c2d-s3-TwB" firstAttribute="top" secondItem="BgE-64-hMX" secondAttribute="bottom" constant="8" id="72D-QZ-tAG"/>
+                            <constraint firstItem="9EO-hN-Hha" firstAttribute="top" secondItem="h2n-kA-1G5" secondAttribute="bottom" constant="8" id="7el-gw-Ccw"/>
+                            <constraint firstItem="pQT-vZ-Z1N" firstAttribute="trailing" secondItem="pcw-fh-w8Q" secondAttribute="trailing" constant="87" id="7mq-NQ-Os0"/>
+                            <constraint firstItem="6eG-bh-Hlb" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="65" id="8CG-aL-7GH"/>
+                            <constraint firstItem="9EO-hN-Hha" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="Iqe-Z6-5x0"/>
+                            <constraint firstItem="pcw-fh-w8Q" firstAttribute="top" secondItem="aCJ-FS-RBF" secondAttribute="bottom" constant="27" id="L8q-vE-HbO"/>
+                            <constraint firstItem="aCJ-FS-RBF" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="76" id="Mch-w4-KxJ"/>
+                            <constraint firstItem="zrF-St-6Tl" firstAttribute="top" secondItem="GDd-JA-qxq" secondAttribute="bottom" constant="73" id="NXx-qo-HUC"/>
+                            <constraint firstItem="c2d-s3-TwB" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="U5J-St-R0t"/>
+                            <constraint firstItem="zrF-St-6Tl" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="VMC-oj-THq"/>
+                            <constraint firstItem="pQT-vZ-Z1N" firstAttribute="trailing" secondItem="6eG-bh-Hlb" secondAttribute="trailing" constant="64" id="WZ8-vI-K3q"/>
+                            <constraint firstItem="GDd-JA-qxq" firstAttribute="top" secondItem="Zgk-mp-lG5" secondAttribute="bottom" constant="8" id="XO9-y5-vUZ"/>
+                            <constraint firstItem="6eG-bh-Hlb" firstAttribute="top" secondItem="pQT-vZ-Z1N" secondAttribute="top" constant="63" id="ckA-yE-NdX"/>
+                            <constraint firstItem="h2n-kA-1G5" firstAttribute="top" secondItem="zrF-St-6Tl" secondAttribute="bottom" constant="8" id="e91-Sg-DpB"/>
+                            <constraint firstItem="GDd-JA-qxq" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="mHh-t7-pdm"/>
+                            <constraint firstItem="BgE-64-hMX" firstAttribute="top" secondItem="pcw-fh-w8Q" secondAttribute="bottom" constant="60" id="pdC-G1-bAS"/>
+                            <constraint firstItem="h2n-kA-1G5" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="pfp-r8-Aez"/>
+                            <constraint firstItem="2sR-N8-Jbc" firstAttribute="top" secondItem="9EO-hN-Hha" secondAttribute="bottom" constant="8" id="q95-5K-un2"/>
+                            <constraint firstItem="Zgk-mp-lG5" firstAttribute="top" secondItem="c2d-s3-TwB" secondAttribute="bottom" constant="8" id="qcC-NK-iZJ"/>
+                            <constraint firstItem="Zgk-mp-lG5" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="sOE-3L-nzG"/>
+                            <constraint firstItem="BgE-64-hMX" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="t4o-TZ-CIL"/>
+                            <constraint firstItem="pQT-vZ-Z1N" firstAttribute="trailing" secondItem="aCJ-FS-RBF" secondAttribute="trailing" constant="76" id="uk2-ok-2da"/>
+                            <constraint firstItem="2sR-N8-Jbc" firstAttribute="leading" secondItem="pQT-vZ-Z1N" secondAttribute="leading" constant="20" id="zwR-Pq-NBA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pQT-vZ-Z1N"/>
                     </view>
                     <toolbarItems/>
