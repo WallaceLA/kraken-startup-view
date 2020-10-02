@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cartao" representedClassName="Cartao" syncable="YES" codeGenerationType="class">
+        <attribute name="cartaoCod" optional="YES" attributeType="String"/>
+        <attribute name="cartaoData" optional="YES" attributeType="String"/>
+        <attribute name="cartaoNome" optional="YES" attributeType="String"/>
+        <attribute name="cartaoNum" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Vaga" representedClassName="Vaga" syncable="YES" codeGenerationType="class">
         <attribute name="altura" optional="YES" attributeType="String"/>
         <attribute name="bairro" optional="YES" attributeType="String"/>
@@ -18,5 +24,6 @@
     </entity>
     <elements>
         <element name="Vaga" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Cartao" positionX="-63" positionY="-27" width="128" height="103"/>
     </elements>
 </model>
