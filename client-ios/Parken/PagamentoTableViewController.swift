@@ -117,7 +117,7 @@ class PagamentoTableViewController: UITableViewController {
             let vc = segue.destination as! PagamentoViewController
             let cartaoSelecionado:NSManagedObject = cartoes[self.tableView.indexPathForSelectedRow!.item]
             vc.cartoes = cartaoSelecionado
-            
+            //print(cartaoSelecionado)
         }
     }
 

@@ -17,24 +17,24 @@ class PagamentoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cartaoData: UITextField!
     @IBOutlet weak var cartaoCod: UITextField!
     
-    @IBAction func voltarAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     var cartoes : NSManagedObject?=nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cartaoNome.delegate = self
+        cartaoNum.delegate = self
+        cartaoData.delegate = self
+        cartaoCod.delegate = self
 
-        cartaoNome?.delegate = self
-        cartaoNum?.delegate = self
-        cartaoData?.delegate = self
-        cartaoCod?.delegate = self
         if (cartoes != nil){
-            cartaoNome.text = cartoes?.value(forKeyPath: "cartaoNome") as? String
-            cartaoNum.text = cartoes?.value(forKeyPath: "cartaoNum") as? String
-            cartaoData.text = cartoes?.value(forKeyPath: "cartaoData") as? String
-            cartaoCod.text = cartoes?.value(forKeyPath: "cartaoCod") as? String
+            
+
+            cartaoNome?.text = cartoes?.value(forKeyPath: "cartaoNome") as! String
+            cartaoNum?.text = cartoes?.value(forKeyPath: "cartaoNum") as! String
+            cartaoData?.text = cartoes?.value(forKeyPath: "cartaoData") as! String
+            cartaoCod?.text = cartoes?.value(forKeyPath: "cartaoCod") as! String
+
         }
         // Do any additional setup after loading the view.
     }
