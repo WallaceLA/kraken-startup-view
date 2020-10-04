@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import CoreData
 import Jelly
 import heresdk
 import Alamofire
@@ -62,6 +63,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     // second step
     private var destineLocateMapMarker: MapMarkerLite?
     private var parkingLocateList: [ParkingLocateModel] = []
+    private var vagas: [NSManagedObject] = []
     private let favoriteSelectedStartIcon = "star"
     
     // third step
@@ -94,6 +96,21 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         requestGPSAuthorization()
         mapController = HereSdkController(mapView: mapView!)
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Vaga")
+
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "titulo", ascending: true)]
+
+        do {
+            vagas = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Não foi possível buscar os dados \(error), \(error.userInfo)")
+        }
     }
     
     // NavBar Definitions
@@ -498,37 +515,50 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 }
         }
         
-        for _ in 1...Int.random(in: 2...5) {
+        for _ in 1...Int.random(in: 2...3) {
             let randomCoordinates = getRandomGeoCoordinatesInViewport()
             
-            mapController.getAddressByCoordinates(
-                geoCoordinates: randomCoordinates,
-                action: { (error: SearchError?, item: [Place]?) -> () in
-                    if let searchError = error {
-                        print("AddressByCoordinates Error: \(searchError)")
-                        return
-                    }
-                    
-                    // If error is nil, it is guaranteed that the place list will not be empty.
-                    print("AddressByCoordinates: Found \(item!.count) result(s).")
-            
-                    let addressText = item!.first!.title
-                    let distance = item!.first!.distanceInMeters!
-                    
-                    let parkingModel = ParkingLocateModel(
-                        addressText,
-                        "\(distance * 10) M",
-                        "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0",
-                        "\(Int.random(in: 10..<100)) Avaliações",
-                        self.mapController.createPointMarker(geoCoordinates: randomCoordinates, imageName: "parking_icon"),
-                        "")
-                    
-                    self.parkingLocateList.append(parkingModel)
-                    self.parkingLocateTable.reloadData()
-                    
-                    self.mapController.addMarkerList(markerList: self.parkingLocateList.map { $0.Localization } )
-            })
+            addParkingFound(geoCoordinates: randomCoordinates)
         }
+ 
+        for vaga in vagas {
+            let latitude = vaga.value(forKeyPath: "latitude") as! Double
+            let longitude = vaga.value(forKeyPath: "longitude") as! Double
+            
+            let addressLocate = GeoCoordinates(latitude: latitude, longitude: longitude)
+            
+            addParkingFound(geoCoordinates: addressLocate)
+        }
+    }
+    
+    private func addParkingFound(geoCoordinates: GeoCoordinates) {
+        mapController.getAddressByCoordinates(
+            geoCoordinates: geoCoordinates,
+            action: { (error: SearchError?, item: [Place]?) -> () in
+                if let searchError = error {
+                    print("AddressByCoordinates Error: \(searchError)")
+                    return
+                }
+                
+                // If error is nil, it is guaranteed that the place list will not be empty.
+                print("AddressByCoordinates: Found \(item!.count) result(s).")
+        
+                let addressText = item!.first!.title
+                let distance = item!.first!.distanceInMeters!
+                
+                let parkingModel = ParkingLocateModel(
+                    addressText,
+                    "\(distance * 10) M",
+                    "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0",
+                    "\(Int.random(in: 10..<100)) Avaliações",
+                    self.mapController.createPointMarker(geoCoordinates: geoCoordinates, imageName: "parking_icon"),
+                    "")
+                
+                self.parkingLocateList.append(parkingModel)
+                self.parkingLocateTable.reloadData()
+                
+                self.mapController.addMarkerList(markerList: self.parkingLocateList.map { $0.Localization } )
+        })
     }
     
     @IBAction func toggleFavoriteAddressSelectedClick(_ sender: Any) {
@@ -625,7 +655,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         // TODO: call backend
         print("requested park choosed")
         
-        showDialog(title: "Request successful", message: "Your park will be approved")
+        showDialog(title: "Pedido enviado", message: "Em breve o proprietàrio entrarà em contato")
         
         goToStep(step: 1)
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     
@@ -40,10 +41,12 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     
     //Todos os itens interativos estão acima, esses itens serão usados para criar um novo objeto do tipo Vaga no CoreData (vide ultima aula de iOS)
     
-    
+    private var geoCoder: CLGeocoder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        geoCoder = CLGeocoder()
         /*
          txtNome.delegate = self
          txtEmail.delegate = self
@@ -64,21 +67,34 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
                     "Sábado":false,
                     "Domingo":false]*/
         
-        self.save(
-            titulo: txtTitulo.text!,
-            descricao: txtDescricao.text!,
-            cep: txtCep.text!,
-            rua: txtRua.text!,
-            numero: txtNumero.text!,
-            complemento: txtComplemento.text!,
-            bairro: txtBairro.text!,
-            cidade: txtCidade.text!,
-            uf: txtUF.text!,
-            largura: txtLargura.text!,
-            comprimento: txtComprimento.text!,
-            altura: txtAltura.text!,
-            reservado: "false"
-        )
+        let endereco:String = "\(txtRua.text!), \(txtNumero.text!), \(txtBairro.text!), \(txtCidade.text!)"
+        
+        geoCoder!.geocodeAddressString(endereco) { (placemarks, error) in
+            guard let placemarks = placemarks, let location = placemarks.first?.location
+                else {
+                    self.showDialog(title: "Erro", message: "Não foi possível obter coordenadas dessa localização")
+                    return
+            }
+                        
+            self.save(
+                titulo: self.txtTitulo.text!,
+                descricao: self.txtDescricao.text!,
+                cep: self.txtCep.text!,
+                rua: self.txtRua.text!,
+                numero: self.txtNumero.text!,
+                complemento: self.txtComplemento.text!,
+                bairro: self.txtBairro.text!,
+                cidade: self.txtCidade.text!,
+                uf: self.txtUF.text!,
+                largura: self.txtLargura.text!,
+                comprimento: self.txtComprimento.text!,
+                altura: self.txtAltura.text!,
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude,
+                reservado: "false")
+            
+             self.navigationController?.popViewController(animated: true)
+        }
         /*
         
         txtNome.resignFirstResponder()
@@ -100,12 +116,24 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
             return
         }
         */
-        
-        self.navigationController?.popViewController(animated: true)
-        
     }
     
-    func save(titulo: String, descricao: String, cep: String, rua: String, numero: String, complemento: String, bairro: String, cidade: String, uf: String, largura: String, comprimento: String, altura: String, reservado:String) {
+    func save(
+        titulo: String,
+        descricao: String,
+        cep: String,
+        rua: String,
+        numero: String,
+        complemento: String,
+        bairro: String,
+        cidade: String,
+        uf: String,
+        largura: String,
+        comprimento: String,
+        altura: String,
+        latitude: Double,
+        longitude: Double,
+        reservado:String) {
         guard let appDelegate  = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -127,6 +155,9 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         vaga.setValue(comprimento, forKeyPath: "comprimento")
         vaga.setValue(altura, forKeyPath: "altura")
         
+        vaga.setValue(latitude, forKeyPath: "latitude")
+        vaga.setValue(longitude, forKeyPath: "longitude")
+        
         vaga.setValue(reservado, forKeyPath: "reservado")
         
         do {
@@ -135,6 +166,12 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
             print("Nao foi possivel salvar \(error), \(error.userInfo)")
         }
     }
+     
+     private func showDialog(title: String, message: String) {
+         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+         present(alertController, animated: true, completion: nil)
+     }
     
     /*
      // MARK: - Navigation
