@@ -8,7 +8,7 @@
         <attribute name="complemento" optional="YES" attributeType="String"/>
         <attribute name="comprimento" optional="YES" attributeType="String"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
-        <attribute name="frequencia" optional="YES" attributeType="String"/>
+        <attribute name="frequencia" optional="YES" attributeType="Transformable"/>
         <attribute name="largura" optional="YES" attributeType="String"/>
         <attribute name="numero" optional="YES" attributeType="String"/>
         <attribute name="reservado" optional="YES" attributeType="String"/>
@@ -17,6 +17,6 @@
         <attribute name="uf" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="253"/>
     </elements>
 </model>

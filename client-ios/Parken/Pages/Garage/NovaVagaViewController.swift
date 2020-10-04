@@ -56,13 +56,13 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
-        /*var freq = ["Segunda-feira":true,
-                    "Terça-feira":false,
-                    "Quarta-feira":true,
-                    "Quinta-feira":false,
-                    "Sexta-feira":true,
-                    "Sábado":false,
-                    "Domingo":false]*/
+        let freq:Dictionary = ["Segunda-feira":switchSegunda.isOn,
+                    "Terça-feira":switchTerca.isOn,
+                    "Quarta-feira":switchQuarta.isOn,
+                    "Quinta-feira":switchQuinta.isOn,
+                    "Sexta-feira":switchSexta.isOn,
+                    "Sábado":switchSabado.isOn,
+                    "Domingo":switchDomingo.isOn]
         
         self.save(
             titulo: txtTitulo.text!,
@@ -77,7 +77,8 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
             largura: txtLargura.text!,
             comprimento: txtComprimento.text!,
             altura: txtAltura.text!,
-            reservado: "false"
+            reservado: "false",
+            frequencia: freq
         )
         /*
         
@@ -105,7 +106,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func save(titulo: String, descricao: String, cep: String, rua: String, numero: String, complemento: String, bairro: String, cidade: String, uf: String, largura: String, comprimento: String, altura: String, reservado:String) {
+    func save(titulo: String, descricao: String, cep: String, rua: String, numero: String, complemento: String, bairro: String, cidade: String, uf: String, largura: String, comprimento: String, altura: String, reservado:String, frequencia:Dictionary<String, Any>) {
         guard let appDelegate  = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -128,6 +129,12 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         vaga.setValue(altura, forKeyPath: "altura")
         
         vaga.setValue(reservado, forKeyPath: "reservado")
+        
+        for (dia, status) in frequencia {
+            print("\n\n\nPara o dia '\(dia)', o status é '\(status)'.\n")
+        }
+        
+        vaga.setValue(frequencia, forKey: "frequencia")
         
         do {
             try managedContext.save()
