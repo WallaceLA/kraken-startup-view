@@ -59,13 +59,13 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
-        /*var freq = ["Segunda-feira":true,
-                    "Terça-feira":false,
-                    "Quarta-feira":true,
-                    "Quinta-feira":false,
-                    "Sexta-feira":true,
-                    "Sábado":false,
-                    "Domingo":false]*/
+        let freq:Dictionary = ["Segunda-feira":switchSegunda.isOn,
+                    "Terça-feira":switchTerca.isOn,
+                    "Quarta-feira":switchQuarta.isOn,
+                    "Quinta-feira":switchQuinta.isOn,
+                    "Sexta-feira":switchSexta.isOn,
+                    "Sábado":switchSabado.isOn,
+                    "Domingo":switchDomingo.isOn]
         
         let endereco:String = "\(txtRua.text!), \(txtNumero.text!), \(txtBairro.text!), \(txtCidade.text!)"
         
@@ -159,6 +159,12 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         vaga.setValue(longitude, forKeyPath: "longitude")
         
         vaga.setValue(reservado, forKeyPath: "reservado")
+        
+        for (dia, status) in frequencia {
+            print("\n\n\nPara o dia '\(dia)', o status é '\(status)'.\n")
+        }
+        
+        vaga.setValue(frequencia, forKey: "frequencia")
         
         do {
             try managedContext.save()

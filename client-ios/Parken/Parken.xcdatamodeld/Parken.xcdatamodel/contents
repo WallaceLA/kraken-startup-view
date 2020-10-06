@@ -14,7 +14,7 @@
         <attribute name="complemento" optional="YES" attributeType="String"/>
         <attribute name="comprimento" optional="YES" attributeType="String"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
-        <attribute name="frequencia" optional="YES" attributeType="String"/>
+        <attribute name="frequencia" optional="YES" attributeType="Transformable"/>
         <attribute name="largura" optional="YES" attributeType="String"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
