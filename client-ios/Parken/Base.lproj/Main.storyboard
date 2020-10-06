@@ -849,41 +849,6 @@
             </objects>
             <point key="canvasLocation" x="2030" y="886"/>
         </scene>
-        <!--Deal View Controller-->
-        <scene sceneID="6WC-3j-0ow">
-            <objects>
-                <viewController id="sth-Fi-nIU" customClass="DealViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tnN-ol-bt2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-jI-UuQ">
-                                <rect key="frame" x="20" y="64" width="374" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-rB-UX9">
-                                <rect key="frame" x="163" y="723" width="89" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="FAZER"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="vkE-Ty-jVO" firstAttribute="trailing" secondItem="mwM-jI-UuQ" secondAttribute="trailing" constant="20" id="8tz-4E-MJN"/>
-                            <constraint firstItem="mwM-jI-UuQ" firstAttribute="leading" secondItem="vkE-Ty-jVO" secondAttribute="leading" constant="20" id="N66-of-xeg"/>
-                            <constraint firstItem="mwM-jI-UuQ" firstAttribute="top" secondItem="vkE-Ty-jVO" secondAttribute="top" constant="20" id="SG7-lO-twN"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="vkE-Ty-jVO"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="oh8-nF-BUk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QGa-gS-qwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2410" y="114"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="q8C-up-omP">
             <objects>
