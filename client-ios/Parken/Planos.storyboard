@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNl-OH-0kU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="V2l-z8-VF2">
+            <objects>
+                <viewController id="7uK-xt-Wpa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7XD-2A-h77">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha seu Plano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esn-rc-1Gm">
+                                <rect key="frame" x="20" y="111" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLe-vr-Gdi">
+                                <rect key="frame" x="20" y="412" width="374" height="24"/>
+                                <string key="text">- Acesso a até 2 estacionamentos 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Valor mensal: R$ 149,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-aV-0xm">
+                                <rect key="frame" x="20" y="442" width="374" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txD-aq-E5F">
+                                <rect key="frame" x="20" y="586" width="374" height="34"/>
+                                <string key="text">Plano GOLD
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0U-Yv-3xN">
+                                <rect key="frame" x="20" y="630" width="374" height="24"/>
+                                <string key="text">- Acesso a até 5 estacionamentos 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Valor mensal: R$ 199,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtO-Sy-raQ">
+                                <rect key="frame" x="20" y="660" width="374" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fng-hV-d62" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="476" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Quero Essential"/>
+                                <connections>
+                                    <segue destination="sed-8D-PRi" kind="show" id="M0W-XP-kya"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3R-xn-3kS" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="694" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Quero GOLD"/>
+                                <connections>
+                                    <segue destination="8CB-X7-xbD" kind="show" id="mY5-0j-pvF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancele quando quiser, sem taxas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-ED-QMh">
+                                <rect key="frame" x="20" y="162" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aS-br-omw">
+                                <rect key="frame" x="20" y="368" width="374" height="34"/>
+                                <string key="text">Plano Essential 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_est" translatesAutoresizingMaskIntoConstraints="NO" id="wru-zx-Vup">
+                                <rect key="frame" x="111" y="210" width="192" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="CQ6-Ua-11Q"/>
+                                    <constraint firstAttribute="height" constant="101" id="Fba-A3-5hY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="00Z-Bg-bWt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wru-zx-Vup" firstAttribute="top" secondItem="qqE-ED-QMh" secondAttribute="bottom" constant="27" id="3WR-hI-3mX"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="wru-zx-Vup" secondAttribute="trailing" constant="111" id="7Af-jg-mbI"/>
+                            <constraint firstItem="qqE-ED-QMh" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="7Jq-Uv-Idf"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="Fng-hV-d62" secondAttribute="trailing" constant="20" id="8TV-0v-fmd"/>
+                            <constraint firstItem="wru-zx-Vup" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="111" id="AQP-AZ-6X6"/>
+                            <constraint firstItem="8aS-br-omw" firstAttribute="top" secondItem="wru-zx-Vup" secondAttribute="bottom" constant="57" id="Blw-zO-oow"/>
+                            <constraint firstItem="txD-aq-E5F" firstAttribute="top" secondItem="Fng-hV-d62" secondAttribute="bottom" constant="71" id="DWM-2F-qw5"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="y0U-Yv-3xN" secondAttribute="trailing" constant="20" id="DiR-g5-VL0"/>
+                            <constraint firstItem="y0U-Yv-3xN" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="Faz-EN-tHY"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="GtO-Sy-raQ" secondAttribute="trailing" constant="20" id="LHw-mR-MAK"/>
+                            <constraint firstItem="esn-rc-1Gm" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="NM0-9v-zRY"/>
+                            <constraint firstItem="qqE-ED-QMh" firstAttribute="top" secondItem="esn-rc-1Gm" secondAttribute="bottom" constant="10" id="NXo-IH-xYv"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="R3R-xn-3kS" secondAttribute="trailing" constant="20" id="RKM-Dz-w8y"/>
+                            <constraint firstItem="nLe-vr-Gdi" firstAttribute="top" secondItem="8aS-br-omw" secondAttribute="bottom" constant="10" id="RRe-fw-j42"/>
+                            <constraint firstItem="R3R-xn-3kS" firstAttribute="top" secondItem="GtO-Sy-raQ" secondAttribute="bottom" constant="10" id="T8h-dY-ce6"/>
+                            <constraint firstItem="Fng-hV-d62" firstAttribute="top" secondItem="2oz-aV-0xm" secondAttribute="bottom" constant="10" id="Yiv-kY-bGq"/>
+                            <constraint firstItem="GtO-Sy-raQ" firstAttribute="top" secondItem="y0U-Yv-3xN" secondAttribute="bottom" constant="6" id="bod-8C-UMB"/>
+                            <constraint firstItem="txD-aq-E5F" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="cKN-Ry-ubW"/>
+                            <constraint firstItem="2oz-aV-0xm" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="cmk-fa-GCv"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="2oz-aV-0xm" secondAttribute="trailing" constant="20" id="dIR-Xp-P5G"/>
+                            <constraint firstItem="GtO-Sy-raQ" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="e80-kW-RSf"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="8aS-br-omw" secondAttribute="trailing" constant="20" id="fr3-cd-aZk"/>
+                            <constraint firstItem="y0U-Yv-3xN" firstAttribute="top" secondItem="txD-aq-E5F" secondAttribute="bottom" constant="10" id="g88-kN-Ab9"/>
+                            <constraint firstItem="8aS-br-omw" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="h5T-yi-wVV"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="qqE-ED-QMh" secondAttribute="trailing" constant="20" id="jB3-YI-bZX"/>
+                            <constraint firstItem="R3R-xn-3kS" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="kpw-rp-hkA"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="nLe-vr-Gdi" secondAttribute="trailing" constant="20" id="mUW-t1-PvU"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="esn-rc-1Gm" secondAttribute="trailing" constant="20" id="mlZ-xk-CoX"/>
+                            <constraint firstItem="nLe-vr-Gdi" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="n9f-uy-4Kb"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="trailing" secondItem="txD-aq-E5F" secondAttribute="trailing" constant="20" id="ogZ-4i-Jez"/>
+                            <constraint firstItem="00Z-Bg-bWt" firstAttribute="bottom" secondItem="R3R-xn-3kS" secondAttribute="bottom" constant="129" id="vmp-OJ-teU"/>
+                            <constraint firstItem="2oz-aV-0xm" firstAttribute="top" secondItem="nLe-vr-Gdi" secondAttribute="bottom" constant="6" id="zPL-fJ-qha"/>
+                            <constraint firstItem="Fng-hV-d62" firstAttribute="leading" secondItem="00Z-Bg-bWt" secondAttribute="leading" constant="20" id="zqc-Me-5ca"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dt7-NA-pzS">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="x4O-dM-nLY"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCY-Lg-5Tx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2820.289855072464" y="-543.08035714285711"/>
+        </scene>
+        <!--Fechar Pedido View Controller-->
+        <scene sceneID="UhA-Xq-eiZ">
+            <objects>
+                <viewController id="8CB-X7-xbD" customClass="FecharPedidoViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mw8-rY-SMb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awf-ee-tsR">
+                                <rect key="frame" x="20" y="131" width="374" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-4J-XiA">
+                                <rect key="frame" x="20" y="273" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <string key="text">Plano GOLD 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Valor mensal: R$ 199,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-tb-tZS">
+                                <rect key="frame" x="20" y="339" width="374" height="24"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOy-VH-wF9">
+                                <rect key="frame" x="106" y="374" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-7s-lEf" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="498" width="374" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Confirmar"/>
+                                <connections>
+                                    <action selector="goldButton:" destination="8CB-X7-xbD" eventType="touchUpInside" id="zGk-EN-CGK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Cartão:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CW-F7-YbJ">
+                                <rect key="frame" x="20" y="371" width="78" height="24"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ViM-Hu-isN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f43-u7-jL0"/>
+                    <connections>
+                        <outlet property="cartaoGold" destination="hOy-VH-wF9" id="UFL-wV-Pqh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gs-SB-0LM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1842.0289855072465" y="-202.23214285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cau-0Z-y9K">
+            <objects>
+                <navigationController id="pNl-OH-0kU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cna-hQ-R5c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7uK-xt-Wpa" kind="relationship" relationship="rootViewController" id="epi-yj-7YX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ox-Tt-vDR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3659" y="-543"/>
+        </scene>
+        <!--Fechar Pedido View Controller-->
+        <scene sceneID="1he-MY-5tt">
+            <objects>
+                <viewController id="7n0-AJ-Ton" customClass="FecharPedidoViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1mh-so-YiH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-2B-fNv">
+                                <rect key="frame" x="20" y="145" width="374" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxc-S8-4YB">
+                                <rect key="frame" x="20" y="287" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Plano Essential 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Valor mensal: R$ 149,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9K-iT-AVf">
+                                <rect key="frame" x="20" y="353" width="374" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Pagamento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14b-AE-2iS">
+                                <rect key="frame" x="20" y="385" width="134" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9c-uF-meO">
+                                <rect key="frame" x="162" y="388" width="232" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdx-t6-BMG" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="512" width="374" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Confirmar"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FAi-LF-YNm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1M-ag-YYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1842" y="-917"/>
+        </scene>
+        <!--Fechar Pedido View Controller-->
+        <scene sceneID="iPa-AU-lXP">
+            <objects>
+                <viewController id="sed-8D-PRi" customClass="FecharPedidoViewController" customModule="Parken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zr-pt-Edf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-Gn-lXr">
+                                <rect key="frame" x="20" y="145" width="374" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHD-KJ-bjp">
+                                <rect key="frame" x="20" y="287" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <string key="text">Plano Essential 
+</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Valor mensal: R$ 149,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bl-JO-dB7">
+                                <rect key="frame" x="20" y="353" width="374" height="24"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- Carão:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-q8-DiZ">
+                                <rect key="frame" x="20" y="385" width="71" height="24"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPR-uh-lUm">
+                                <rect key="frame" x="99" y="388" width="295" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82o-FB-rlZ" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="512" width="374" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Confirmar"/>
+                                <connections>
+                                    <action selector="essentialButton:" destination="sed-8D-PRi" eventType="touchUpInside" id="tif-ZR-2hL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QJ9-WN-zAA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZXM-9t-5ah"/>
+                    <connections>
+                        <outlet property="cartaoEssential" destination="TPR-uh-lUm" id="8K9-x9-1yN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sb-6W-Vvv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1842.0289855072465" y="-917.41071428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img_est" width="804" height="416"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

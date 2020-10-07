@@ -46,8 +46,17 @@
 		4D6780A124BD19B5009141D6 /* heresdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; };
 		4D6780A224BD19B5009141D6 /* heresdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6780A024BD19B5009141D6 /* heresdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
+<<<<<<< Updated upstream
 		7202E88C24FAFA3500020A71 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202E88B24FAFA3500020A71 /* PresentationModel.swift */; };
 		7202E88E24FAFC1800020A71 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202E88D24FAFC1800020A71 /* SignIn.swift */; };
+=======
+		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
+		7282FA1F2527A13C0055D62B /* PagamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */; };
+		728A89362526244700C69089 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A89352526244700C69089 /* PagamentoViewController.swift */; };
+		72E6910D252D27ED004F268C /* FecharPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E6910C252D27ED004F268C /* FecharPedidoViewController.swift */; };
+		72E6910F252D2833004F268C /* FecharPedido.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E6910E252D2833004F268C /* FecharPedido.storyboard */; };
+		72E69111252D35DA004F268C /* Planos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E69110252D35DA004F268C /* Planos.storyboard */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,8 +116,17 @@
 		4D65CC3824DCD9060002CA86 /* ParkingLocateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocateTableView.swift; sourceTree = "<group>"; };
 		4D6780A024BD19B5009141D6 /* heresdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = heresdk.xcframework; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		7202E88B24FAFA3500020A71 /* PresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
 		7202E88D24FAFC1800020A71 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+=======
+		7264487D25256870008A8AF6 /* Pagamento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pagamento.storyboard; sourceTree = "<group>"; };
+		7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoTableViewController.swift; sourceTree = "<group>"; };
+		728A89352526244700C69089 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
+		72E6910C252D27ED004F268C /* FecharPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FecharPedidoViewController.swift; sourceTree = "<group>"; };
+		72E6910E252D2833004F268C /* FecharPedido.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FecharPedido.storyboard; sourceTree = "<group>"; };
+		72E69110252D35DA004F268C /* Planos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Planos.storyboard; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +169,12 @@
 				4D4D2D3B248C6ABA00574595 /* Models */,
 				4D4D2D3A248C6AAD00574595 /* Components */,
 				4D4D2D23248C697400574595 /* AppDelegate.swift */,
+<<<<<<< Updated upstream
+=======
+				0F3AC01B2512F66F00355918 /* Garage.storyboard */,
+				72E69110252D35DA004F268C /* Planos.storyboard */,
+				72E6910E252D2833004F268C /* FecharPedido.storyboard */,
+>>>>>>> Stashed changes
 				4D4D2D29248C697400574595 /* Main.storyboard */,
 				4D4D2D25248C697400574595 /* SceneDelegate.swift */,
 				4D4D2D2F248C697B00574595 /* Assets.xcassets */,
@@ -188,7 +212,15 @@
 		4D4D2D3C248C6AC500574595 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				4D4D2D4E248C7DED00574595 /* Account */,
+=======
+				72E6910B252D27B5004F268C /* FecharPedido */,
+				0F593D39252C024C00083F54 /* Requisicoes */,
+				0F593D38252C021800083F54 /* Pagamento */,
+				0F593D33252C015100083F54 /* Chat */,
+				0F5F5D4B251C442D003B2998 /* Garage */,
+>>>>>>> Stashed changes
 				4D4D2D41248C6B8400574595 /* Welcome */,
 				4D4D2D40248C6B7D00574595 /* Main */,
 			);
@@ -381,6 +413,14 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		72E6910B252D27B5004F268C /* FecharPedido */ = {
+			isa = PBXGroup;
+			children = (
+				72E6910C252D27ED004F268C /* FecharPedidoViewController.swift */,
+			);
+			path = FecharPedido;
+			sourceTree = "<group>";
+		};
 		8C8CECE4F9E9B86BF76B5170 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,7 +491,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E6910F252D2833004F268C /* FecharPedido.storyboard in Resources */,
 				4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< Updated upstream
+=======
+				72E69111252D35DA004F268C /* Planos.storyboard in Resources */,
+				0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */,
+				4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */,
+>>>>>>> Stashed changes
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D50248C7E6A00574595 /* Account.storyboard in Resources */,
@@ -521,6 +568,7 @@
 				4D65CC3524DCCB200002CA86 /* ParkingLocateModel.swift in Sources */,
 				4D65CC3724DCD8DC0002CA86 /* SuggestAddressTableView.swift in Sources */,
 				4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */,
+				72E6910D252D27ED004F268C /* FecharPedidoViewController.swift in Sources */,
 				4D4FE9C1248D770200CA9D1C /* TermsViewController.swift in Sources */,
 				4D4FE9CF248D7ABC00CA9D1C /* HistoryViewController.swift in Sources */,
 				4D4F6EB724BA490D00A01C59 /* PrimaryTextFieldStyle.swift in Sources */,
