@@ -13,5 +13,7 @@ target 'Parken' do
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Analytics'
   pod 'Alamofire', '~> 5.2'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 end
 

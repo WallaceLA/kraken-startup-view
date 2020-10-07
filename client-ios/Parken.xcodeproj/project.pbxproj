@@ -42,7 +42,6 @@
 		4D534AAA24AD76C800782651 /* PhoneNumberCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D534AA924AD76C800782651 /* PhoneNumberCustomButton.swift */; };
 		4D534AAC24AD844000782651 /* SecondButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D534AAB24AD844000782651 /* SecondButtonStyle.swift */; };
 		4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5667A124D3AF18008EF702 /* HereSdkController.swift */; };
-		4D570DE824E21F23004A6541 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D570DE724E21F23004A6541 /* GoogleService-Info.plist */; };
 		4D57EDDF24BB9F7F00E9F472 /* RegisterUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */; };
 		4D5BC56324B14B0000078722 /* ThumbnailCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */; };
 		4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */; };
@@ -66,6 +65,7 @@
 		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
 		7282FA1F2527A13C0055D62B /* PagamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */; };
 		728A89362526244700C69089 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A89352526244700C69089 /* PagamentoViewController.swift */; };
+		C68ECBB7252D496C00570FF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C68ECBB6252D496B00570FF6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -122,7 +122,6 @@
 		4D534AA924AD76C800782651 /* PhoneNumberCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCustomButton.swift; sourceTree = "<group>"; };
 		4D534AAB24AD844000782651 /* SecondButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondButtonStyle.swift; sourceTree = "<group>"; };
 		4D5667A124D3AF18008EF702 /* HereSdkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereSdkController.swift; sourceTree = "<group>"; };
-		4D570DE724E21F23004A6541 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D57EDDE24BB9F7F00E9F472 /* RegisterUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUpdateViewController.swift; sourceTree = "<group>"; };
 		4D5BC56224B14B0000078722 /* ThumbnailCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCustom.swift; sourceTree = "<group>"; };
 		4D5BC56424B14B2900078722 /* ThumbnailCustom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCustom.xib; sourceTree = "<group>"; };
@@ -146,6 +145,8 @@
 		7264487D25256870008A8AF6 /* Pagamento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pagamento.storyboard; sourceTree = "<group>"; };
 		7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoTableViewController.swift; sourceTree = "<group>"; };
 		728A89352526244700C69089 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
+		C68ECBB5252AAAF600570FF6 /* Parken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Parken.entitlements; sourceTree = "<group>"; };
+		C68ECBB6252D496B00570FF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +200,8 @@
 		4D4D2D22248C697400574595 /* Parken */ = {
 			isa = PBXGroup;
 			children = (
+				C68ECBB6252D496B00570FF6 /* GoogleService-Info.plist */,
+				C68ECBB5252AAAF600570FF6 /* Parken.entitlements */,
 				4D4D2D3E248C6B1300574595 /* Helpers */,
 				4D4D2D3D248C6AD400574595 /* Services */,
 				4D4D2D3C248C6AC500574595 /* Pages */,
@@ -214,7 +217,6 @@
 				4D4D2D2F248C697B00574595 /* Assets.xcassets */,
 				4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */,
 				4D4D2D34248C697B00574595 /* Info.plist */,
-				4D570DE724E21F23004A6541 /* GoogleService-Info.plist */,
 				4D4D2D2C248C697400574595 /* Parken.xcdatamodeld */,
 				4D4D2D42248C6BE300574595 /* Welcome.storyboard */,
 				4D4D2D4F248C7E6A00574595 /* Account.storyboard */,
@@ -528,9 +530,9 @@
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D50248C7E6A00574595 /* Account.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
+				C68ECBB7252D496C00570FF6 /* GoogleService-Info.plist in Resources */,
 				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
 				0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */,
-				4D570DE824E21F23004A6541 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +769,7 @@
 			baseConfigurationReference = 2538C39AFA3B87A1302FEE0F /* Pods-Parken.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Parken/Parken.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parken/Info.plist;
@@ -793,6 +796,7 @@
 			baseConfigurationReference = 11917EBFC7FA23AE2651727F /* Pods-Parken.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Parken/Parken.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parken/Info.plist;

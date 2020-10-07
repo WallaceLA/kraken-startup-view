@@ -1,5 +1,6 @@
 import UIKit
 import SGCodeTextField
+import Firebase
 
 class SignInViewController: UIViewController {
     
@@ -9,7 +10,18 @@ class SignInViewController: UIViewController {
     
     var phoneNumber = ""
     private var retryCodeTime = 60
-    
+    var tempo:Timer?
+    var timeLeft = 60
+        
+        @objc func onTimerFires(){
+            timeLeft -= 1
+            
+            if timeLeft <= 0{
+                tempo?.invalidate()
+                tempo = nil
+            }
+        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,8 +32,10 @@ class SignInViewController: UIViewController {
         codeSecurityField.textColorFocused = UIColor.brown
         codeSecurityField.refreshUI()
         
+        tempo = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        
         phoneNumberLabel.text = phoneNumber
-        retryTimeLabel.text = String(retryCodeTime)
+        retryTimeLabel.text = String("\(timeLeft)")
     }
     
     @IBAction func acessarClick(_ sender: UIButton) {

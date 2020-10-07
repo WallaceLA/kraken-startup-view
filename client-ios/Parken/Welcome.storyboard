@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lpG-L4-x1e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lpG-L4-x1e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,13 +21,16 @@
                                     <constraint firstAttribute="height" constant="280" id="Ay6-uP-bhc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-Vindo ao Parken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-E5-wpe">
-                                <rect key="frame" x="20" y="295" width="261" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bem-Vindo ao Parken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-E5-wpe">
+                                <rect key="frame" x="73" y="291" width="269" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31.5" id="bY7-am-WlV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-KM-dNH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-KM-dNH">
                                 <rect key="frame" x="20" y="823" width="57" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Termos"/>
@@ -37,25 +38,17 @@
                                     <segue destination="lXH-Bo-QDa" kind="show" identifier="SignInToTermsSegue" id="2l9-e1-Oy8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-Ao-4p9" customClass="PhoneNumberCustomButton" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="351.5" width="374" height="34"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="phoneNumberChangeEvent:" destination="3Ci-bP-aLz" eventType="touchUpInside" id="nYe-kf-1dn"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9T-t8-toi" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="415.5" width="374" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9T-t8-toi" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="472.5" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <action selector="signInClick:" destination="3Ci-bP-aLz" eventType="touchUpInside" id="WUx-hO-fXc"/>
+                                    <segue destination="z7k-8B-eGx" kind="show" identifier="criarContaSegue" id="6Xm-v5-3hD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao clicar em entrar você concorda com os " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCS-m7-h1E">
-                                <rect key="frame" x="20" y="793.5" width="324.5" height="20.5"/>
+                                <rect key="frame" x="20" y="793.5" width="326" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -66,12 +59,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="bin-4V-sUE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="bin-4V-sUE">
                                 <rect key="frame" x="122" y="85" width="170" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="svj-Kl-NGI"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-20-amc" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="481.5" width="374" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-20-amc" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="538.5" width="374" height="36"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Conheça o Serviço"/>
@@ -79,8 +74,8 @@
                                     <segue destination="xbe-u3-wcg" kind="show" identifier="SignInToPresentationSegue" id="Wvl-81-clh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-S0-rs5">
-                                <rect key="frame" x="96.5" y="823" width="172" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-S0-rs5">
+                                <rect key="frame" x="96.5" y="823" width="173" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Política de Privacidade"/>
                                 <connections>
@@ -88,23 +83,39 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider 1" translatesAutoresizingMaskIntoConstraints="NO" id="yev-Ho-gXz">
-                                <rect key="frame" x="35" y="331.5" width="349" height="5"/>
+                                <rect key="frame" x="35" y="330.5" width="349" height="5"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="0nV-ix-795"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S5A-MV-TzW">
+                                <rect key="frame" x="27" y="362" width="364" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4JP-rI-6yN">
+                                <rect key="frame" x="25" y="416" width="364" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="gjZ-az-xTP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dpj-KM-dNH" firstAttribute="top" secondItem="aCS-m7-h1E" secondAttribute="bottom" constant="9" id="3a4-NO-7LR"/>
+                            <constraint firstItem="m9T-t8-toi" firstAttribute="top" secondItem="WPD-cM-mP7" secondAttribute="top" constant="472.5" id="7Ar-Pc-yft"/>
+                            <constraint firstItem="bin-4V-sUE" firstAttribute="top" secondItem="gjZ-az-xTP" secondAttribute="top" constant="41" id="7hw-Yf-mWU"/>
                             <constraint firstItem="sJw-SS-0xu" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" id="80E-gg-sxL"/>
-                            <constraint firstItem="HXf-E5-wpe" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="CMP-1U-hBv"/>
+                            <constraint firstItem="m9T-t8-toi" firstAttribute="centerX" secondItem="bin-4V-sUE" secondAttribute="centerX" id="8xh-V6-xfl"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="73" id="CMP-1U-hBv"/>
                             <constraint firstItem="PfN-20-amc" firstAttribute="top" secondItem="m9T-t8-toi" secondAttribute="bottom" constant="30" id="DmM-9W-l42"/>
                             <constraint firstItem="sJw-SS-0xu" firstAttribute="trailing" secondItem="gjZ-az-xTP" secondAttribute="trailing" id="EST-Kp-ocE"/>
                             <constraint firstItem="PfN-20-amc" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="EaA-lN-vnh"/>
+                            <constraint firstItem="S5A-MV-TzW" firstAttribute="leading" secondItem="m9T-t8-toi" secondAttribute="leading" constant="7" id="HUL-fa-Wmd"/>
+                            <constraint firstItem="bin-4V-sUE" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="122" id="Hid-iD-LSf"/>
                             <constraint firstItem="m9T-t8-toi" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="I1t-o5-bIs"/>
+                            <constraint firstItem="m9T-t8-toi" firstAttribute="top" secondItem="4JP-rI-6yN" secondAttribute="bottom" constant="22.5" id="NeB-tq-nm9"/>
+                            <constraint firstItem="4JP-rI-6yN" firstAttribute="leading" secondItem="S5A-MV-TzW" secondAttribute="leading" constant="-2" id="OLG-Bv-vv1"/>
                             <constraint firstItem="g36-aY-UzH" firstAttribute="leading" secondItem="dpj-KM-dNH" secondAttribute="trailing" constant="5" id="Q58-Jj-U3O"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="Wfo-S0-rs5" secondAttribute="bottom" constant="6" id="QiS-W1-5Gi"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="g36-aY-UzH" secondAttribute="bottom" constant="12" id="RsF-3Z-Iex"/>
@@ -113,23 +124,25 @@
                             <constraint firstItem="sJw-SS-0xu" firstAttribute="top" secondItem="WPD-cM-mP7" secondAttribute="top" id="UBn-Re-ha7"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="bottom" secondItem="dpj-KM-dNH" secondAttribute="bottom" constant="6" id="WZm-MS-w44"/>
                             <constraint firstItem="Wfo-S0-rs5" firstAttribute="leading" secondItem="g36-aY-UzH" secondAttribute="trailing" constant="5" id="baQ-1M-a9U"/>
-                            <constraint firstItem="m9T-t8-toi" firstAttribute="top" secondItem="HFP-Ao-4p9" secondAttribute="bottom" constant="30" id="d6m-T5-fbS"/>
-                            <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="HFP-Ao-4p9" secondAttribute="trailing" constant="20" id="dJ8-U3-nP6"/>
-                            <constraint firstItem="HFP-Ao-4p9" firstAttribute="top" secondItem="yev-Ho-gXz" secondAttribute="bottom" constant="15" id="fbA-x6-VS1"/>
-                            <constraint firstItem="yev-Ho-gXz" firstAttribute="top" secondItem="HXf-E5-wpe" secondAttribute="bottom" constant="5" id="fwl-NP-Jpe"/>
+                            <constraint firstItem="4JP-rI-6yN" firstAttribute="trailing" secondItem="S5A-MV-TzW" secondAttribute="trailing" constant="-2" id="exk-4r-Cyp"/>
+                            <constraint firstItem="yev-Ho-gXz" firstAttribute="top" secondItem="HXf-E5-wpe" secondAttribute="bottom" constant="8" id="fwl-NP-Jpe"/>
+                            <constraint firstItem="S5A-MV-TzW" firstAttribute="trailing" secondItem="yev-Ho-gXz" secondAttribute="trailing" constant="7" id="hBx-yo-LJ0"/>
                             <constraint firstItem="gjZ-az-xTP" firstAttribute="trailing" secondItem="m9T-t8-toi" secondAttribute="trailing" constant="20" id="k2o-sP-Occ"/>
-                            <constraint firstItem="HFP-Ao-4p9" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="lcW-RP-6zG"/>
+                            <constraint firstItem="S5A-MV-TzW" firstAttribute="top" secondItem="yev-Ho-gXz" secondAttribute="bottom" constant="26.5" id="kvf-OV-NVN"/>
                             <constraint firstItem="dpj-KM-dNH" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="n8K-3h-X1c"/>
                             <constraint firstItem="aCS-m7-h1E" firstAttribute="leading" secondItem="gjZ-az-xTP" secondAttribute="leading" constant="20" id="r5q-UW-J0h"/>
-                            <constraint firstItem="HXf-E5-wpe" firstAttribute="top" secondItem="sJw-SS-0xu" secondAttribute="bottom" constant="15" id="zGk-eh-Ca0"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="top" secondItem="sJw-SS-0xu" secondAttribute="bottom" constant="11" id="zGk-eh-Ca0"/>
+                            <constraint firstItem="HXf-E5-wpe" firstAttribute="centerX" secondItem="m9T-t8-toi" secondAttribute="centerX" id="zHl-m7-HD7"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="gjZ-az-xTP"/>
                     </view>
                     <navigationItem key="navigationItem" title="SignIn" id="MQz-jU-Mcd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="V96-o7-qMr"/>
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="phoneNumberField" destination="HFP-Ao-4p9" id="0H2-CO-sdN"/>
+                        <outlet property="emailTextField" destination="S5A-MV-TzW" id="0t4-Gh-2eu"/>
+                        <outlet property="passwordTextField" destination="4JP-rI-6yN" id="XcT-dJ-TWB"/>
                         <outlet property="signInButton" destination="m9T-t8-toi" id="aoa-gm-aaP"/>
                         <segue destination="0X2-DT-xlh" kind="show" identifier="AccessToSignInSegue" id="meV-gn-ys3"/>
                     </connections>
@@ -148,7 +161,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-iC-Smt">
                                 <rect key="frame" x="0.0" y="44" width="414" height="158"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="158" id="dpt-5K-vTC"/>
                                     <constraint firstAttribute="height" constant="158" id="e6x-LH-s9l"/>
@@ -157,16 +170,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criar Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-ud-sE9">
                                 <rect key="frame" x="20" y="90" width="138.5" height="33"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vamos fazer o seu registro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpV-Xr-oWF">
                                 <rect key="frame" x="20" y="149" width="238" height="26"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhm-LS-zYM" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhm-LS-zYM" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
                                 <rect key="frame" x="20" y="803" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Finalizar Cadastro"/>
@@ -176,12 +189,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primeiro Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-h1-gor" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="222" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="222" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="systemPurpleColor"/>
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,12 +202,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Último Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n45-hR-eA8" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="267.5" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="266" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="systemPurpleColor"/>
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -202,19 +215,19 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUU-oP-WDS" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="313" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="310" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="systemPurpleColor"/>
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYQ-WF-tTF" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYQ-WF-tTF" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
                                 <rect key="frame" x="20" y="744" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Já possuo uma conta"/>
@@ -223,12 +236,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-fo-nDe" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="358.5" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="354" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="systemPurpleColor"/>
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -236,8 +249,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="isZ-yt-4gS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="G7b-iC-Smt" secondAttribute="trailing" id="2P4-be-QDY"/>
                             <constraint firstItem="isZ-yt-4gS" firstAttribute="bottom" secondItem="zhm-LS-zYM" secondAttribute="bottom" constant="20" id="2i2-b0-Bfo"/>
@@ -265,6 +277,7 @@
                             <constraint firstItem="7hh-ud-sE9" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="wXq-3G-g0N"/>
                             <constraint firstItem="3Jm-fo-nDe" firstAttribute="top" secondItem="WUU-oP-WDS" secondAttribute="bottom" constant="20" id="yjK-A4-UX7"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="isZ-yt-4gS"/>
                     </view>
                     <navigationItem key="navigationItem" id="IZM-4a-9o0"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -291,7 +304,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mH-Oj-TiU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="158"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="158" id="yyq-yo-TXI"/>
                                 </constraints>
@@ -299,13 +312,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verificação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCj-DA-oaQ">
                                 <rect key="frame" x="20" y="90" width="123" height="33"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insira o código recebido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raE-KF-U5m">
                                 <rect key="frame" x="20" y="149" width="216" height="26"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reenviando em" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdu-Zd-xJw">
@@ -332,17 +345,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-Vg-TYN" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="485" width="374" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Verificar"/>
-                                <connections>
-                                    <action selector="acessarClick:" destination="0X2-DT-xlh" eventType="touchUpInside" id="tS6-vK-MdS"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ap1-M0-qSQ" customClass="SGCodeTextField" customModule="SGCodeTextField">
                                 <rect key="frame" x="20" y="222" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8MU-e6-eTF"/>
                                 </constraints>
@@ -353,9 +358,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JF-Vg-TYN" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="449" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Verificar"/>
+                                <connections>
+                                    <action selector="acessarClick:" destination="0X2-DT-xlh" eventType="touchUpInside" id="tS6-vK-MdS"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="xjP-cH-LY4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="hdu-Zd-xJw" secondAttribute="bottom" constant="30" id="2p1-by-1Sw"/>
                             <constraint firstItem="xjP-cH-LY4" firstAttribute="bottom" secondItem="Sgg-3w-SJL" secondAttribute="bottom" constant="30" id="5ch-UL-o3H"/>
@@ -379,6 +391,7 @@
                             <constraint firstItem="xjP-cH-LY4" firstAttribute="trailing" secondItem="1JF-Vg-TYN" secondAttribute="trailing" constant="20" id="tJc-sm-jf4"/>
                             <constraint firstItem="hdu-Zd-xJw" firstAttribute="leading" secondItem="xjP-cH-LY4" secondAttribute="leading" constant="20" id="tL5-2E-O6t"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjP-cH-LY4"/>
                     </view>
                     <navigationItem key="navigationItem" id="p3W-fu-IiV"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -386,13 +399,12 @@
                         <outlet property="codeSecurityField" destination="Ap1-M0-qSQ" id="Fv2-JM-Zk0"/>
                         <outlet property="phoneNumberLabel" destination="xll-SR-wgJ" id="OVa-lj-QQR"/>
                         <outlet property="retryTimeLabel" destination="5Zp-gW-FpF" id="i6x-7g-xsp"/>
-                        <segue destination="z7k-8B-eGx" kind="show" identifier="SignToRegisterSegue" id="hdA-z8-DEL"/>
                         <segue destination="8Oi-bW-grw" kind="show" identifier="SignInToMainSegue" id="fWN-Ll-ZtF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndL-dd-IjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139.130434782609" y="-76.339285714285708"/>
+            <point key="canvasLocation" x="2174" y="-408"/>
         </scene>
         <!--Main-->
         <scene sceneID="7aF-yA-IKd">
@@ -414,7 +426,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgG-xs-2CR">
                                 <rect key="frame" x="20" y="64" width="374" height="778"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Na Parken, acessível em parken.com.br, uma de nossas principais prioridades é a privacidade de nossos visitantes. Este documento de Política de Privacidade contém tipos de informações que são coletadas e registradas pela Parken e como as usamos.
@@ -488,14 +500,14 @@ A Parken não coleta intencionalmente qualquer informação pessoal identificáv
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="r4K-Vh-PdT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bgG-xs-2CR" firstAttribute="leading" secondItem="r4K-Vh-PdT" secondAttribute="leading" constant="20" id="ZVp-4I-bfr"/>
                             <constraint firstItem="r4K-Vh-PdT" firstAttribute="trailing" secondItem="bgG-xs-2CR" secondAttribute="trailing" constant="20" id="d9u-Br-m8V"/>
                             <constraint firstItem="r4K-Vh-PdT" firstAttribute="bottom" secondItem="bgG-xs-2CR" secondAttribute="bottom" constant="20" id="hUO-ML-V6t"/>
                             <constraint firstItem="bgG-xs-2CR" firstAttribute="top" secondItem="r4K-Vh-PdT" secondAttribute="top" constant="20" id="iHz-Jm-8ID"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="r4K-Vh-PdT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Terms of privacy" id="0CY-zd-O68">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Cs5-rk-83a"/>
@@ -515,7 +527,7 @@ A Parken não coleta intencionalmente qualquer informação pessoal identificáv
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czM-kS-NN2">
                                 <rect key="frame" x="20" y="64" width="374" height="778"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Ao acessar este site, acessível em contact@parken.com.br, você concorda em se submeter a estes Termos e Condições de Uso do site e concorda que é responsável pelo acordo com as leis locais aplicáveis. Se você discordar de qualquer um desses termos, você está proibido de acessar este site. Os materiais contidos neste site são protegidos por direitos autorais e leis de marcas registradas.
@@ -564,14 +576,14 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Gm6-1h-hA1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="czM-kS-NN2" firstAttribute="leading" secondItem="Gm6-1h-hA1" secondAttribute="leading" constant="20" id="JxG-E8-Yem"/>
                             <constraint firstItem="czM-kS-NN2" firstAttribute="top" secondItem="Gm6-1h-hA1" secondAttribute="top" constant="20" id="WaT-ig-Ffd"/>
                             <constraint firstItem="Gm6-1h-hA1" firstAttribute="trailing" secondItem="czM-kS-NN2" secondAttribute="trailing" constant="20" id="ci6-I1-xta"/>
                             <constraint firstItem="Gm6-1h-hA1" firstAttribute="bottom" secondItem="czM-kS-NN2" secondAttribute="bottom" constant="20" id="sfa-a3-wW3"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gm6-1h-hA1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Terms of service" id="n66-DN-hva">
                         <barButtonItem key="backBarButtonItem" title="Back" id="aYd-Yu-C5V"/>
@@ -589,7 +601,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIk-xz-IMA" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIk-xz-IMA" customClass="SecondButtonStyle" customModule="Parken" customModuleProvider="target">
                                 <rect key="frame" x="20" y="803" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip"/>
@@ -598,7 +610,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-jT-jHA">
-                                <rect key="frame" x="94" y="745.5" width="226" height="27.5"/>
+                                <rect key="frame" x="94" y="736" width="226" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
@@ -608,8 +620,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 <viewLayoutGuide key="frameLayoutGuide" id="GaB-zY-DGc"/>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="mLY-rB-cfG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zgc-jT-jHA" firstAttribute="leading" secondItem="mLY-rB-cfG" secondAttribute="leading" constant="94" id="57f-C0-Dp1"/>
                             <constraint firstItem="mLY-rB-cfG" firstAttribute="trailing" secondItem="XIk-xz-IMA" secondAttribute="trailing" constant="20" id="5ec-an-Hrl"/>
@@ -621,6 +632,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                             <constraint firstItem="mLY-rB-cfG" firstAttribute="trailing" secondItem="zgc-jT-jHA" secondAttribute="trailing" constant="94" id="ijh-45-GIn"/>
                             <constraint firstItem="mLY-rB-cfG" firstAttribute="bottom" secondItem="XIk-xz-IMA" secondAttribute="bottom" constant="20" id="lJj-4N-qq5"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="mLY-rB-cfG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Presentation" id="44U-DH-gTt">
                         <barButtonItem key="backBarButtonItem" title="Back" id="sy6-N6-jlU"/>
@@ -664,7 +676,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-7Z-Ftc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="158"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="158" id="SAq-WB-eGz"/>
                                     <constraint firstAttribute="height" constant="158" id="vEy-Ni-eye"/>
@@ -673,16 +685,16 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atualizar Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZW-Lk-jL1">
                                 <rect key="frame" x="20" y="90" width="180" height="33"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vamos atualizar a sua conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d73-Kp-KM1">
                                 <rect key="frame" x="20" y="149" width="246" height="26"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp5-C5-Yn7" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp5-C5-Yn7" customClass="PrimaryButtonStyle" customModule="Parken" customModuleProvider="target">
                                 <rect key="frame" x="20" y="803" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Verificar Conta"/>
@@ -691,12 +703,12 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DF-JK-8p0" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="295" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="295" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="systemPurpleColor"/>
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -704,12 +716,12 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxi-fJ-Kh9" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
-                                <rect key="frame" x="20" y="340.5" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="339" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" systemColor="systemPurpleColor"/>
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -723,8 +735,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="iTG-Sb-iwh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iTG-Sb-iwh" firstAttribute="trailing" secondItem="lp5-C5-Yn7" secondAttribute="trailing" constant="20" id="5SE-aE-SKk"/>
                             <constraint firstItem="SmZ-w2-ZdI" firstAttribute="top" secondItem="DD6-7Z-Ftc" secondAttribute="bottom" constant="20" id="75u-SB-36N"/>
@@ -746,6 +757,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                             <constraint firstItem="DD6-7Z-Ftc" firstAttribute="top" secondItem="iTG-Sb-iwh" secondAttribute="top" id="uoJ-H9-Hg0"/>
                             <constraint firstItem="SmZ-w2-ZdI" firstAttribute="leading" secondItem="iTG-Sb-iwh" secondAttribute="leading" constant="20" id="vhe-kf-UqS"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="iTG-Sb-iwh"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nzd-OE-YXo"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -760,18 +772,12 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
             <point key="canvasLocation" x="3953.6231884057975" y="328.79464285714283"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="fWN-Ll-ZtF"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="divider 1" width="349" height="18"/>
         <image name="icon" width="191" height="157"/>
         <image name="splashscreen" width="213.5" height="320.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fWN-Ll-ZtF"/>
+    </inferredMetricsTieBreakers>
 </document>
