@@ -18,6 +18,9 @@
 		0F5F5D4A251C3D49003B2998 /* VagasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */; };
 		0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3DF252A313C00327E62 /* Chat.storyboard */; };
 		0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3E1252A455D00327E62 /* Request.storyboard */; };
+		0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE90CCC252D60E2002E240B /* Plano.storyboard */; };
+		0FE90CD0252D61B3002E240B /* PlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE90CCF252D61B3002E240B /* PlanoViewController.swift */; };
+		0FE90CD2252D6477002E240B /* CheckoutPlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */; };
 		4D19732425166BBB001B4E07 /* FavoriteAddressTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D19732325166BBB001B4E07 /* FavoriteAddressTableView.swift */; };
 		4D47D53324A93A69006E24EA /* Pods_Parken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924520FD2771C4A688895DF /* Pods_Parken.framework */; };
 		4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D23248C697400574595 /* AppDelegate.swift */; };
@@ -93,6 +96,9 @@
 		0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VagasTableViewController.swift; sourceTree = "<group>"; };
 		0F60B3DF252A313C00327E62 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0F60B3E1252A455D00327E62 /* Request.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
+		0FE90CCC252D60E2002E240B /* Plano.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plano.storyboard; sourceTree = "<group>"; };
+		0FE90CCF252D61B3002E240B /* PlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanoViewController.swift; sourceTree = "<group>"; };
+		0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPlanoViewController.swift; sourceTree = "<group>"; };
 		11917EBFC7FA23AE2651727F /* Pods-Parken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parken.release.xcconfig"; path = "Target Support Files/Pods-Parken/Pods-Parken.release.xcconfig"; sourceTree = "<group>"; };
 		2538C39AFA3B87A1302FEE0F /* Pods-Parken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parken.debug.xcconfig"; path = "Target Support Files/Pods-Parken/Pods-Parken.debug.xcconfig"; sourceTree = "<group>"; };
 		2924520FD2771C4A688895DF /* Pods_Parken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +210,15 @@
 			path = Garage;
 			sourceTree = "<group>";
 		};
+		0FE90CCE252D6197002E240B /* PlanoMensal */ = {
+			isa = PBXGroup;
+			children = (
+				0FE90CCF252D61B3002E240B /* PlanoViewController.swift */,
+				0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */,
+			);
+			path = PlanoMensal;
+			sourceTree = "<group>";
+		};
 		4D4D2D17248C697400574595 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +263,7 @@
 				4DCEB6B124F5D4B7001B5BBE /* Bridging.h */,
 				4DCEB6A524F5D3BC001B5BBE /* TestFairySDK-1 */,
 				4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */,
+				0FE90CCC252D60E2002E240B /* Plano.storyboard */,
 			);
 			path = Parken;
 			sourceTree = "<group>";
@@ -275,6 +291,7 @@
 		4D4D2D3C248C6AC500574595 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0FE90CCE252D6197002E240B /* PlanoMensal */,
 				0F593D39252C024C00083F54 /* Requisicoes */,
 				0F593D38252C021800083F54 /* Pagamento */,
 				0F593D33252C015100083F54 /* Chat */,
@@ -498,6 +515,7 @@
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
 				C68ECBB7252D496C00570FF6 /* GoogleService-Info.plist in Resources */,
 				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
+				0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */,
 				0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +572,7 @@
 				4D534AAA24AD76C800782651 /* PhoneNumberCustomButton.swift in Sources */,
 				4D4D2D4C248C7A1A00574595 /* SignInViewController.swift in Sources */,
 				4D19732425166BBB001B4E07 /* FavoriteAddressTableView.swift in Sources */,
+				0FE90CD0252D61B3002E240B /* PlanoViewController.swift in Sources */,
 				0F593D3B252C026B00083F54 /* RequestViewController.swift in Sources */,
 				4D527F4D24DB96D90088AC7A /* ParkingLocateTableViewCell.swift in Sources */,
 				4D4D2D49248C74CE00574595 /* PresentationViewController.swift in Sources */,
@@ -583,6 +602,7 @@
 				4D4D2D45248C6C2D00574595 /* AccessViewController.swift in Sources */,
 				4D65CC3924DCD9060002CA86 /* ParkingLocateTableView.swift in Sources */,
 				4D7D39BE251AD54000024F5A /* FavoriteAddressTableViewCell.swift in Sources */,
+				0FE90CD2252D6477002E240B /* CheckoutPlanoViewController.swift in Sources */,
 				4D5ECD7724CF9C4500392D11 /* PrimaryNavButtonStyle.swift in Sources */,
 				728A89362526244700C69089 /* PagamentoViewController.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,

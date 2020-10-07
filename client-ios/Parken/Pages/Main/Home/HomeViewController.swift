@@ -399,7 +399,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     }
                     
                     // If error is nil, it is guaranteed that the items will not be nil.
-                    print("AutoSuggest: Found \(items!.count) result(s).")
+                    print("AutoSuggest: Encontrado \(items!.count) resultado(s).")
                     
                     self.suggestAddressList = items!
                     self.suggestAddressTable.reloadData()
@@ -540,7 +540,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 }
                 
                 // If error is nil, it is guaranteed that the place list will not be empty.
-                print("AddressByCoordinates: Found \(item!.count) result(s).")
+                print("AddressByCoordinates: Encontrado \(item!.count) resultado(s).")
         
                 let addressText = item!.first!.title
                 let distance = item!.first!.distanceInMeters!
@@ -652,9 +652,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     @IBAction func requestParkClick(_ sender: Any) {
         // TODO: call backend
-        print("requested park choosed")
-        
-        showDialog(title: "Pedido enviado", message: "Em breve o proprietàrio entrarà em contato")
+        print("Vaga requisitada")
         
         goToStep(step: 1)
     }
@@ -681,14 +679,21 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         mapView.handleLowMemory()
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "requestSegue" {
+            let bugado = segue.destination as! RequestViewController
+            let vagaSelecionada:NSManagedObject = vagas[parkingLocateTable.indexPathForSelectedRow!.item]
+            bugado.vaga = vagaSelecionada
+        }
+        
      }
-     */
+     
     
 }

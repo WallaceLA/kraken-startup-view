@@ -91,12 +91,14 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
                 altura: self.txtAltura.text!,
                 latitude: location.coordinate.latitude,
                 longitude: location.coordinate.longitude,
-                reservado: "false")
+                reservado: "false",
+                frequencia: freq)
             
              self.navigationController?.popViewController(animated: true)
         }
         /*
-        
+        TODO validar campos
+         
         txtNome.resignFirstResponder()
         txtTelefone.resignFirstResponder()
         txtEmail.resignFirstResponder()
@@ -133,7 +135,8 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         altura: String,
         latitude: Double,
         longitude: Double,
-        reservado:String) {
+        reservado:String,
+        frequencia:Dictionary<String,Any>) {
         guard let appDelegate  = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedContext = appDelegate.persistentContainer.viewContext
