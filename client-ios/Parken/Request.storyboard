@@ -99,6 +99,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-Xc-nBJ">
                                 <rect key="frame" x="20" y="505" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="definirHora:" destination="pJX-pL-BOv" eventType="valueChanged" id="aJg-GA-M1Q"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ow-7y-zrd">
                                 <rect key="frame" x="125" y="507" width="44" height="30"/>
@@ -114,11 +117,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$ 0,00" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-lC-ZwX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$ 0,00 por Hora" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-lC-ZwX">
                                 <rect key="frame" x="20" y="612" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-If-ttT">
@@ -130,14 +133,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgA-dG-Zjp">
-                                <rect key="frame" x="20" y="678" width="374" height="47"/>
+                                <rect key="frame" x="20" y="746" width="374" height="47"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Prosseguir para Pagamento"/>
-                                <connections>
-                                    <segue destination="9aD-7z-Dbb" kind="show" id="bGh-OI-2yt"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total: R$ 0,00" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeX-Qm-llx">
+                                <rect key="frame" x="20" y="650" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="SEf-7O-g0K"/>
@@ -150,6 +157,7 @@
                         <outlet property="lblHoras" destination="2ow-7y-zrd" id="Vqj-Fy-UPi"/>
                         <outlet property="lblTamanho" destination="nTR-0N-Jkr" id="Lks-F8-YpX"/>
                         <outlet property="lblTitulo" destination="X4N-6R-hQF" id="uuq-eD-isf"/>
+                        <outlet property="lblTotal" destination="FeX-Qm-llx" id="1fB-DW-wf7"/>
                         <outlet property="lglDescricao" destination="2Zc-DQ-1oi" id="wXq-1u-Zg8"/>
                         <outlet property="stepHoras" destination="Yu4-Xc-nBJ" id="DfC-qP-0Gt"/>
                     </connections>
@@ -157,16 +165,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoX-Jo-JOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="-24.107142857142858"/>
-        </scene>
-        <!--Pagamento-->
-        <scene sceneID="NIS-B6-Piv">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Pagamento" id="9aD-7z-Dbb" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="AFt-tX-q9l"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="obH-4s-Hsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="884" y="-24"/>
         </scene>
     </scenes>
 </document>
