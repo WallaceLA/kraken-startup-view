@@ -47,6 +47,12 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         geoCoder = CLGeocoder()
+        
+        txtCep.keyboardType = .numberPad
+        txtNumero.keyboardType = .numberPad
+        txtLargura.keyboardType = .numberPad
+        txtComprimento.keyboardType = .numberPad
+        txtAltura.keyboardType = .numberPad
         /*
          txtNome.delegate = self
          txtEmail.delegate = self

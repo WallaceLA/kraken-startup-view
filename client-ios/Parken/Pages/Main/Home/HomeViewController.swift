@@ -513,12 +513,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     print("Data: \(utf8Text)") // original server data as UTF8 string
                 }
         }
-        
+        /*
         for _ in 1...Int.random(in: 2...3) {
             let randomCoordinates = getRandomGeoCoordinatesInViewport()
             
             addParkingFound(geoCoordinates: randomCoordinates)
-        }
+        }*/
  
         for vaga in vagas {
             let latitude = vaga.value(forKeyPath: "latitude") as! Double

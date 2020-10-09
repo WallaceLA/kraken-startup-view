@@ -3,7 +3,7 @@
 //  Parken
 //
 //  Created by Wallace Aguiar on 05/10/20.
-//  Copyright © 2020 Julio Avila. All rights reserved.
+//  Copyright © 2020 Parken. All rights reserved.
 //
 
 import UIKit
@@ -27,7 +27,7 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var lblCusto: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
     
-    var vaga : NSManagedObject? = nil
+    public var vaga : NSManagedObject?
 
     var valorHora:Double = 0.0
     var qtdHora:Double = 1.0
@@ -37,7 +37,9 @@ class RequestViewController: UIViewController {
         super.viewDidLoad()
                 
         if (vaga != nil){
+            
             lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
+            lglDescricao.text = vaga?.value(forKeyPath: "descricao") as? String ?? "Descricao"
                         
             let rua = vaga?.value(forKeyPath: "rua") as? String ?? "Rua"
             let num = vaga?.value(forKeyPath: "numero") as? String ?? "N/D"
@@ -57,6 +59,8 @@ class RequestViewController: UIViewController {
             valorHora = vaga?.value(forKeyPath: "valor") as? Double ?? 1.0
             
             lblCusto.text = "R$ \(valorHora) por Hora"
+        } else {
+            lblTitulo.text = "VAGA NULA"
         }
         
         //qtdHora = Double(lblHoras.text ?? "1")!
