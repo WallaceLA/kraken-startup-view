@@ -27,7 +27,7 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var lblCusto: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
     
-    public var vaga : NSManagedObject?
+    var vaga : NSManagedObject?
 
     var valorHora:Double = 0.0
     var qtdHora:Double = 1.0
