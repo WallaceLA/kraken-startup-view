@@ -65,6 +65,7 @@
 		4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */; };
 		4DCEB6B524F5E627001B5BBE /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6B424F5E627001B5BBE /* libTestFairy.a */; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
+		723CB99C253244600008682F /* CheckoutVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CB99B253244600008682F /* CheckoutVagaViewController.swift */; };
 		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
 		7282FA1F2527A13C0055D62B /* PagamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */; };
 		728A89362526244700C69089 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A89352526244700C69089 /* PagamentoViewController.swift */; };
@@ -147,6 +148,7 @@
 		4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLog.swift; sourceTree = "<group>"; };
 		4DCEB6B424F5E627001B5BBE /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFairy.a; path = "../Parken/TestFairySDK-1/libTestFairy.a"; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
+		723CB99B253244600008682F /* CheckoutVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVagaViewController.swift; sourceTree = "<group>"; };
 		7264487D25256870008A8AF6 /* Pagamento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pagamento.storyboard; sourceTree = "<group>"; };
 		7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoTableViewController.swift; sourceTree = "<group>"; };
 		728A89352526244700C69089 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0F593D3A252C026B00083F54 /* RequestViewController.swift */,
+				723CB99B253244600008682F /* CheckoutVagaViewController.swift */,
 			);
 			path = Requisicoes;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				728A89362526244700C69089 /* PagamentoViewController.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,
 				4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */,
+				723CB99C253244600008682F /* CheckoutVagaViewController.swift in Sources */,
 				0F593D37252C01C300083F54 /* ChatViewController.swift in Sources */,
 				4D4FE9E1248D9C8600CA9D1C /* PrimaryButtonStyle.swift in Sources */,
 			);
