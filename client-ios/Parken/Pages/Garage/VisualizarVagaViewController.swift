@@ -19,6 +19,7 @@ class VisualizarVagaViewController: UIViewController {
     @IBOutlet weak var lblEndereco: UILabel!
     @IBOutlet weak var lblCidade: UILabel!
     @IBOutlet weak var lblTamanho: UILabel!
+    @IBOutlet weak var lblCusto: UILabel!
     
     @IBOutlet weak var buttonFrequencia: UIButton!
     
@@ -65,6 +66,9 @@ class VisualizarVagaViewController: UIViewController {
                     dias += " \(dia.prefix(3)),"
                 }
             }
+            
+            let custo = "R$ \(vaga?.value(forKeyPath: "valor") ?? "12,00")"
+            lblCusto.text = custo
             
             dias = String(dias.dropLast(1))
             

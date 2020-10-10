@@ -79,7 +79,7 @@ class RequestViewController: UIViewController {
         lblHoras.text = "\(qtdHora)"
         
         valorTotal = valorHora * qtdHora
-        lblTotal.text = "Total: R$ \(valorTotal)"
+        lblTotal.text = "Total: R$ \(String(format: "%.2f", ceil(valorTotal * 100)/100))"
     }
     
     
