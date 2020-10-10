@@ -18,6 +18,7 @@
 		0F5F5D4A251C3D49003B2998 /* VagasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */; };
 		0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3DF252A313C00327E62 /* Chat.storyboard */; };
 		0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3E1252A455D00327E62 /* Request.storyboard */; };
+		0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */; };
 		0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE90CCC252D60E2002E240B /* Plano.storyboard */; };
 		0FE90CD0252D61B3002E240B /* PlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE90CCF252D61B3002E240B /* PlanoViewController.swift */; };
 		0FE90CD2252D6477002E240B /* CheckoutPlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */; };
@@ -64,10 +65,10 @@
 		4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */; };
 		4DCEB6B524F5E627001B5BBE /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCEB6B424F5E627001B5BBE /* libTestFairy.a */; };
 		4DEDBC2B24CE20FC003A36F1 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */; };
+		723CB99C253244600008682F /* CheckoutVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CB99B253244600008682F /* CheckoutVagaViewController.swift */; };
 		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
 		7282FA1F2527A13C0055D62B /* PagamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */; };
 		728A89362526244700C69089 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A89352526244700C69089 /* PagamentoViewController.swift */; };
-		C68ECBB7252D496C00570FF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C68ECBB6252D496B00570FF6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,6 +97,7 @@
 		0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VagasTableViewController.swift; sourceTree = "<group>"; };
 		0F60B3DF252A313C00327E62 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0F60B3E1252A455D00327E62 /* Request.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
+		0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FE90CCC252D60E2002E240B /* Plano.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plano.storyboard; sourceTree = "<group>"; };
 		0FE90CCF252D61B3002E240B /* PlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanoViewController.swift; sourceTree = "<group>"; };
 		0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPlanoViewController.swift; sourceTree = "<group>"; };
@@ -146,11 +148,11 @@
 		4DCEB6B224F5D7D5001B5BBE /* NSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLog.swift; sourceTree = "<group>"; };
 		4DCEB6B424F5E627001B5BBE /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFairy.a; path = "../Parken/TestFairySDK-1/libTestFairy.a"; sourceTree = "<group>"; };
 		4DEDBC2A24CE20FC003A36F1 /* CustomNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
+		723CB99B253244600008682F /* CheckoutVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVagaViewController.swift; sourceTree = "<group>"; };
 		7264487D25256870008A8AF6 /* Pagamento.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pagamento.storyboard; sourceTree = "<group>"; };
 		7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoTableViewController.swift; sourceTree = "<group>"; };
 		728A89352526244700C69089 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
 		C68ECBB5252AAAF600570FF6 /* Parken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Parken.entitlements; sourceTree = "<group>"; };
-		C68ECBB6252D496B00570FF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0F593D3A252C026B00083F54 /* RequestViewController.swift */,
+				723CB99B253244600008682F /* CheckoutVagaViewController.swift */,
 			);
 			path = Requisicoes;
 			sourceTree = "<group>";
@@ -240,7 +243,7 @@
 		4D4D2D22248C697400574595 /* Parken */ = {
 			isa = PBXGroup;
 			children = (
-				C68ECBB6252D496B00570FF6 /* GoogleService-Info.plist */,
+				0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */,
 				C68ECBB5252AAAF600570FF6 /* Parken.entitlements */,
 				4D4D2D3E248C6B1300574595 /* Helpers */,
 				4D4D2D3D248C6AD400574595 /* Services */,
@@ -475,7 +478,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = "Julio Avila";
+				ORGANIZATIONNAME = Parken;
 				TargetAttributes = {
 					4D4D2D1F248C697400574595 = {
 						CreatedOnToolsVersion = 11.5;
@@ -510,10 +513,10 @@
 				4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */,
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
 				7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */,
+				0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */,
 				0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */,
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
-				C68ECBB7252D496C00570FF6 /* GoogleService-Info.plist in Resources */,
 				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
 				0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */,
 				0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */,
@@ -607,6 +610,7 @@
 				728A89362526244700C69089 /* PagamentoViewController.swift in Sources */,
 				4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */,
 				4D5667A224D3AF18008EF702 /* HereSdkController.swift in Sources */,
+				723CB99C253244600008682F /* CheckoutVagaViewController.swift in Sources */,
 				0F593D37252C01C300083F54 /* ChatViewController.swift in Sources */,
 				4D4FE9E1248D9C8600CA9D1C /* PrimaryButtonStyle.swift in Sources */,
 			);

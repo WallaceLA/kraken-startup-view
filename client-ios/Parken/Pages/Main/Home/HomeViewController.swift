@@ -6,6 +6,9 @@ import heresdk
 import Alamofire
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
+    //var myIndex:Int=0
+    
     @IBOutlet weak var dealPopup: UIView!
     @IBOutlet weak var dealPopupSafeTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dealPopupHeightConstraint: NSLayoutConstraint!
@@ -68,7 +71,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // third step
     private var parkChoosed: ParkingLocateModel?
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +99,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         requestGPSAuthorization()
         mapController = HereSdkController(mapView: mapView!)
         mapView.mapScene.loadScene(mapStyle: .normalDay, callback: onLoadMap)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -513,24 +517,36 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     print("Data: \(utf8Text)") // original server data as UTF8 string
                 }
         }
-        
+        /*
         for _ in 1...Int.random(in: 2...3) {
             let randomCoordinates = getRandomGeoCoordinatesInViewport()
             
             addParkingFound(geoCoordinates: randomCoordinates)
-        }
+        }*/
  
         for vaga in vagas {
             let latitude = vaga.value(forKeyPath: "latitude") as! Double
             let longitude = vaga.value(forKeyPath: "longitude") as! Double
+            let rua = vaga.value(forKeyPath: "rua") as? String ?? "Rua"
+            let numero = vaga.value(forKeyPath: "numero") as? String ?? "Numero"
+            let bairro = vaga.value(forKeyPath: "bairro") as? String ?? "Bairro"
+            let valor = vaga.value(forKeyPath: "valor") as? Double ?? 12.22
+            let endereco = "\(rua), \(numero), \(bairro)"
+            let titulo = vaga.value(forKeyPath: "titulo") as? String ?? "Titulo"
+            let descricao = vaga.value(forKeyPath: "descricao") as? String ?? "Descricao"
             
             let addressLocate = GeoCoordinates(latitude: latitude, longitude: longitude)
             
-            addParkingFound(geoCoordinates: addressLocate)
+            addParkingFound(geoCoordinates: addressLocate, endereco: endereco, valor: valor, titulo: titulo, descricao: descricao)
+            
         }
+        //self.parkingLocateTable.reloadData()
     }
-    
-    private func addParkingFound(geoCoordinates: GeoCoordinates) {
+
+    /*MARK:---------------------------------LISTAGEM DE VAGAS - REQUISICAO---------------------------------*/
+                    
+     
+    private func addParkingFound(geoCoordinates: GeoCoordinates, endereco: String, valor: Double, titulo: String, descricao: String) {
         mapController.getAddressByCoordinates(
             geoCoordinates: geoCoordinates,
             action: { (error: SearchError?, item: [Place]?) -> () in
@@ -541,23 +557,27 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                 
                 // If error is nil, it is guaranteed that the place list will not be empty.
                 print("AddressByCoordinates: Encontrado \(item!.count) resultado(s).")
-        
-                let addressText = item!.first!.title
+
+                //let addressText = item!.first!.title
                 let distance = item!.first!.distanceInMeters!
-                
+
                 let parkingModel = ParkingLocateModel(
-                    addressText,
-                    "\(distance * 10) M",
-                    "R$ \(Int.random(in: 0..<50)),\(Int.random(in: 1..<10))0",
-                    "\(Int.random(in: 10..<100)) Avaliações",
+                    endereco,
+                    //"\(distance * 10) M",
+                    "\(distance) M",
+                    "R$ \(valor)",
+                    "",
                     self.mapController.createPointMarker(geoCoordinates: geoCoordinates, imageName: "parking_icon"),
-                    "")
+                    descricao,
+                    titulo)
                 
                 self.parkingLocateList.append(parkingModel)
                 self.parkingLocateTable.reloadData()
+                //self.parkingLocateTable.reloadRows(at: , with: UITableView.RowAnimation)
                 
                 self.mapController.addMarkerList(markerList: self.parkingLocateList.map { $0.Localization } )
-        })
+                })
+        
     }
     
     @IBAction func toggleFavoriteAddressSelectedClick(_ sender: Any) {
@@ -606,6 +626,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         parkingCell.DistanceLabel?.text = parking.Distance
         parkingCell.AmmountLabel?.text = parking.Ammount
         parkingCell.RatesLabel?.text = parking.Rates
+    
+        //myIndex = indexPath.row
         
         return parkingCell
     }
@@ -643,7 +665,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         distanceParkChoosedLabel?.text = park.Distance
         ammountParkChoosedLabel?.text = park.Ammount
         ratesParkChoosedLabel?.text = park.Rates
-        //descriptionParkChoosedLabal?.text = park.Description
+        descriptionParkChoosedLabal?.text = park.Description
     }
     
     @IBAction func backToSecondStepClick(_ sender: Any) {
@@ -689,8 +711,23 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
         if segue.identifier == "requestSegue" {
             let bugado = segue.destination as! RequestViewController
-            let vagaSelecionada:NSManagedObject = vagas[parkingLocateTable.indexPathForSelectedRow!.item]
-            bugado.vaga = vagaSelecionada
+            let vagaSelecionada = parkingLocateList[parkingLocateTable.indexPathForSelectedRow!.item]
+            let titulo = vagaSelecionada.Title
+            
+            var vagaFinal:NSManagedObject?
+            
+            for vaga in vagas{
+                
+                var tituloVaga = vaga.value(forKeyPath: "titulo") as? String ??  "Titulo"
+                vagaFinal = vaga
+                if titulo == tituloVaga{
+                    break
+                }
+                
+            }
+            
+            //let vagaSelecionada:NSManagedObject = vagas[myIndex]
+            bugado.vaga = vagaFinal
         }
         
      }
