@@ -142,6 +142,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="S5A-MV-TzW" id="0t4-Gh-2eu"/>
+                        <outlet property="instBtn" destination="PfN-20-amc" id="YxW-Ax-jMb"/>
                         <outlet property="passwordTextField" destination="4JP-rI-6yN" id="XcT-dJ-TWB"/>
                         <outlet property="signInButton" destination="m9T-t8-toi" id="aoa-gm-aaP"/>
                         <segue destination="0X2-DT-xlh" kind="show" identifier="AccessToSignInSegue" id="meV-gn-ys3"/>
@@ -186,6 +187,7 @@
                                 <connections>
                                     <action selector="acessarClick:" destination="0X2-DT-xlh" eventType="touchUpInside" id="Sna-N6-MY6"/>
                                     <action selector="registerClick:" destination="z7k-8B-eGx" eventType="touchUpInside" id="MRL-kW-nup"/>
+                                    <segue destination="3Ci-bP-aLz" kind="show" identifier="RegisterToWelcomeSegue" id="IJf-Y3-cfy"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primeiro Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-h1-gor" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
@@ -248,6 +250,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-VF-yBW" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                                <rect key="frame" x="20" y="400" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -266,7 +281,9 @@
                             <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="WUU-oP-WDS" secondAttribute="trailing" constant="20" id="LzU-xh-z7w"/>
                             <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="zhm-LS-zYM" secondAttribute="trailing" constant="20" id="Q3b-Ud-UYs"/>
                             <constraint firstItem="gqT-h1-gor" firstAttribute="top" secondItem="G7b-iC-Smt" secondAttribute="bottom" constant="20" id="XQW-JQ-zp6"/>
+                            <constraint firstItem="vU8-VF-yBW" firstAttribute="trailing" secondItem="3Jm-fo-nDe" secondAttribute="trailing" id="bdB-JJ-1XN"/>
                             <constraint firstItem="n45-hR-eA8" firstAttribute="top" secondItem="gqT-h1-gor" secondAttribute="bottom" constant="20" id="dWl-TY-sV4"/>
+                            <constraint firstItem="vU8-VF-yBW" firstAttribute="top" secondItem="3Jm-fo-nDe" secondAttribute="bottom" constant="22" id="djf-EU-kV5"/>
                             <constraint firstItem="JYQ-WF-tTF" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="dkQ-QF-32F"/>
                             <constraint firstItem="7hh-ud-sE9" firstAttribute="top" secondItem="isZ-yt-4gS" secondAttribute="top" constant="46" id="htE-nv-RkL"/>
                             <constraint firstItem="isZ-yt-4gS" firstAttribute="trailing" secondItem="gqT-h1-gor" secondAttribute="trailing" constant="20" id="jvj-EQ-9iz"/>
@@ -275,6 +292,7 @@
                             <constraint firstItem="WUU-oP-WDS" firstAttribute="top" secondItem="n45-hR-eA8" secondAttribute="bottom" constant="20" id="pMx-9s-M3W"/>
                             <constraint firstItem="RpV-Xr-oWF" firstAttribute="top" secondItem="7hh-ud-sE9" secondAttribute="bottom" constant="26" id="wIR-M7-fwe"/>
                             <constraint firstItem="7hh-ud-sE9" firstAttribute="leading" secondItem="isZ-yt-4gS" secondAttribute="leading" constant="20" id="wXq-3G-g0N"/>
+                            <constraint firstItem="vU8-VF-yBW" firstAttribute="leading" secondItem="3Jm-fo-nDe" secondAttribute="leading" id="xUx-oI-Ltk"/>
                             <constraint firstItem="3Jm-fo-nDe" firstAttribute="top" secondItem="WUU-oP-WDS" secondAttribute="bottom" constant="20" id="yjK-A4-UX7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="isZ-yt-4gS"/>
@@ -286,6 +304,7 @@
                         <outlet property="emailField" destination="3Jm-fo-nDe" id="UpI-wn-mHa"/>
                         <outlet property="firstNameField" destination="gqT-h1-gor" id="mYT-VA-brS"/>
                         <outlet property="lastNameField" destination="n45-hR-eA8" id="uMT-5c-i3A"/>
+                        <outlet property="passwordField" destination="vU8-VF-yBW" id="4lR-gz-LgI"/>
                         <segue destination="8Oi-bW-grw" kind="show" identifier="RegisterToMain" id="HQi-1L-Wif"/>
                         <segue destination="dYI-hp-ws8" kind="show" identifier="RegisterToChangePhoneSegue" id="c3R-Rt-Amw"/>
                     </connections>
@@ -336,8 +355,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+55 91111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xll-SR-wgJ">
-                                <rect key="frame" x="200.5" y="811" width="150" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+55 91111-1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xll-SR-wgJ">
+                                <rect key="frame" x="201" y="811" width="194" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="O2g-vI-mV7"/>
                                 </constraints>
@@ -404,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndL-dd-IjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="-408"/>
+            <point key="canvasLocation" x="2173.913043478261" y="-408.48214285714283"/>
         </scene>
         <!--Main-->
         <scene sceneID="7aF-yA-IKd">
@@ -778,6 +797,8 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
         <image name="splashscreen" width="213.5" height="320.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="6Xm-v5-3hD"/>
         <segue reference="fWN-Ll-ZtF"/>
+        <segue reference="IJf-Y3-cfy"/>
     </inferredMetricsTieBreakers>
 </document>

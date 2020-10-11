@@ -10,15 +10,16 @@ class SignInViewController: UIViewController {
     
     var phoneNumber = ""
     private var retryCodeTime = 60
-    var tempo:Timer?
+    var tempo:Timer!
     var timeLeft = 60
         
-        @objc func onTimerFires(){
-            timeLeft -= 1
-            
-            if timeLeft <= 0{
-                tempo?.invalidate()
-                tempo = nil
+    @objc func onTimerFires(){
+        
+            if timeLeft != 0{
+                retryTimeLabel.text = "\(timeLeft)"
+                timeLeft -= 1
+            } else {
+                tempo.invalidate()
             }
         }
 
@@ -32,7 +33,7 @@ class SignInViewController: UIViewController {
         codeSecurityField.textColorFocused = UIColor.brown
         codeSecurityField.refreshUI()
         
-        tempo = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        self.tempo = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
         
         phoneNumberLabel.text = phoneNumber
         retryTimeLabel.text = String("\(timeLeft)")
@@ -42,14 +43,8 @@ class SignInViewController: UIViewController {
         if true {
             performSegue(withIdentifier: "SignInToMainSegue", sender: nil)
         } else {
-            // TODO: Nao tem conta
-            performSegue(withIdentifier: "SignToRegisterSegue", sender: nil)
+           
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let registerView = segue.destination as? RegisterViewController {
-            registerView.phoneNumber = phoneNumber
-        }
-    }
+
 }

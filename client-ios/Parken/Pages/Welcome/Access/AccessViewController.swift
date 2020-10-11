@@ -4,9 +4,12 @@ import FirebaseAuth
 
 class AccessViewController: UIViewController {
     
+    @IBOutlet weak var instBtn: SecondButtonStyle!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    
+    var emailTxt = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,8 @@ class AccessViewController: UIViewController {
         passwordTextField.placeholder = "Insira a sua senha..."
         passwordTextField.isSecureTextEntry = true
         
+        emailTextField.text = emailTxt
+        
     }
     
     @IBAction func signInClick(_ sender: Any) {
@@ -25,9 +30,14 @@ class AccessViewController: UIViewController {
             let password = passwordTextField.text, !password.isEmpty else{
                 showEmptyDataAlert()
                 return
-        }
+            }
 
     }
+    
+    @IBAction func instBtnClick(_ sender: Any) {
+        
+            performSegue(withIdentifier: "SignInToPresentationSegue", sender: nil)
+        }
     
     func showEmptyDataAlert(){
         
@@ -97,6 +107,11 @@ class AccessViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let signInView = segue.destination as? SignInViewController {
             signInView.phoneNumber = emailTextField.text!
+        }
+        
+        if let signInView = segue.destination as? RegisterViewController {
+            signInView.emailAddress = emailTextField.text!
+            signInView.passwordTyped = passwordTextField.text!
         }
     }
     
