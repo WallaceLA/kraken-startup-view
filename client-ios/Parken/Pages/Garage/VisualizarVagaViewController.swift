@@ -28,7 +28,7 @@ class VisualizarVagaViewController: UIViewController {
         
         if (vaga != nil){
             
-            let reserva:String = vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
+            let reserva:String = "true" //vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
             if(reserva == "true"){
                 lblStatus.tintColor = UIColor.yellow
                 lblStatus.text = "Reservado"

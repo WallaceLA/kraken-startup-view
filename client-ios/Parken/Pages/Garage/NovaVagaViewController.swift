@@ -93,7 +93,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
                 altura: self.txtAltura.text!,
                 latitude: location.coordinate.latitude,
                 longitude: location.coordinate.longitude,
-                reservado: "false",
+                //reservado: "false",
                 frequencia: freq)
             
              self.navigationController?.popViewController(animated: true)
@@ -138,7 +138,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         altura: String,
         latitude: Double,
         longitude: Double,
-        reservado:String,
+        //reservado:String,
         frequencia:Dictionary<String,Any>) {
         guard let appDelegate  = UIApplication.shared.delegate as? AppDelegate else {return}
         
@@ -165,7 +165,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         vaga.setValue(latitude, forKeyPath: "latitude")
         vaga.setValue(longitude, forKeyPath: "longitude")
         
-        vaga.setValue(reservado, forKeyPath: "reservado")
+        //vaga.setValue(reservado, forKeyPath: "reservado")
         
         for (dia, status) in frequencia {
             print("\n\n\nPara o dia '\(dia)', o status é '\(status)'.\n")
