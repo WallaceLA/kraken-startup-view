@@ -534,10 +534,13 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             let endereco = "\(rua), \(numero), \(bairro)"
             let titulo = vaga.value(forKeyPath: "titulo") as? String ?? "Titulo"
             let descricao = vaga.value(forKeyPath: "descricao") as? String ?? "Descricao"
+            let cep = vaga.value(forKeyPath: "cep") as? String ?? "CEP"
             
             let addressLocate = GeoCoordinates(latitude: latitude, longitude: longitude)
             
-            addParkingFound(geoCoordinates: addressLocate, endereco: endereco, valor: valor, titulo: titulo, descricao: descricao)
+            let idVaga:String = "\(rua)-\(numero)-\(cep)-\(titulo)"
+            
+            addParkingFound(geoCoordinates: addressLocate, endereco: endereco, valor: valor, titulo: titulo, descricao: descricao, idVaga: idVaga)
             
         }
         //self.parkingLocateTable.reloadData()
@@ -546,7 +549,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     /*MARK:---------------------------------LISTAGEM DE VAGAS - REQUISICAO---------------------------------*/
                     
      
-    private func addParkingFound(geoCoordinates: GeoCoordinates, endereco: String, valor: Double, titulo: String, descricao: String) {
+    private func addParkingFound(geoCoordinates: GeoCoordinates, endereco: String, valor: Double, titulo: String, descricao: String, idVaga: String) {
         mapController.getAddressByCoordinates(
             geoCoordinates: geoCoordinates,
             action: { (error: SearchError?, item: [Place]?) -> () in
@@ -569,7 +572,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     "",
                     self.mapController.createPointMarker(geoCoordinates: geoCoordinates, imageName: "parking_icon"),
                     descricao,
-                    titulo)
+                    titulo,
+                    idVaga)
                 
                 self.parkingLocateList.append(parkingModel)
                 self.parkingLocateTable.reloadData()
@@ -712,15 +716,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         if segue.identifier == "requestSegue" {
             let bugado = segue.destination as! RequestViewController
             let vagaSelecionada = parkingLocateList[parkingLocateTable.indexPathForSelectedRow!.item]
-            let titulo = vagaSelecionada.Title
+            let id = vagaSelecionada.Id
             
             var vagaFinal:NSManagedObject?
             
             for vaga in vagas{
                 
-                var tituloVaga = vaga.value(forKeyPath: "titulo") as? String ??  "Titulo"
+                let idVaga = vaga.value(forKeyPath: "id") as? String ??  "Titulo"
                 vagaFinal = vaga
-                if titulo == tituloVaga{
+                if idVaga == id {
                     break
                 }
                 

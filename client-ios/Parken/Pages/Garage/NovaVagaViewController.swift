@@ -58,6 +58,8 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
+        let id:String = "\(txtRua.text!), \(txtNumero.text!), \(txtCep.text!), \(txtTitulo.text!)"
+        
         let preco:Double = Double(txtPreco.text!)!
         
         let freq:Dictionary = ["Segunda-feira":switchSegunda.isOn,
@@ -78,6 +80,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
             }
                         
             self.save(
+                id: id,
                 titulo: self.txtTitulo.text!,
                 descricao: self.txtDescricao.text!,
                 custo: preco,
@@ -123,6 +126,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }
     
     func save(
+        id: String,
         titulo: String,
         descricao: String,
         custo:Double,
@@ -146,6 +150,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         let entidade = NSEntityDescription.entity(forEntityName: "Vaga", in: managedContext)!
         let vaga = NSManagedObject(entity: entidade, insertInto: managedContext)
         
+        vaga.setValue(id, forKey: "id")
         vaga.setValue(titulo, forKeyPath: "titulo")
         vaga.setValue(descricao, forKeyPath: "descricao")
         vaga.setValue(custo, forKeyPath: "valor")

@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class ConfirmarVagaViewController: UIViewController {
 
+    @IBOutlet weak var lblTitulo: UILabel!
+    @IBOutlet weak var lblEndereco: UILabel!
     
+    @IBOutlet weak var lblDataHora: UILabel!
+    @IBOutlet weak var lblNome: UILabel!
+    @IBOutlet weak var lblVeiculo: UILabel!
+    @IBOutlet weak var lblPlaca: UILabel!
+    @IBOutlet weak var lblTempo: UILabel!
+    @IBOutlet weak var lblValorTotal: UILabel!
     
+    var requisicao : NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +29,13 @@ class ConfirmarVagaViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func actAprovar(_ sender: Any) {
+    }
+    
+    @IBAction func actRejeitar(_ sender: Any) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 

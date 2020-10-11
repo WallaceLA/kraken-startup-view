@@ -27,6 +27,12 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var lblCusto: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
     
+    @IBOutlet weak var lblMarca: UITextField!
+    @IBOutlet weak var lblModelo: UITextField!
+    @IBOutlet weak var lblPlaca: UITextField!
+    
+    @IBOutlet weak var campoData: UIDatePicker!
+    
     var vaga : NSManagedObject?
 
     var valorHora:Double = 0.0
@@ -59,6 +65,8 @@ class RequestViewController: UIViewController {
             valorHora = vaga?.value(forKeyPath: "valor") as? Double ?? 1.0
             
             lblCusto.text = "R$ \(valorHora) por Hora"
+
+            
         } else {
             lblTitulo.text = "VAGA NULA"
         }
@@ -82,6 +90,12 @@ class RequestViewController: UIViewController {
         lblTotal.text = "Total: R$ \(String(format: "%.2f", ceil(valorTotal * 100)/100))"
     }
     
+    @IBAction func actProsseguir(_ sender: Any) {
+         
+        
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -93,6 +107,11 @@ class RequestViewController: UIViewController {
         if segue.identifier == "segueVaga"{
             seguer.nomeVaga = lblTitulo.text!
             seguer.valorVaga = "\(String(format: "%.2f", ceil(valorTotal * 100)/100))"
+            seguer.placa = lblPlaca.text!
+            seguer.modelo = lblModelo.text!
+            seguer.marca = lblMarca.text!
+            seguer.dataHora = campoData.date
+            seguer.qtdHoras = qtdHora
             
         }
         /*

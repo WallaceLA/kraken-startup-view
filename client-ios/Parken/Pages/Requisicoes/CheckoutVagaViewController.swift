@@ -22,9 +22,16 @@ class CheckoutVagaViewController: UIViewController {
     @IBOutlet weak var buttonConfirmar: PrimaryButtonStyle!
     
     var cartoes : [NSManagedObject] = []
+    var requisicoes : NSManagedObject?
     
     var nomeVaga:String = "Titulo Vaga"
     var valorVaga:String = "R$ 00,00"
+    
+    var dataHora:Date?
+    var marca:String?
+    var modelo:String?
+    var placa:String?
+    var qtdHoras:Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +66,9 @@ class CheckoutVagaViewController: UIViewController {
     
     @IBAction func confirmar(_ sender: Any) {
         
+        
+        
+        
         let alerta = UIAlertController(
                                title: "Sucesso!" ,
                                message: "Pagamento confirmado.",
@@ -73,6 +83,31 @@ class CheckoutVagaViewController: UIViewController {
     }
         // Do any additional setup after loading the view.
     
+    func save(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+          
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entidade = NSEntityDescription.entity(forEntityName: "Requisicao", in: managedContext)!
+        let objUpdate = NSManagedObject(entity: entidade, insertInto: managedContext)
+        
+        let veiculo = "\(marca ?? "marca") \(modelo ?? "modelo")"
+        let solicitante = "Tiago"
+        let estado = "Pendente"
+        
+        //let objUpdate = requisicoes
+        objUpdate.setValue(dataHora, forKeyPath: "data")
+        objUpdate.setValue(placa, forKeyPath: "placa")
+        objUpdate.setValue(veiculo, forKeyPath: "veiculo")
+        objUpdate.setValue(solicitante, forKeyPath: "solicitante")
+        objUpdate.setValue(qtdHoras, forKeyPath: "qtdHoras")
+        objUpdate.setValue(estado, forKeyPath: "estado")
+
+        do{
+            try managedContext.save()
+        } catch let error as NSError{
+            print("nao foi possivel salvar \(error), \(error.userInfo)")
+        }
+    }
 
     /*
     // MARK: - Navigation
