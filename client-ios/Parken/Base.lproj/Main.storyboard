@@ -532,6 +532,15 @@
             </objects>
             <point key="canvasLocation" x="1394.2028985507247" y="113.83928571428571"/>
         </scene>
+        <!--Welcome-->
+        <scene sceneID="pyn-Mo-dUX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Welcome" id="rWN-2N-VdX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cqY-Xm-cSM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vqf-9E-LtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="1269"/
         <!--Request-->
         <scene sceneID="cIG-sl-IFZ">
             <objects>
@@ -550,7 +559,9 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7c-O8-IVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+
             <point key="canvasLocation" x="720" y="1029"/>
+
         </scene>
         <!--Custom Nav View Controller-->
         <scene sceneID="5uN-Kf-LvD">
@@ -575,7 +586,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Olá, XXXX!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-xn-MeX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Olá, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpj-xn-MeX">
                                         <rect key="frame" x="20" y="38" width="374" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -680,6 +691,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
                                 <state key="normal" title="Sair"/>
+                                <connections>
+                                    <segue destination="rWN-2N-VdX" kind="show" identifier="SairToWelcomeSegue" id="6TF-Cs-4lj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-lq-kri">
                                 <rect key="frame" x="0.0" y="319" width="414" height="57"/>
@@ -722,6 +736,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ypk-pt-oiM"/>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="dpj-xn-MeX" id="pc1-pe-7nJ"/>
+                        <outlet property="sairBtn" destination="a9V-3w-WgD" id="SBR-Nv-zeo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUX-oe-9xO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -804,4 +822,7 @@
         <image name="star" catalog="system" width="64" height="58"/>
         <image name="text.justify" catalog="system" width="64" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Png-NY-iNg"/>
+    </inferredMetricsTieBreakers>
 </document>
