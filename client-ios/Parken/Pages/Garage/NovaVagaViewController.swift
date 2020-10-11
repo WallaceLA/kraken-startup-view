@@ -14,15 +14,16 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtTitulo: UITextField!
     @IBOutlet weak var txtDescricao: UITextField!
+    @IBOutlet weak var txtPreco: UITextField!
     
     //Endereço
     @IBOutlet weak var txtCep: UITextField!
     @IBOutlet weak var txtRua: UITextField!
     @IBOutlet weak var txtNumero: UITextField!
+    @IBOutlet weak var txtComplemento: UITextField!
     @IBOutlet weak var txtBairro: UITextField!
     @IBOutlet weak var txtCidade: UITextField!
     @IBOutlet weak var txtUF: UITextField!
-    @IBOutlet weak var txtComplemento: UITextField!
     
     //Medidas
     @IBOutlet weak var txtLargura: UITextField!
@@ -47,25 +48,25 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         geoCoder = CLGeocoder()
-        /*
-         txtNome.delegate = self
-         txtEmail.delegate = self
-         txtTelefone.delegate = self
-         if (pessoas != nil){
-         txtNome.text = pessoas?.value(forKey: "nome")  as? String
-         txtTelefone.text = pessoas?.value(forKey: "telefone")  as? String
-         txtEmail.text = pessoas?.value(forKey: "email")  as? String
-         */
+        
+        txtCep.keyboardType = .numberPad
+        txtPreco.keyboardType = .decimalPad
+        txtNumero.keyboardType = .numberPad
+        txtLargura.keyboardType = .decimalPad
+        txtComprimento.keyboardType = .decimalPad
+        txtAltura.keyboardType = .decimalPad
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
-        /*var freq = ["Segunda-feira":true,
-                    "Terça-feira":false,
-                    "Quarta-feira":true,
-                    "Quinta-feira":false,
-                    "Sexta-feira":true,
-                    "Sábado":false,
-                    "Domingo":false]*/
+        let preco:Double = Double(txtPreco.text!)!
+        
+        let freq:Dictionary = ["Segunda-feira":switchSegunda.isOn,
+                    "Terça-feira":switchTerca.isOn,
+                    "Quarta-feira":switchQuarta.isOn,
+                    "Quinta-feira":switchQuinta.isOn,
+                    "Sexta-feira":switchSexta.isOn,
+                    "Sábado":switchSabado.isOn,
+                    "Domingo":switchDomingo.isOn]
         
         let endereco:String = "\(txtRua.text!), \(txtNumero.text!), \(txtBairro.text!), \(txtCidade.text!)"
         
@@ -79,6 +80,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
             self.save(
                 titulo: self.txtTitulo.text!,
                 descricao: self.txtDescricao.text!,
+                custo: preco,
                 cep: self.txtCep.text!,
                 rua: self.txtRua.text!,
                 numero: self.txtNumero.text!,
@@ -91,12 +93,14 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
                 altura: self.txtAltura.text!,
                 latitude: location.coordinate.latitude,
                 longitude: location.coordinate.longitude,
-                reservado: "false")
+                //reservado: "false",
+                frequencia: freq)
             
              self.navigationController?.popViewController(animated: true)
         }
         /*
-        
+        TODO validar campos
+         
         txtNome.resignFirstResponder()
         txtTelefone.resignFirstResponder()
         txtEmail.resignFirstResponder()
@@ -121,6 +125,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     func save(
         titulo: String,
         descricao: String,
+        custo:Double,
         cep: String,
         rua: String,
         numero: String,
@@ -133,7 +138,8 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         altura: String,
         latitude: Double,
         longitude: Double,
-        reservado:String) {
+        //reservado:String,
+        frequencia:Dictionary<String,Any>) {
         guard let appDelegate  = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -142,6 +148,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         
         vaga.setValue(titulo, forKeyPath: "titulo")
         vaga.setValue(descricao, forKeyPath: "descricao")
+        vaga.setValue(custo, forKeyPath: "valor")
         
         vaga.setValue(cep, forKeyPath: "cep")
         vaga.setValue(rua, forKeyPath: "rua")
@@ -158,7 +165,13 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         vaga.setValue(latitude, forKeyPath: "latitude")
         vaga.setValue(longitude, forKeyPath: "longitude")
         
-        vaga.setValue(reservado, forKeyPath: "reservado")
+        //vaga.setValue(reservado, forKeyPath: "reservado")
+        
+        for (dia, status) in frequencia {
+            print("\n\n\nPara o dia '\(dia)', o status é '\(status)'.\n")
+        }
+        
+        vaga.setValue(frequencia, forKey: "frequencia")
         
         do {
             try managedContext.save()

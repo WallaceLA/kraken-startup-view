@@ -19,6 +19,7 @@ class VisualizarVagaViewController: UIViewController {
     @IBOutlet weak var lblEndereco: UILabel!
     @IBOutlet weak var lblCidade: UILabel!
     @IBOutlet weak var lblTamanho: UILabel!
+    @IBOutlet weak var lblCusto: UILabel!
     
     @IBOutlet weak var buttonFrequencia: UIButton!
     
@@ -26,11 +27,14 @@ class VisualizarVagaViewController: UIViewController {
         super.viewDidLoad()
         
         if (vaga != nil){
-            lblStatus.text = vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
-            if(lblStatus.text == "true"){
-                lblStatus.tintColor = UIColor.green
+            
+            let reserva:String = "true" //vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
+            if(reserva == "true"){
+                lblStatus.tintColor = UIColor.yellow
+                lblStatus.text = "Reservado"
             } else {
-                lblStatus.tintColor = UIColor.red
+                lblStatus.tintColor = UIColor.green
+                lblStatus.text = "Livre"
             }
             
             lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
@@ -51,7 +55,24 @@ class VisualizarVagaViewController: UIViewController {
             let com = vaga?.value(forKeyPath: "comprimento") as? String ?? "0m"
             lblTamanho.text = "\(lar)m x \(com)m x \(alt)"
             
-            //buttonFrequencia.setTitle("TODO", for: .normal)
+            let freq = vaga?.value(forKeyPath: "frequencia") as? Dictionary<String, Any>
+            
+            var dias:String = ""
+            
+            for (dia, status) in freq! {
+                print("Dia \(dia) - Status: \(status)")
+                
+                if(status as? Int == 1){
+                    dias += " \(dia.prefix(3)),"
+                }
+            }
+            
+            let custo = "R$ \(vaga?.value(forKeyPath: "valor") ?? "12,00")"
+            lblCusto.text = custo
+            
+            dias = String(dias.dropLast(1))
+            
+            buttonFrequencia.setTitle(dias, for: .normal)
         }
 
         // Do any additional setup after loading the view.

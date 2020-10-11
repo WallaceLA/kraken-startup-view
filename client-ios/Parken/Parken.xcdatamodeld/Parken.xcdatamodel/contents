@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Cartao" representedClassName="Cartao" syncable="YES" codeGenerationType="class">
         <attribute name="cartaoCod" optional="YES" attributeType="String"/>
         <attribute name="cartaoData" optional="YES" attributeType="String"/>
         <attribute name="cartaoNome" optional="YES" attributeType="String"/>
         <attribute name="cartaoNum" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Requisicao" representedClassName="Requisicao" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="estado" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="placa" optional="YES" attributeType="String"/>
+        <attribute name="solicitante" optional="YES" attributeType="String"/>
+        <attribute name="veiculo" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Vaga" representedClassName="Vaga" syncable="YES" codeGenerationType="class">
         <attribute name="altura" optional="YES" attributeType="String"/>
@@ -14,18 +22,20 @@
         <attribute name="complemento" optional="YES" attributeType="String"/>
         <attribute name="comprimento" optional="YES" attributeType="String"/>
         <attribute name="descricao" optional="YES" attributeType="String"/>
-        <attribute name="frequencia" optional="YES" attributeType="String"/>
+        <attribute name="frequencia" optional="YES" attributeType="Transformable"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="largura" optional="YES" attributeType="String"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="numero" optional="YES" attributeType="String"/>
-        <attribute name="reservado" optional="YES" attributeType="String"/>
         <attribute name="rua" optional="YES" attributeType="String"/>
         <attribute name="titulo" optional="YES" attributeType="String"/>
         <attribute name="uf" optional="YES" attributeType="String"/>
+        <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Cartao" positionX="-63" positionY="-27" width="128" height="103"/>
-        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="283"/>
+        <element name="Vaga" positionX="-63" positionY="-18" width="128" height="298"/>
+        <element name="Requisicao" positionX="-63" positionY="108" width="128" height="133"/>
     </elements>
 </model>
