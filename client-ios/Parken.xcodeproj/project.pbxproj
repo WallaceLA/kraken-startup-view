@@ -19,6 +19,9 @@
 		0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3DF252A313C00327E62 /* Chat.storyboard */; };
 		0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3E1252A455D00327E62 /* Request.storyboard */; };
 		0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */; };
+		0FD943CF2533765D00C8F99D /* Confirmacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */; };
+		0FD943D22533808700C8F99D /* ListaConfirmacoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */; };
+		0FD943D4253380BA00C8F99D /* ConfirmarVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */; };
 		0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE90CCC252D60E2002E240B /* Plano.storyboard */; };
 		0FE90CD0252D61B3002E240B /* PlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE90CCF252D61B3002E240B /* PlanoViewController.swift */; };
 		0FE90CD2252D6477002E240B /* CheckoutPlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */; };
@@ -98,6 +101,9 @@
 		0F60B3DF252A313C00327E62 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0F60B3E1252A455D00327E62 /* Request.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
 		0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmacoes.storyboard; sourceTree = "<group>"; };
+		0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaConfirmacoesTableViewController.swift; sourceTree = "<group>"; };
+		0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarVagaViewController.swift; sourceTree = "<group>"; };
 		0FE90CCC252D60E2002E240B /* Plano.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plano.storyboard; sourceTree = "<group>"; };
 		0FE90CCF252D61B3002E240B /* PlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanoViewController.swift; sourceTree = "<group>"; };
 		0FE90CD1252D6477002E240B /* CheckoutPlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPlanoViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +219,15 @@
 			path = Garage;
 			sourceTree = "<group>";
 		};
+		0FD943D02533805E00C8F99D /* Confirmacao */ = {
+			isa = PBXGroup;
+			children = (
+				0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */,
+				0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */,
+			);
+			path = Confirmacao;
+			sourceTree = "<group>";
+		};
 		0FE90CCE252D6197002E240B /* PlanoMensal */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +268,7 @@
 				4D4D2D23248C697400574595 /* AppDelegate.swift */,
 				0F3AC01B2512F66F00355918 /* Garage.storyboard */,
 				4D4D2D29248C697400574595 /* Main.storyboard */,
+				0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */,
 				0F60B3DF252A313C00327E62 /* Chat.storyboard */,
 				0F60B3E1252A455D00327E62 /* Request.storyboard */,
 				7264487D25256870008A8AF6 /* Pagamento.storyboard */,
@@ -294,6 +310,7 @@
 		4D4D2D3C248C6AC500574595 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0FD943D02533805E00C8F99D /* Confirmacao */,
 				0FE90CCE252D6197002E240B /* PlanoMensal */,
 				0F593D39252C024C00083F54 /* Requisicoes */,
 				0F593D38252C021800083F54 /* Pagamento */,
@@ -511,6 +528,7 @@
 				4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */,
 				0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */,
 				4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */,
+				0FD943CF2533765D00C8F99D /* Confirmacoes.storyboard in Resources */,
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
 				7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */,
 				0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */,
@@ -581,6 +599,7 @@
 				4D4D2D49248C74CE00574595 /* PresentationViewController.swift in Sources */,
 				4D4D2D2E248C697400574595 /* Parken.xcdatamodeld in Sources */,
 				7282FA1F2527A13C0055D62B /* PagamentoTableViewController.swift in Sources */,
+				0FD943D4253380BA00C8F99D /* ConfirmarVagaViewController.swift in Sources */,
 				0F5946092520011A00357CF4 /* AtualizarFrequenciaTableViewController.swift in Sources */,
 				4D4FE9BD248D601800CA9D1C /* RegisterViewController.swift in Sources */,
 				0F594603251FD7DD00357CF4 /* NovaVagaViewController.swift in Sources */,
@@ -588,6 +607,7 @@
 				0F57217F25240DBA00380564 /* VisualizarVagaViewController.swift in Sources */,
 				0F593D3D252C079B00083F54 /* AtualizarFrequenciaViewController.swift in Sources */,
 				0F593D35252C019200083F54 /* ListaChatTableViewController.swift in Sources */,
+				0FD943D22533808700C8F99D /* ListaConfirmacoesTableViewController.swift in Sources */,
 				4DCEB6B324F5D7D5001B5BBE /* NSLog.swift in Sources */,
 				4D91D20324F30BCF0051321E /* ParkenConstants.swift in Sources */,
 				4D65CC3524DCCB200002CA86 /* ParkingLocateModel.swift in Sources */,
