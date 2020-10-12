@@ -1,14 +1,17 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import InputMask
 
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var firstNameField: PrimaryTextFieldStyle!
     @IBOutlet weak var lastNameField: PrimaryTextFieldStyle!
-    @IBOutlet weak var documentNumberField: PrimaryTextFieldStyle!
+    @IBOutlet weak var documentNumberField: UITextField!
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
     @IBOutlet weak var passwordField: PrimaryTextFieldStyle!
+    @IBOutlet var listener: MaskedTextFieldDelegate!
+    @IBOutlet weak var phoneNumberField: UITextField!
     
     var emailAddress = ""
     var passwordTyped = ""
@@ -20,6 +23,9 @@ class RegisterViewController: UIViewController {
     
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        /*listener.affinityCalculationStrategy = .prefix
+        listener.primaryMaskFormat = "[000].[000].[000]-[00]"*/
+        
         passwordField.isSecureTextEntry = true
         
         emailField.text = emailAddress
@@ -28,7 +34,10 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerClick(_ sender: UIButton) {
         // TODO: enviar cadastro
-        self.ref.child("users").setValue(["firstname":firstNameField.text, "lastname":lastNameField.text, "cpf":documentNumberField.text, "email":emailField.text, "password":passwordField.text])
+        self.ref.child("users").setValue(["firstname":firstNameField.text, "lastname":lastNameField.text, "cpf":documentNumberField.text,
+            "phone":phoneNumberField.text,
+            "email":emailField.text,
+            "password":passwordField.text])
         
         guard let email = emailField.text,
             let password = passwordField.text else{
@@ -46,7 +55,7 @@ class RegisterViewController: UIViewController {
             }
         })
         
-            showUserDataAlert()
+            
     }
     
     func showUserDataAlert(){
@@ -60,6 +69,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func updatePhoneNumberClick(_ sender: Any) {
         /*performSegue(withIdentifier: "RegisterToChangePhoneSegue", sender: nil*/
+        showUserDataAlert()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

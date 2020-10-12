@@ -1,11 +1,10 @@
 import UIKit
+import FirebaseAuth
 
 class RegisterUpdateViewController: UIViewController {
     
-    @IBOutlet weak var documentNumberField: PrimaryTextFieldStyle!
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
-    
-    var phoneNumber = ""
+    @IBOutlet weak var updateAccountBtn: PrimaryButtonStyle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,16 +12,46 @@ class RegisterUpdateViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    @IBAction func updateAccountClick(_ sender: Any) {
+    @IBAction func updateAccountBtnClick(_ sender: Any) {
         // TODO: enviar novos dados
-        if true {
-            performSegue(withIdentifier: "RegisterUpdateToMainSegue", sender: nil)
+        guard let email = emailField.text else {
+            return
         }
+        
+    FirebaseAuth.Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+        DispatchQueue.main.async {
+                if error != nil {
+                    self.resetFailedAlert()
+                } else {
+                    self.confirmResetAlert()
+                }
+            }
+        })
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        showUserDataAlert()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showUserDataAlert(){
+        let alert = UIAlertController(title: "Nova senha enviada", message: "O novo codigo foi enviado para o seu e-mail!", preferredStyle: .alert)
+                  
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        present(alert, animated: true)
+    }
+    
+    func resetFailedAlert(){
+        let resetFailedAlert = UIAlertController(title: "Reset falhou", message: "Erro: Nao foi possivel realizar o reset de senha.", preferredStyle: .alert)
+        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(resetFailedAlert, animated: true, completion: nil)
+    }
+    
+    func confirmResetAlert(){
+        let resetFailedAlert = UIAlertController(title: "Nova senha enviada!", message: "Confira seu e-mail para o link de reset de senha.", preferredStyle: .alert)
+        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(resetFailedAlert, animated: true, completion: nil)
     }
     
 }
