@@ -10,8 +10,9 @@ class ParkingLocateModel: NSObject {
     var Localization: MapMarkerLite
     var Description: String
     var Title: String
+    var Id: String
     
-    init(_ address: String, _ distance: String, _ ammount: String, _ rates: String, _ localization: MapMarkerLite, _ description: String, _ title: String) {
+    init(_ address: String, _ distance: String, _ ammount: String, _ rates: String, _ localization: MapMarkerLite, _ description: String, _ title: String, _ id: String) {
         Address = address
         Distance = distance
         Ammount = ammount
@@ -19,5 +20,6 @@ class ParkingLocateModel: NSObject {
         Localization = localization
         Description = description
         Title = title
+        Id = id
     }
 }

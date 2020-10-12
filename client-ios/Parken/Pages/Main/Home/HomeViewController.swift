@@ -4,6 +4,7 @@ import CoreData
 import Jelly
 import heresdk
 import Alamofire
+import CoreLocation
 
 class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
@@ -71,7 +72,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     
     // third step
     private var parkChoosed: ParkingLocateModel?
-
+    
+    var locLat:Double=0.0
+    var locLon:Double=0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,18 +106,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let managedContext = appDelegate.persistentContainer.viewContext
 
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Vaga")
-
-        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "titulo", ascending: true)]
-
-        do {
-            vagas = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Não foi possível buscar os dados \(error), \(error.userInfo)")
-        }
     }
     
     // NavBar Definitions
@@ -499,8 +491,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let parameters: Parameters = [
             "latitude": "\(geoCoordinates.latitude)",
             "longitude": "\(geoCoordinates.longitude)",
-            "maxDistance": "10.0",
-            "maxResult": "10"
+            "maxDistance": "1000.0",
+            "maxResult": "1000"
         ]
         
         AF.request("\(ParkenConstants.apiEndpoint)/Parking/GetParkingListByPerimeter",
@@ -523,6 +515,19 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             
             addParkingFound(geoCoordinates: randomCoordinates)
         }*/
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Vaga")
+
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: true)]
+
+        do {
+            vagas = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Não foi possível buscar os dados \(error), \(error.userInfo)")
+        }
  
         for vaga in vagas {
             let latitude = vaga.value(forKeyPath: "latitude") as! Double
@@ -534,10 +539,20 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             let endereco = "\(rua), \(numero), \(bairro)"
             let titulo = vaga.value(forKeyPath: "titulo") as? String ?? "Titulo"
             let descricao = vaga.value(forKeyPath: "descricao") as? String ?? "Descricao"
+            let cep = vaga.value(forKeyPath: "cep") as? String ?? "CEP"
             
             let addressLocate = GeoCoordinates(latitude: latitude, longitude: longitude)
             
-            addParkingFound(geoCoordinates: addressLocate, endereco: endereco, valor: valor, titulo: titulo, descricao: descricao)
+            let idVaga:String = "\(rua)-\(numero)-\(cep)-\(titulo)"
+            
+            //let coordinate0 = CLLocation(latitude: -23.56824, longitude: -46.56816)
+            let coordinate0 = CLLocation(latitude: locLat, longitude: locLon)
+            let coordinate1 = CLLocation(latitude: latitude, longitude: longitude)
+
+            let distanciaTest:Int = Int(coordinate0.distance(from: coordinate1))
+            
+            addParkingFound(geoCoordinates: addressLocate, endereco: endereco, valor: valor, titulo: titulo, descricao: descricao, idVaga: idVaga, distanciaTest: distanciaTest)
+            
             
         }
         //self.parkingLocateTable.reloadData()
@@ -546,7 +561,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     /*MARK:---------------------------------LISTAGEM DE VAGAS - REQUISICAO---------------------------------*/
                     
      
-    private func addParkingFound(geoCoordinates: GeoCoordinates, endereco: String, valor: Double, titulo: String, descricao: String) {
+    private func addParkingFound(geoCoordinates: GeoCoordinates, endereco: String, valor: Double, titulo: String, descricao: String, idVaga: String, distanciaTest: Int) {
         mapController.getAddressByCoordinates(
             geoCoordinates: geoCoordinates,
             action: { (error: SearchError?, item: [Place]?) -> () in
@@ -555,12 +570,17 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     return
                 }
                 
+                if (distanciaTest <= 1000) {
+                
                 // If error is nil, it is guaranteed that the place list will not be empty.
                 print("AddressByCoordinates: Encontrado \(item!.count) resultado(s).")
 
                 //let addressText = item!.first!.title
-                let distance = item!.first!.distanceInMeters!
+                //let distance = item!.first!.distanceInMeters!
+                let distance = distanciaTest
 
+                print("\n\n\n\n Distancia - \(type(of: distance)) \n\n\n\n")
+                
                 let parkingModel = ParkingLocateModel(
                     endereco,
                     //"\(distance * 10) M",
@@ -569,15 +589,22 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
                     "",
                     self.mapController.createPointMarker(geoCoordinates: geoCoordinates, imageName: "parking_icon"),
                     descricao,
-                    titulo)
+                    titulo,
+                    idVaga)
+                
+                print("\n \n \n Parking model: \(parkingModel.Id) \n \n \n ")
                 
                 self.parkingLocateList.append(parkingModel)
-                self.parkingLocateTable.reloadData()
                 //self.parkingLocateTable.reloadRows(at: , with: UITableView.RowAnimation)
-                
+              
                 self.mapController.addMarkerList(markerList: self.parkingLocateList.map { $0.Localization } )
+                    
+                }
+                
+                self.parkingLocateTable.reloadData()
                 })
         
+            
     }
     
     @IBAction func toggleFavoriteAddressSelectedClick(_ sender: Any) {
@@ -647,6 +674,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             geoCoordinates: geoCoordinates,
             lastMarker: destineLocateMapMarker)
         
+        locLat = geoCoordinates.latitude
+        locLon = geoCoordinates.longitude
+        
         mapController.centralize(geoCoordinates: geoCoordinates)
     }
     
@@ -712,15 +742,15 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         if segue.identifier == "requestSegue" {
             let bugado = segue.destination as! RequestViewController
             let vagaSelecionada = parkingLocateList[parkingLocateTable.indexPathForSelectedRow!.item]
-            let titulo = vagaSelecionada.Title
+            let id = vagaSelecionada.Id
             
             var vagaFinal:NSManagedObject?
             
             for vaga in vagas{
                 
-                var tituloVaga = vaga.value(forKeyPath: "titulo") as? String ??  "Titulo"
+                let idVaga = vaga.value(forKeyPath: "id") as? String ??  "Titulo"
                 vagaFinal = vaga
-                if titulo == tituloVaga{
+                if idVaga == id {
                     break
                 }
                 
