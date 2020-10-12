@@ -2,6 +2,7 @@ import UIKit
 import CoreData
 import IQKeyboardManagerSwift
 import Firebase
+import PhoneNumberKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

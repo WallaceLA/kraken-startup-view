@@ -79,7 +79,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Esqueci a minha senha"/>
                                 <connections>
-                                    <segue destination="dYI-hp-ws8" kind="show" id="f3k-dw-03C"/>
+                                    <segue destination="dYI-hp-ws8" kind="show" identifier="WelcomeToUpdateSegue" id="f3k-dw-03C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-S0-rs5">
@@ -108,7 +108,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-Vindo ao Parken" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-E5-wpe">
-                                <rect key="frame" x="77" y="290" width="265" height="32"/>
+                                <rect key="frame" x="77" y="290" width="265" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31.5" id="bY7-am-WlV"/>
                                 </constraints>
@@ -330,12 +330,12 @@
                     <navigationItem key="navigationItem" id="IZM-4a-9o0"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="documentNumberField" destination="WUU-oP-WDS" id="k7U-Nu-vlV"/>
-                        <outlet property="emailField" destination="3Jm-fo-nDe" id="UpI-wn-mHa"/>
-                        <outlet property="firstNameField" destination="gqT-h1-gor" id="mYT-VA-brS"/>
-                        <outlet property="lastNameField" destination="n45-hR-eA8" id="uMT-5c-i3A"/>
-                        <outlet property="passwordField" destination="vU8-VF-yBW" id="4lR-gz-LgI"/>
-                        <outlet property="phoneNumberField" destination="ot0-sZ-WPI" id="4FW-RA-MpQ"/>
+                        <outlet property="documentNumberField" destination="WUU-oP-WDS" id="WyR-eo-xTQ"/>
+                        <outlet property="emailField" destination="3Jm-fo-nDe" id="2H3-ub-8Wn"/>
+                        <outlet property="firstNameField" destination="gqT-h1-gor" id="1qu-iF-vTX"/>
+                        <outlet property="lastNameField" destination="n45-hR-eA8" id="bua-Yd-MsH"/>
+                        <outlet property="passwordField" destination="vU8-VF-yBW" id="IHz-qf-Iwt"/>
+                        <outlet property="phoneNumberField" destination="ot0-sZ-WPI" id="4yu-4h-s10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-h8-sdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -778,8 +778,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Atualizar Conta"/>
                                 <connections>
-                                    <action selector="updateAccountClick:" destination="dYI-hp-ws8" eventType="touchUpInside" id="lAr-7e-l9p"/>
-                                    <segue destination="3Ci-bP-aLz" kind="show" identifier="AtualizaToWelcomeSegue" id="iKM-J7-JuE"/>
+                                    <segue destination="3Ci-bP-aLz" kind="show" id="fvM-0a-2Ub"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -807,8 +806,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                     <navigationItem key="navigationItem" id="Nzd-OE-YXo"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="emailField" destination="Sxi-fJ-Kh9" id="2ae-02-6dT"/>
-                        <outlet property="updateAccountBtn" destination="lp5-C5-Yn7" id="Wra-32-ZGl"/>
+                        <outlet property="emailField" destination="Sxi-fJ-Kh9" id="Og4-r8-4gZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGa-qY-JZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -822,7 +820,6 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
         <image name="splashscreen" width="213.5" height="320.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f3k-dw-03C"/>
-        <segue reference="iKM-J7-JuE"/>
+        <segue reference="fvM-0a-2Ub"/>
     </inferredMetricsTieBreakers>
 </document>

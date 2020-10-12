@@ -37,12 +37,14 @@ class SignInViewController: UIViewController {
         
         self.tempo = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
         
-        ref?.observe(.childAdded, with: {(snapshot) in
-        if let getData = snapshot.value as? [String:Any] {
+        let userID = Auth.auth().currentUser?.uid
+        
+        ref?.child("users").child(userID!).observeSingleEvent(of: .value, with: {(snapshot) in
+        if let getData = snapshot.value as? NSDictionary {
             
             print(getData)
             
-            let phone = getData["phone"] as! String
+            let phone = getData["phone"] as? String ?? ""
             print(phone)
             
             self.phoneNumberLabel.text = phone
