@@ -4,7 +4,6 @@ import FirebaseAuth
 class RegisterUpdateViewController: UIViewController {
     
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
-    @IBOutlet weak var updateAccountBtn: PrimaryButtonStyle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,26 +11,31 @@ class RegisterUpdateViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    @IBAction func updateAccountBtnClick(_ sender: Any) {
-        // TODO: enviar novos dados
-        guard let email = emailField.text else {
+    /*@IBAction func passwordResetClick(_ sender: Any) {
+        guard let email = emailField.text, email != "" else {
             return
         }
         
-    FirebaseAuth.Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
-        DispatchQueue.main.async {
-                if error != nil {
-                    self.resetFailedAlert()
-                } else {
-                    self.confirmResetAlert()
-                }
-            }
+        resetPassword(email: email, onSuccess: {
+            self.view.endEditing(true)
+            self.showUserDataAlert()
+        }, onError: { (error) in
+            self.resetFailedAlert()
         })
-    }
+        self.performSegue(withIdentifier: "AtualizaToWelcomeSegue", sender: self)
+    }*/
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         
-        showUserDataAlert()
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+
+                if error == nil {
+                    onSuccess()
+                } else {
+                    onError(error!.localizedDescription)
+                }
+            
+        })
     }
     
     func showUserDataAlert(){
@@ -40,18 +44,16 @@ class RegisterUpdateViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
         present(alert, animated: true)
-    }
+    }*/
     
-    func resetFailedAlert(){
+    /*func resetFailedAlert(){
         let resetFailedAlert = UIAlertController(title: "Reset falhou", message: "Erro: Nao foi possivel realizar o reset de senha.", preferredStyle: .alert)
         resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(resetFailedAlert, animated: true, completion: nil)
     }
     
-    func confirmResetAlert(){
-        let resetFailedAlert = UIAlertController(title: "Nova senha enviada!", message: "Confira seu e-mail para o link de reset de senha.", preferredStyle: .alert)
-        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(resetFailedAlert, animated: true, completion: nil)
-    }
+    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        showUserDataAlert()
+    }*/
     
 }

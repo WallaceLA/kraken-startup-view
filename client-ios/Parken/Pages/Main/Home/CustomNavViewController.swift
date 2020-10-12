@@ -11,12 +11,14 @@ class CustomNavViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref?.observe(.childAdded, with: {(snapshot) in
-            if let getData = snapshot.value as? [String:Any] {
+        let userID = Auth.auth().currentUser?.uid;
+        
+        ref?.child("users").child(userID!).observeSingleEvent(of: .value, with: {(snapshot) in
+            if let getData = snapshot.value as? NSDictionary {
                 
                 print(getData)
                 
-                let firstname = getData["firstname"] as! String
+                let firstname = getData["firstname"] as? String ?? ""
                 
                 /*let regex = try! NSRegularE"\(firstname)")xpression(pattern: "[A-Z]+\w")
                 let range = NSRange(location: 0, length: String(firstname).utf16.count)

@@ -6,9 +6,9 @@ class PresentationViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     
     var imageList: [(String, String, String, UIColor)] = [
-        ("icon-many-places", "Several possibilities", "There are many options for parking with greater practicality and comfort", UIColor(red: 1, green: 0.556, blue: 0.232, alpha: 1)),
-        ("icon-connect-people", "Choose your place", "Find the most suitable vacancy with ease for your final destination", UIColor(red: 1, green: 0.556, blue: 0.232, alpha: 1)),
-        ("icon-payment-online", "Trade safely", "Ensure the best value for money with security when paying online", UIColor(red: 1, green: 0.556, blue: 0.232, alpha: 1)),
+        ("icon-many-places", "Diversas possibilidades", "Muitas opcoes disponiveis para estacionar, com muita praticidade e conforto.", UIColor(red: 1, green: 0.556, blue: 0.232, alpha: 1)),
+        ("icon-connect-people", "Escolha a sua vaga", "Encontre a vaga que melhor te atende, proxima de seu local de destino.", UIColor(red: 1, green: 0.556, blue: 0.232, alpha: 1)),
+        ("icon-payment-online", "Seguranca para pagar", "Garanta o melhor valor pagando direto no app usando nossos planos mensais.", UIColor(red: 1, green: 0.556, blue: 0.232, alpha: 1)),
     ]
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
