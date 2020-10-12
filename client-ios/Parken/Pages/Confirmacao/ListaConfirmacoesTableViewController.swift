@@ -13,9 +13,13 @@ class ListaConfirmacoesTableViewController: UITableViewController {
     
     var requisicoes:[NSManagedObject] = []
     var vagas:[NSManagedObject] = []
+    var vagaSelec:NSManagedObject?
+    let df = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        df.dateFormat = "dd-MM-yyyy HH:mm"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -66,7 +70,7 @@ class ListaConfirmacoesTableViewController: UITableViewController {
         //cell.imageView?.image = UIImage(color: .red)
         //var idFinal:String = ""
         
-        let idRequisicao = requisicao.value(forKeyPath: "id") as? String ??  "N/D"
+        //let idRequisicao = requisicao.value(forKeyPath: "id") as? String ??  "N/D"
         
         for vaga in vagas{
             
@@ -77,18 +81,29 @@ class ListaConfirmacoesTableViewController: UITableViewController {
             
             let idVaga = "\(rua)-\(numero)-\(cep)-\(titulo)"
             
+            let idRequisicao = requisicao.value(forKeyPath: "id") as? String ??  "N/D"
+            
+            //print("idReq: \(idRequisicao), idVaga: \(idVaga)")
+            
             if idRequisicao == idVaga{
                 //idFinal = idVaga
             
+                vagaSelec = vaga
+                
                 let endereco:String = "\(titulo) - \(rua), \(numero)"
                 
                 cell.textLabel?.text = endereco
-                cell.detailTextLabel?.text = requisicao.value(forKeyPath: "data") as? String
+                //let dataReq = requisicao.value(forKeyPath: "data") as? String
+
+                let dataReq = df.string(from: requisicao.value(forKeyPath: "data") as! Date)
+                
+                cell.detailTextLabel?.text = dataReq
                 
                 break
             }
             
         }
+        
         
         return cell
     }
@@ -138,8 +153,10 @@ class ListaConfirmacoesTableViewController: UITableViewController {
         
         if(segue.identifier == "segueConfirmacao"){
             let vc = segue.destination as! ConfirmarVagaViewController
-            let vagaSelecionada:NSManagedObject = requisicoes[self.tableView.indexPathForSelectedRow!.item]
-            vc.requisicao = vagaSelecionada
+            let reqSelecionada:NSManagedObject = requisicoes[self.tableView.indexPathForSelectedRow!.item]
+            let vagaSelecionada:NSManagedObject = vagaSelec!
+            vc.requisicao = reqSelecionada
+            vc.vagas = vagaSelecionada
         }
         
      }

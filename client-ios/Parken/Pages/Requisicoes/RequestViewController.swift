@@ -36,15 +36,17 @@ class RequestViewController: UIViewController {
     var vaga : NSManagedObject?
 
     var valorHora:Double = 0.0
-    var qtdHora:Double = 1.0
+    var qtdHora:Double = 0.0
     var valorTotal:Double = 0.0
+    var id:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         if (vaga != nil){
             
-            lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
+            let titulo = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
+            lblTitulo.text = titulo
             lglDescricao.text = vaga?.value(forKeyPath: "descricao") as? String ?? "Descricao"
                         
             let rua = vaga?.value(forKeyPath: "rua") as? String ?? "Rua"
@@ -65,6 +67,8 @@ class RequestViewController: UIViewController {
             valorHora = vaga?.value(forKeyPath: "valor") as? Double ?? 1.0
             
             lblCusto.text = "R$ \(valorHora) por Hora"
+            
+            id = "\(rua)-\(num)-\(cep)-\(titulo)"
 
             
         } else {
@@ -106,12 +110,14 @@ class RequestViewController: UIViewController {
         
         if segue.identifier == "segueVaga"{
             seguer.nomeVaga = lblTitulo.text!
-            seguer.valorVaga = "\(String(format: "%.2f", ceil(valorTotal * 100)/100))"
+            seguer.valorVaga = valorTotal
+            print("total: \(lblTotal.text!)")
             seguer.placa = lblPlaca.text!
             seguer.modelo = lblModelo.text!
             seguer.marca = lblMarca.text!
             seguer.dataHora = campoData.date
             seguer.qtdHoras = qtdHora
+            seguer.id = id
             
         }
         /*

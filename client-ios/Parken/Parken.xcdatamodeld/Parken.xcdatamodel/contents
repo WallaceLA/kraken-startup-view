@@ -9,9 +9,11 @@
     <entity name="Requisicao" representedClassName="Requisicao" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="estado" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="placa" optional="YES" attributeType="String"/>
+        <attribute name="qtdHoras" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="solicitante" optional="YES" attributeType="String"/>
+        <attribute name="valorTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="veiculo" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Vaga" representedClassName="Vaga" syncable="YES" codeGenerationType="class">
@@ -35,7 +37,7 @@
     </entity>
     <elements>
         <element name="Cartao" positionX="-63" positionY="-27" width="128" height="103"/>
-        <element name="Requisicao" positionX="-63" positionY="108" width="128" height="133"/>
+        <element name="Requisicao" positionX="-63" positionY="108" width="128" height="163"/>
         <element name="Vaga" positionX="-63" positionY="-18" width="128" height="298"/>
     </elements>
 </model>

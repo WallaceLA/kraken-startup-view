@@ -499,8 +499,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         let parameters: Parameters = [
             "latitude": "\(geoCoordinates.latitude)",
             "longitude": "\(geoCoordinates.longitude)",
-            "maxDistance": "10.0",
-            "maxResult": "10"
+            "maxDistance": "1000.0",
+            "maxResult": "1000"
         ]
         
         AF.request("\(ParkenConstants.apiEndpoint)/Parking/GetParkingListByPerimeter",

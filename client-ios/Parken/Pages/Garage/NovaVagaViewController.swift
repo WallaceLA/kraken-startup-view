@@ -58,7 +58,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
-        let id:String = "\(txtRua.text!), \(txtNumero.text!), \(txtCep.text!), \(txtTitulo.text!)"
+        let id:String = "\(txtRua.text!)-\(txtNumero.text!)-\(txtCep.text!)-\(txtTitulo.text!)"
         
         let preco:Double = Double(txtPreco.text!)!
         

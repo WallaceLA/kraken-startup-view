@@ -25,13 +25,14 @@ class CheckoutVagaViewController: UIViewController {
     var requisicoes : NSManagedObject?
     
     var nomeVaga:String = "Titulo Vaga"
-    var valorVaga:String = "R$ 00,00"
+    var valorVaga:Double = 0.00
     
     var dataHora:Date?
     var marca:String?
     var modelo:String?
     var placa:String?
     var qtdHoras:Double?
+    var id:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,12 +67,11 @@ class CheckoutVagaViewController: UIViewController {
     
     @IBAction func confirmar(_ sender: Any) {
         
-        
-        
+        self.save()
         
         let alerta = UIAlertController(
                                title: "Sucesso!" ,
-                               message: "Pagamento confirmado.",
+                               message: "Vaga solicitada com sucesso. Favor aguardar aprovação.",
                                preferredStyle: UIAlertController.Style.alert)
 
                            alerta.addAction(UIAlertAction(
@@ -87,6 +87,7 @@ class CheckoutVagaViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
           
         let managedContext = appDelegate.persistentContainer.viewContext
+        
         let entidade = NSEntityDescription.entity(forEntityName: "Requisicao", in: managedContext)!
         let objUpdate = NSManagedObject(entity: entidade, insertInto: managedContext)
         
@@ -101,6 +102,8 @@ class CheckoutVagaViewController: UIViewController {
         objUpdate.setValue(solicitante, forKeyPath: "solicitante")
         objUpdate.setValue(qtdHoras, forKeyPath: "qtdHoras")
         objUpdate.setValue(estado, forKeyPath: "estado")
+        objUpdate.setValue(id, forKey: "id")
+        objUpdate.setValue(valorVaga, forKey: "valorTotal")
 
         do{
             try managedContext.save()
