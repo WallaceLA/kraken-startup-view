@@ -22,6 +22,7 @@ class CustomNavViewController: UIViewController {
                 let range = NSRange(location: 0, length: String(firstname).utf16.count)
                 
                 self.nameLabel.text! += "\(regex.firstMatch(in: String(firstname), options: [], range: range) != nil)!"*/
+                print(firstname)
                 
                 self.nameLabel.text! += "\(firstname)!"
                 

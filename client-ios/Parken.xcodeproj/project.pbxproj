@@ -18,7 +18,6 @@
 		0F5F5D4A251C3D49003B2998 /* VagasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */; };
 		0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3DF252A313C00327E62 /* Chat.storyboard */; };
 		0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3E1252A455D00327E62 /* Request.storyboard */; };
-		0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */; };
 		0FD943CF2533765D00C8F99D /* Confirmacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */; };
 		0FD943D22533808700C8F99D /* ListaConfirmacoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */; };
 		0FD943D4253380BA00C8F99D /* ConfirmarVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */; };
@@ -29,7 +28,6 @@
 		4D47D53324A93A69006E24EA /* Pods_Parken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924520FD2771C4A688895DF /* Pods_Parken.framework */; };
 		4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D23248C697400574595 /* AppDelegate.swift */; };
 		4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D25248C697400574595 /* SceneDelegate.swift */; };
-		4D4D2D2B248C697400574595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D2D29248C697400574595 /* Main.storyboard */; };
 		4D4D2D2E248C697400574595 /* Parken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D2C248C697400574595 /* Parken.xcdatamodeld */; };
 		4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D2D2F248C697B00574595 /* Assets.xcassets */; };
 		4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */; };
@@ -72,6 +70,8 @@
 		7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264487D25256870008A8AF6 /* Pagamento.storyboard */; };
 		7282FA1F2527A13C0055D62B /* PagamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */; };
 		728A89362526244700C69089 /* PagamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A89352526244700C69089 /* PagamentoViewController.swift */; };
+		C68ECBBA253394E400570FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68ECBB9253394E400570FF6 /* Main.storyboard */; };
+		C68ECBBC25339CFB00570FF6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C68ECBBB25339CFB00570FF6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,7 +100,6 @@
 		0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VagasTableViewController.swift; sourceTree = "<group>"; };
 		0F60B3DF252A313C00327E62 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0F60B3E1252A455D00327E62 /* Request.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
-		0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmacoes.storyboard; sourceTree = "<group>"; };
 		0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaConfirmacoesTableViewController.swift; sourceTree = "<group>"; };
 		0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarVagaViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +113,6 @@
 		4D4D2D20248C697400574595 /* Parken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4D2D23248C697400574595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4D2D25248C697400574595 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4D4D2D2A248C697400574595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D4D2D2D248C697400574595 /* Parken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Parken.xcdatamodel; sourceTree = "<group>"; };
 		4D4D2D2F248C697B00574595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D4D2D32248C697B00574595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,6 +157,8 @@
 		7282FA1E2527A13C0055D62B /* PagamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoTableViewController.swift; sourceTree = "<group>"; };
 		728A89352526244700C69089 /* PagamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagamentoViewController.swift; sourceTree = "<group>"; };
 		C68ECBB5252AAAF600570FF6 /* Parken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Parken.entitlements; sourceTree = "<group>"; };
+		C68ECBB9253394E400570FF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Main.storyboard; sourceTree = "<group>"; };
+		C68ECBBB25339CFB00570FF6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +258,8 @@
 		4D4D2D22248C697400574595 /* Parken */ = {
 			isa = PBXGroup;
 			children = (
-				0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */,
+				C68ECBBB25339CFB00570FF6 /* GoogleService-Info.plist */,
+				C68ECBB9253394E400570FF6 /* Main.storyboard */,
 				C68ECBB5252AAAF600570FF6 /* Parken.entitlements */,
 				4D4D2D3E248C6B1300574595 /* Helpers */,
 				4D4D2D3D248C6AD400574595 /* Services */,
@@ -267,7 +268,6 @@
 				4D4D2D3A248C6AAD00574595 /* Components */,
 				4D4D2D23248C697400574595 /* AppDelegate.swift */,
 				0F3AC01B2512F66F00355918 /* Garage.storyboard */,
-				4D4D2D29248C697400574595 /* Main.storyboard */,
 				0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */,
 				0F60B3DF252A313C00327E62 /* Chat.storyboard */,
 				0F60B3E1252A455D00327E62 /* Request.storyboard */,
@@ -531,12 +531,12 @@
 				0FD943CF2533765D00C8F99D /* Confirmacoes.storyboard in Resources */,
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
 				7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */,
-				0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */,
+				C68ECBBA253394E400570FF6 /* Main.storyboard in Resources */,
 				0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */,
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
-				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
 				0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */,
+				C68ECBBC25339CFB00570FF6 /* GoogleService-Info.plist in Resources */,
 				0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,14 +639,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4D4D2D29248C697400574595 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4D4D2D2A248C697400574595 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

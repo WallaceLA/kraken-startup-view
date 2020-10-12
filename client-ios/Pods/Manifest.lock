@@ -72,6 +72,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
+  - InputMask (6.0.0)
   - IQKeyboardManagerSwift (6.5.6)
   - Jelly (2.2.2)
   - leveldb-library (1.22)
@@ -95,6 +96,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - InputMask
   - IQKeyboardManagerSwift
   - Jelly (~> 2.0)
   - PhoneNumberKit (~> 3.1)
@@ -114,6 +116,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - InputMask
     - IQKeyboardManagerSwift
     - Jelly
     - leveldb-library
@@ -135,6 +138,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: b7f406340a291370045a270c599e53c6fa6ec20f
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  InputMask: f340bdc905a4c4f377e44d865f129f752ac2383d
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Jelly: 0576a8fd3b3bea78f6c2d952acdc30b0835dda71
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
@@ -143,6 +147,6 @@ SPEC CHECKSUMS:
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SGCodeTextField: 751d41a1f0aecdea1e099a4be36edb9eb8d6ba94
 
-PODFILE CHECKSUM: 392af50aeada32ce46f73a8ca0a4f99e1ae4ddd3
+PODFILE CHECKSUM: 8de2f3d612760dba2d0557387dc1f3275a683919
 
 COCOAPODS: 1.10.0.rc.1

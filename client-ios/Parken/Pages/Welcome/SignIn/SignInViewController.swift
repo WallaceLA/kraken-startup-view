@@ -1,12 +1,14 @@
 import UIKit
 import SGCodeTextField
 import Firebase
+import FirebaseDatabase
 
 class SignInViewController: UIViewController {
     
     @IBOutlet weak var codeSecurityField: SGCodeTextField!
     @IBOutlet weak var retryTimeLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    var ref:DatabaseReference! = Database.database().reference()
     
     var phoneNumber = ""
     private var retryCodeTime = 60
@@ -35,7 +37,18 @@ class SignInViewController: UIViewController {
         
         self.tempo = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
         
-        phoneNumberLabel.text = phoneNumber
+        ref?.observe(.childAdded, with: {(snapshot) in
+        if let getData = snapshot.value as? [String:Any] {
+            
+            print(getData)
+            
+            let phone = getData["phone"] as! String
+            print(phone)
+            
+            self.phoneNumberLabel.text = phone
+            }
+        })
+            
         retryTimeLabel.text = String("\(timeLeft)")
     }
     
