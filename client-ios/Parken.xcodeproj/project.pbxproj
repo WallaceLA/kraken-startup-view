@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3AC01B2512F66F00355918 /* Garage.storyboard */; };
+		0F4F48CF253523D9004A9B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4F48CD253523D8004A9B35 /* Main.storyboard */; };
+		0F4F48D1253524CC004A9B35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F4F48D0253524CC004A9B35 /* GoogleService-Info.plist */; };
 		0F57217F25240DBA00380564 /* VisualizarVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57217E25240DBA00380564 /* VisualizarVagaViewController.swift */; };
 		0F593D35252C019200083F54 /* ListaChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F593D34252C019200083F54 /* ListaChatTableViewController.swift */; };
 		0F593D37252C01C300083F54 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F593D36252C01C300083F54 /* ChatViewController.swift */; };
@@ -18,7 +20,6 @@
 		0F5F5D4A251C3D49003B2998 /* VagasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */; };
 		0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3DF252A313C00327E62 /* Chat.storyboard */; };
 		0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60B3E1252A455D00327E62 /* Request.storyboard */; };
-		0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */; };
 		0FD943CF2533765D00C8F99D /* Confirmacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */; };
 		0FD943D22533808700C8F99D /* ListaConfirmacoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */; };
 		0FD943D4253380BA00C8F99D /* ConfirmarVagaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */; };
@@ -29,7 +30,6 @@
 		4D47D53324A93A69006E24EA /* Pods_Parken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924520FD2771C4A688895DF /* Pods_Parken.framework */; };
 		4D4D2D24248C697400574595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D23248C697400574595 /* AppDelegate.swift */; };
 		4D4D2D26248C697400574595 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D25248C697400574595 /* SceneDelegate.swift */; };
-		4D4D2D2B248C697400574595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D2D29248C697400574595 /* Main.storyboard */; };
 		4D4D2D2E248C697400574595 /* Parken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D2D2C248C697400574595 /* Parken.xcdatamodeld */; };
 		4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D2D2F248C697B00574595 /* Assets.xcassets */; };
 		4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */; };
@@ -90,6 +90,8 @@
 
 /* Begin PBXFileReference section */
 		0F3AC01B2512F66F00355918 /* Garage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Garage.storyboard; sourceTree = "<group>"; };
+		0F4F48CE253523D8004A9B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0F4F48D0253524CC004A9B35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F57217E25240DBA00380564 /* VisualizarVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarVagaViewController.swift; sourceTree = "<group>"; };
 		0F593D34252C019200083F54 /* ListaChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaChatTableViewController.swift; sourceTree = "<group>"; };
 		0F593D36252C01C300083F54 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +102,6 @@
 		0F5F5D49251C3D49003B2998 /* VagasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VagasTableViewController.swift; sourceTree = "<group>"; };
 		0F60B3DF252A313C00327E62 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		0F60B3E1252A455D00327E62 /* Request.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
-		0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirmacoes.storyboard; sourceTree = "<group>"; };
 		0FD943D12533808700C8F99D /* ListaConfirmacoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaConfirmacoesTableViewController.swift; sourceTree = "<group>"; };
 		0FD943D3253380BA00C8F99D /* ConfirmarVagaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarVagaViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		4D4D2D20248C697400574595 /* Parken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4D2D23248C697400574595 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4D2D25248C697400574595 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4D4D2D2A248C697400574595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D4D2D2D248C697400574595 /* Parken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Parken.xcdatamodel; sourceTree = "<group>"; };
 		4D4D2D2F248C697B00574595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D4D2D32248C697B00574595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		4D4D2D22248C697400574595 /* Parken */ = {
 			isa = PBXGroup;
 			children = (
-				0FB8561D252FDFEC00C6904C /* GoogleService-Info.plist */,
+				0F4F48D0253524CC004A9B35 /* GoogleService-Info.plist */,
 				C68ECBB5252AAAF600570FF6 /* Parken.entitlements */,
 				4D4D2D3E248C6B1300574595 /* Helpers */,
 				4D4D2D3D248C6AD400574595 /* Services */,
@@ -267,13 +267,13 @@
 				4D4D2D3A248C6AAD00574595 /* Components */,
 				4D4D2D23248C697400574595 /* AppDelegate.swift */,
 				0F3AC01B2512F66F00355918 /* Garage.storyboard */,
-				4D4D2D29248C697400574595 /* Main.storyboard */,
 				0FD943CE2533765D00C8F99D /* Confirmacoes.storyboard */,
 				0F60B3DF252A313C00327E62 /* Chat.storyboard */,
 				0F60B3E1252A455D00327E62 /* Request.storyboard */,
 				7264487D25256870008A8AF6 /* Pagamento.storyboard */,
 				4D4D2D25248C697400574595 /* SceneDelegate.swift */,
 				4D4D2D2F248C697B00574595 /* Assets.xcassets */,
+				0F4F48CD253523D8004A9B35 /* Main.storyboard */,
 				4D4D2D31248C697B00574595 /* LaunchScreen.storyboard */,
 				4D4D2D34248C697B00574595 /* Info.plist */,
 				4D4D2D2C248C697400574595 /* Parken.xcdatamodeld */,
@@ -477,6 +477,7 @@
 				4D4D2D1E248C697400574595 /* Resources */,
 				FC4D599C07C7DD0630986649 /* [CP] Embed Pods Frameworks */,
 				4D6780A324BD19B5009141D6 /* Embed Frameworks */,
+				7A228A1F21EF828355011698 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -525,17 +526,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4F48D1253524CC004A9B35 /* GoogleService-Info.plist in Resources */,
 				4D4D2D33248C697B00574595 /* LaunchScreen.storyboard in Resources */,
 				0F60B3E0252A313C00327E62 /* Chat.storyboard in Resources */,
 				4DCEB6A624F5D3BC001B5BBE /* TestFairySDK-1 in Resources */,
 				0FD943CF2533765D00C8F99D /* Confirmacoes.storyboard in Resources */,
 				4D5BC56524B14B2900078722 /* ThumbnailCustom.xib in Resources */,
 				7264487E25256870008A8AF6 /* Pagamento.storyboard in Resources */,
-				0FB8561E252FDFEC00C6904C /* GoogleService-Info.plist in Resources */,
 				0F60B3E2252A455D00327E62 /* Request.storyboard in Resources */,
+				0F4F48CF253523D9004A9B35 /* Main.storyboard in Resources */,
 				4D4D2D43248C6BE300574595 /* Welcome.storyboard in Resources */,
 				4D4D2D30248C697B00574595 /* Assets.xcassets in Resources */,
-				4D4D2D2B248C697400574595 /* Main.storyboard in Resources */,
 				0FE90CCD252D60E2002E240B /* Plano.storyboard in Resources */,
 				0F3AC01C2512F66F00355918 /* Garage.storyboard in Resources */,
 			);
@@ -564,6 +565,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A228A1F21EF828355011698 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parken/Pods-Parken-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parken/Pods-Parken-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Parken/Pods-Parken-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC4D599C07C7DD0630986649 /* [CP] Embed Pods Frameworks */ = {
@@ -639,10 +657,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4D4D2D29248C697400574595 /* Main.storyboard */ = {
+		0F4F48CD253523D8004A9B35 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4D4D2D2A248C697400574595 /* Base */,
+				0F4F48CE253523D8004A9B35 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
