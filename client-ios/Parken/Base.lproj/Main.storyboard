@@ -532,16 +532,6 @@
             </objects>
             <point key="canvasLocation" x="1394.2028985507247" y="113.83928571428571"/>
         </scene>
-        <!--Welcome-->
-        <scene sceneID="pyn-Mo-dUX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Welcome" id="rWN-2N-VdX" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cqY-Xm-cSM"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vqf-9E-LtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-86" y="1269"/>
-        </scene>
         <!--Request-->
         <scene sceneID="cIG-sl-IFZ">
             <objects>
@@ -551,18 +541,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARN-L1-iCf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2038" y="117"/>
-        </scene>
-        <!--ChatViewController-->
-        <scene sceneID="RcY-cf-5sL">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Account" bundleIdentifier="br.com.krakenstartup.parken.pages.account" referencedIdentifier="ChatViewController" id="4ks-eX-bgZ" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Kdg-KA-sms"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J7c-O8-IVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-
-            <point key="canvasLocation" x="720" y="1029"/>
-
         </scene>
         <!--Custom Nav View Controller-->
         <scene sceneID="5uN-Kf-LvD">
@@ -676,9 +654,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
                                         <state key="normal" title="Entre em contato"/>
-                                        <connections>
-                                            <segue destination="4ks-eX-bgZ" kind="show" id="X49-9B-W8A"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -693,7 +668,7 @@
                                 <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
                                 <state key="normal" title="Sair"/>
                                 <connections>
-                                    <segue destination="rWN-2N-VdX" kind="show" identifier="SairToWelcomeSegue" id="6TF-Cs-4lj"/>
+                                    <action selector="sairBtnClick:" destination="t4W-tH-6Fb" eventType="touchUpInside" id="lfV-k0-I0f"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-lq-kri">
@@ -705,17 +680,6 @@
                                 <state key="normal" title="Carteira"/>
                                 <connections>
                                     <segue destination="OE0-vL-4Uy" kind="show" id="Rik-XE-ddL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Is-L4-XB3">
-                                <rect key="frame" x="0.0" y="374" width="414" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                <state key="normal" title="Requisição"/>
-                                <connections>
-                                    <segue destination="pNY-PT-vui" kind="show" id="C5S-vP-1Fx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -738,8 +702,7 @@
                     <navigationItem key="navigationItem" id="ypk-pt-oiM"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="nameLabel" destination="dpj-xn-MeX" id="pc1-pe-7nJ"/>
-                        <outlet property="sairBtn" destination="a9V-3w-WgD" id="SBR-Nv-zeo"/>
+                        <outlet property="nameLabel" destination="dpj-xn-MeX" id="wPI-Tg-Sjt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUX-oe-9xO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -775,16 +738,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4Y-Og-DAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="885"/>
-        </scene>
-        <!--Request-->
-        <scene sceneID="h32-t4-J2o">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Request" id="pNY-PT-vui" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="f9u-gr-5Ca"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sxO-O6-3hu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="668" y="924"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q8C-up-omP">
@@ -823,7 +776,4 @@
         <image name="star" catalog="system" width="64" height="58"/>
         <image name="text.justify" catalog="system" width="64" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Png-NY-iNg"/>
-    </inferredMetricsTieBreakers>
 </document>

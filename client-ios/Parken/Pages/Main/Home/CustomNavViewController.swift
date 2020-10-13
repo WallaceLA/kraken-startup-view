@@ -4,13 +4,12 @@ import FirebaseAuth
 
 class CustomNavViewController: UIViewController {
     
-    @IBOutlet weak var sairBtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     var ref:DatabaseReference! = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         let userID = Auth.auth().currentUser?.uid;
         
         ref?.child("users").child(userID!).observeSingleEvent(of: .value, with: {(snapshot) in
@@ -29,7 +28,7 @@ class CustomNavViewController: UIViewController {
                 self.nameLabel.text! += "\(firstname)!"
                 
             }
-        })
+        })*/
     }
     
     @IBAction func sairBtnClick(_ sender: Any) {

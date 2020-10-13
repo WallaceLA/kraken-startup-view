@@ -116,6 +116,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtd-6O-1VR">
+                                <rect key="frame" x="348" y="744" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="csj-O6-GFT" kind="show" id="t39-7b-hi6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -176,6 +186,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bws-y9-G01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224.6376811594205" y="-76.339285714285708"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="OJG-cA-N9g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="csj-O6-GFT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gXc-91-v80"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyY-dT-mQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1680" y="131"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="oTi-KQ-bsE">
@@ -820,6 +840,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
         <image name="splashscreen" width="213.5" height="320.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="f3k-dw-03C"/>
         <segue reference="fvM-0a-2Ub"/>
     </inferredMetricsTieBreakers>
 </document>
