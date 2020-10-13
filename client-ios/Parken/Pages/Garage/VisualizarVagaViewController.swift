@@ -28,7 +28,9 @@ class VisualizarVagaViewController: UIViewController {
         
         if (vaga != nil){
             
+            /*
             let reserva:String = "true" //vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
+            
             if(reserva == "true"){
                 lblStatus.tintColor = UIColor.yellow
                 lblStatus.text = "Reservado"
@@ -36,6 +38,7 @@ class VisualizarVagaViewController: UIViewController {
                 lblStatus.tintColor = UIColor.green
                 lblStatus.text = "Livre"
             }
+            */
             
             lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
             lblDescricao.text = vaga?.value(forKeyPath: "descricao") as? String ?? "Descricao"
@@ -67,8 +70,8 @@ class VisualizarVagaViewController: UIViewController {
                 }
             }
             
-            let custo = "R$ \(vaga?.value(forKeyPath: "valor") ?? "12,00")"
-            lblCusto.text = custo
+            let custo = vaga?.value(forKeyPath: "valor") as? Double ?? 12.22
+            lblCusto.text = "R$ \(String(format: "%.2f", ceil(custo * 100)/100))"
             
             dias = String(dias.dropLast(1))
             
