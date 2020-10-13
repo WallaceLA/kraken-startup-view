@@ -9,7 +9,7 @@ class CustomNavViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
+        
         let userID = Auth.auth().currentUser?.uid;
         
         ref?.child("users").child(userID!).observeSingleEvent(of: .value, with: {(snapshot) in
@@ -22,13 +22,13 @@ class CustomNavViewController: UIViewController {
                 /*let regex = try! NSRegularE"\(firstname)")xpression(pattern: "[A-Z]+\w")
                 let range = NSRange(location: 0, length: String(firstname).utf16.count)
                 
-                self.nameLabel.text! += "\(regex.firstMatch(in: String(firstname), options: [], range: range) != nil)!"*/
-                print(firstname)
+                self.nameLabel.text! += "\(regex.firstMatch(in: String(firstname), options: [], range: range) != nil)!"
+                print(firstname)*/
                 
                 self.nameLabel.text! += "\(firstname)!"
                 
             }
-        })*/
+        })
     }
     
     @IBAction func sairBtnClick(_ sender: Any) {

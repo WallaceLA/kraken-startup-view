@@ -4,6 +4,7 @@ import FirebaseAuth
 class RegisterUpdateViewController: UIViewController {
     
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
+    @IBOutlet weak var passwordReset: PrimaryButtonStyle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,7 +12,8 @@ class RegisterUpdateViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    /*@IBAction func passwordResetClick(_ sender: Any) {
+    
+    @IBAction func passwordResetClick(_ sender: Any) {
         guard let email = emailField.text, email != "" else {
             return
         }
@@ -22,10 +24,9 @@ class RegisterUpdateViewController: UIViewController {
         }, onError: { (error) in
             self.resetFailedAlert()
         })
-        self.performSegue(withIdentifier: "AtualizaToWelcomeSegue", sender: self)
-    }*/
+    }
 
-    /*func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+    func resetPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         
         Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
 
@@ -44,16 +45,12 @@ class RegisterUpdateViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 
         present(alert, animated: true)
-    }*/
+    }
     
-    /*func resetFailedAlert(){
+    func resetFailedAlert(){
         let resetFailedAlert = UIAlertController(title: "Reset falhou", message: "Erro: Nao foi possivel realizar o reset de senha.", preferredStyle: .alert)
         resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(resetFailedAlert, animated: true, completion: nil)
     }
-    
-    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        showUserDataAlert()
-    }*/
     
 }

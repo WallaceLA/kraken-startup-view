@@ -251,7 +251,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUU-oP-WDS" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUU-oP-WDS" customClass="SwiftMaskTextfield" customModule="SwiftMaskTextfield">
                                 <rect key="frame" x="20" y="310" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -290,7 +290,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ot0-sZ-WPI" customClass="PrimaryTextFieldStyle" customModule="Parken" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ot0-sZ-WPI" customClass="SwiftMaskTextfield" customModule="SwiftMaskTextfield">
                                 <rect key="frame" x="20" y="353" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -350,12 +350,12 @@
                     <navigationItem key="navigationItem" id="IZM-4a-9o0"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="documentNumberField" destination="WUU-oP-WDS" id="WyR-eo-xTQ"/>
+                        <outlet property="documentNumberField" destination="WUU-oP-WDS" id="gSZ-gY-C28"/>
                         <outlet property="emailField" destination="3Jm-fo-nDe" id="2H3-ub-8Wn"/>
                         <outlet property="firstNameField" destination="gqT-h1-gor" id="1qu-iF-vTX"/>
                         <outlet property="lastNameField" destination="n45-hR-eA8" id="bua-Yd-MsH"/>
                         <outlet property="passwordField" destination="vU8-VF-yBW" id="IHz-qf-Iwt"/>
-                        <outlet property="phoneNumberField" destination="ot0-sZ-WPI" id="4yu-4h-s10"/>
+                        <outlet property="phoneNumberField" destination="ot0-sZ-WPI" id="6nt-Go-F9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-h8-sdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -798,6 +798,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Atualizar Conta"/>
                                 <connections>
+                                    <action selector="passwordResetClick:" destination="dYI-hp-ws8" eventType="touchUpInside" id="aoP-2l-n9U"/>
                                     <segue destination="3Ci-bP-aLz" kind="show" id="fvM-0a-2Ub"/>
                                 </connections>
                             </button>
@@ -827,6 +828,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="Sxi-fJ-Kh9" id="Og4-r8-4gZ"/>
+                        <outlet property="passwordReset" destination="lp5-C5-Yn7" id="FnP-HJ-TdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGa-qY-JZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -840,7 +842,6 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
         <image name="splashscreen" width="213.5" height="320.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f3k-dw-03C"/>
-        <segue reference="fvM-0a-2Ub"/>
+        <segue reference="IJf-Y3-cfy"/>
     </inferredMetricsTieBreakers>
 </document>

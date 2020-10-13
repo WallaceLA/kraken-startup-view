@@ -2,13 +2,14 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import PhoneNumberKit
+import SwiftMaskTextfield
 
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var passwordField: PrimaryTextFieldStyle!
     @IBOutlet weak var emailField: PrimaryTextFieldStyle!
-    @IBOutlet weak var phoneNumberField: PrimaryTextFieldStyle!
-    @IBOutlet weak var documentNumberField: PrimaryTextFieldStyle!
+    @IBOutlet weak var phoneNumberField: SwiftMaskTextfield!
+    @IBOutlet weak var documentNumberField: SwiftMaskTextfield!
     @IBOutlet weak var lastNameField: PrimaryTextFieldStyle!
     @IBOutlet weak var firstNameField: PrimaryTextFieldStyle!
     
@@ -21,13 +22,10 @@ class RegisterViewController: UIViewController {
         
         super.viewDidLoad()
         
-        /*phoneNumberField.text = PartialFormatter(phoneNumberKit: PhoneNumberKit(), defaultRegion: "BR", withPrefix: true, maxDigits: 11).formatPartial(phoneNumberField.text ?? "")
-        phoneNumberField.defaultRegion = "BR"
-        phoneNumberField.withFlag = true
-        phoneNumberField.maxDigits = 11
-        phoneNumberField.withExamplePlaceholder = true*/
-        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        self.documentNumberField.formatPattern = "###.###.###-##"
+        self.phoneNumberField.formatPattern = "+## (##) #####-####"
         
         passwordField.isSecureTextEntry = true
         
