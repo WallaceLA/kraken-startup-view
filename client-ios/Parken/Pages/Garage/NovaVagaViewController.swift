@@ -58,6 +58,27 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
     }        // Do any additional setup after loading the view.
     
     @IBAction func salvar(_sender: Any) {
+        
+        if  txtTitulo.text!.isEmpty ||
+            txtDescricao.text!.isEmpty ||
+            txtPreco.text!.isEmpty ||
+            txtCep.text!.isEmpty ||
+            txtRua.text!.isEmpty ||
+            txtNumero.text!.isEmpty ||
+            txtBairro.text!.isEmpty ||
+            txtCidade.text!.isEmpty ||
+            txtUF.text!.isEmpty ||
+            txtLargura.text!.isEmpty ||
+            txtComprimento.text!.isEmpty ||
+            txtAltura.text!.isEmpty
+            {
+            
+            let alerta = UIAlertController(title: "Erro" ,message: "Preencha todos os campos",preferredStyle: UIAlertController.Style.alert)
+            alerta.addAction(UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler: nil))
+            present(alerta, animated: true, completion: nil)
+            return
+        }
+        
         let id:String = "\(txtRua.text!)-\(txtNumero.text!)-\(txtCep.text!)-\(txtTitulo.text!)"
         
         let preco:Double = Double(txtPreco.text!)!
@@ -143,7 +164,7 @@ class NovaVagaViewController: UIViewController, UITextFieldDelegate {
         latitude: Double,
         longitude: Double,
         //reservado:String,
-        frequencia:Dictionary<String,Any>) {
+        frequencia:Dictionary<String,Bool>) {
         guard let appDelegate  = UIApplication.shared.delegate as? AppDelegate else {return}
         
         let managedContext = appDelegate.persistentContainer.viewContext

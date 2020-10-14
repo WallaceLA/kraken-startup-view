@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class ConfirmarVagaViewController: UIViewController {
-
+    
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var lblEndereco: UILabel!
     
@@ -28,7 +28,7 @@ class ConfirmarVagaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         lblNome?.text = (requisicao?.value(forKeyPath: "solicitante") as? String) ?? "Nome"
         lblVeiculo?.text = (requisicao?.value(forKeyPath: "veiculo") as? String) ?? "Veiculo"
         lblPlaca?.text = (requisicao?.value(forKeyPath: "placa") as? String) ?? "Placa"
@@ -53,45 +53,65 @@ class ConfirmarVagaViewController: UIViewController {
     
     @IBAction func actAprovar(_ sender: Any) {
         
+        self.save(estado: "Aprovado")
+        
         let alerta = UIAlertController(
-                               title: "Sucesso!" ,
-                               message: "Vaga Aprovada.",
-                               preferredStyle: UIAlertController.Style.alert)
-
-                           alerta.addAction(UIAlertAction(
-                                               title: "OK",
-                                               style: UIAlertAction.Style.default,
-                                               handler: {_ in self.navigationController?.popToRootViewController(animated: true)}))
-
-               present(alerta, animated: true, completion: nil)
+            title: "Sucesso!" ,
+            message: "Vaga Aprovada.",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alerta.addAction(UIAlertAction(
+            title: "OK",
+            style: UIAlertAction.Style.default,
+            handler: {_ in self.navigationController?.popToRootViewController(animated: true)}))
+        
+        present(alerta, animated: true, completion: nil)
         
     }
     
     @IBAction func actRejeitar(_ sender: Any) {
         
-        let alerta = UIAlertController(
-                               title: "Atenção!" ,
-                               message: "Sua solicitação foi negada.",
-                               preferredStyle: UIAlertController.Style.alert)
-
-                           alerta.addAction(UIAlertAction(
-                                               title: "OK",
-                                               style: UIAlertAction.Style.default,
-                                               handler: {_ in self.navigationController?.popToRootViewController(animated: true)}))
-
-               present(alerta, animated: true, completion: nil)
+        self.save(estado: "Rejeitado")
         
+        let alerta = UIAlertController(
+            title: "Atenção!" ,
+            message: "Sua solicitação foi negada.",
+            preferredStyle: UIAlertController.Style.alert)
+        
+        alerta.addAction(UIAlertAction(
+            title: "OK",
+            style: UIAlertAction.Style.default,
+            handler: {_ in self.navigationController?.popToRootViewController(animated: true)}))
+        
+        present(alerta, animated: true, completion: nil)
+        
+    }
+    
+    func save(estado:String){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        if (requisicao != nil){
+            let objectUpdate = requisicao
+            objectUpdate?.setValue(estado, forKeyPath: "estado")
+        }
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Não foi possível salvar \(error), \(error.userInfo)")
+        }
     }
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

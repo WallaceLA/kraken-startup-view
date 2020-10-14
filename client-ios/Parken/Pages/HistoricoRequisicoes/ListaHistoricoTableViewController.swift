@@ -1,43 +1,17 @@
 //
-//  AtualizarFrequenciaTableViewController.swift
+//  ListaHistoricoTableViewController.swift
 //  Parken
 //
-//  Created by Wallace Aguiar on 26/09/20.
-//  Copyright © 2020 Julio Avila. All rights reserved.
+//  Created by Wallace Aguiar on 13/10/20.
+//  Copyright © 2020 Parken. All rights reserved.
 //
 
 import UIKit
 
-class AtualizarFrequenciaTableViewController: UITableViewController {
+class ListaHistoricoTableViewController: UITableViewController {
 
-    //!!!!!!!!!!!!!!!!!!!!!
-    //CADA LINHA PRECISA CONSTAR UM DIA DA SEMANA, COM UM SWITCH
-    var dias:[String] = ["Segunda-feira", "1", "Terça-feira", "0", "Qua", "1"]
-    var semana = ["Segunda-feira":true, "Terça-feira":false, "Quarta-feira":true]
-    // sempre SEMPREEEEEEE 14 ESPAÇOS, que vai de 0 a 13, par -> Dia, ímpar -> status
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var i = 0
-        var dia:String = ""
-        var status:String = ""
-        
-        for (data, stats) in semana {
-            print("\(dia) - disponibilidade é \(status)" )
-        }
-        
-        while i < 14 {
-            dia = dias[i]
-            status = dias[i+1]
-            
-            i += 2
-        }
-        
-        print(dia)
-        print(status)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

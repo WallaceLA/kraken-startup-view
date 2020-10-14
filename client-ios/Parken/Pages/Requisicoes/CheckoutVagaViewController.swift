@@ -40,7 +40,7 @@ class CheckoutVagaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
 

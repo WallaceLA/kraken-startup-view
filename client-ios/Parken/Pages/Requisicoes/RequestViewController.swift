@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class RequestViewController: UIViewController {
-
+    
     @IBOutlet weak var buttonCancelar: UIBarButtonItem!
     
     @IBOutlet weak var lblTitulo: UILabel!
@@ -20,7 +20,7 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var lblCidadeEstado: UILabel!
     
     @IBOutlet weak var lblTamanho: UILabel!
-        
+    
     @IBOutlet weak var stepHoras: UIStepper!
     @IBOutlet weak var lblHoras: UILabel!
     
@@ -34,7 +34,7 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var campoData: UIDatePicker!
     
     var vaga : NSManagedObject?
-
+    
     var valorHora:Double = 0.0
     var qtdHora:Double = 0.0
     var valorTotal:Double = 0.0
@@ -42,13 +42,13 @@ class RequestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         if (vaga != nil){
             
             let titulo = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
             lblTitulo.text = titulo
             lglDescricao.text = vaga?.value(forKeyPath: "descricao") as? String ?? "Descricao"
-                        
+            
             let rua = vaga?.value(forKeyPath: "rua") as? String ?? "Rua"
             let num = vaga?.value(forKeyPath: "numero") as? String ?? "N/D"
             let compl = vaga?.value(forKeyPath: "complemento") as? String ?? ""
@@ -69,7 +69,7 @@ class RequestViewController: UIViewController {
             lblCusto.text = "R$ \(valorHora) por Hora"
             
             id = "\(rua)-\(num)-\(cep)-\(titulo)"
-
+            
             
         } else {
             lblTitulo.text = "VAGA NULA"
@@ -80,7 +80,7 @@ class RequestViewController: UIViewController {
         //valorTotal = valorHora * qtdHora
         
         //lblTotal.text = "Total: R$ \(valorTotal)"
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -95,13 +95,23 @@ class RequestViewController: UIViewController {
     }
     
     @IBAction func actProsseguir(_ sender: Any) {
-         
+        if  lblMarca.text!.isEmpty ||
+            lblModelo.text!.isEmpty ||
+            stepHoras.value < 1.0 ||
+            lblPlaca.text!.isEmpty
+        {
+            
+            let alerta = UIAlertController(title: "Erro" ,message: "Preencha todos os campos",preferredStyle: UIAlertController.Style.alert)
+            alerta.addAction(UIAlertAction(title: "OK",style: UIAlertAction.Style.default,handler: nil))
+            present(alerta, animated: true, completion: nil)
+            return
+        }
         
     }
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -121,12 +131,12 @@ class RequestViewController: UIViewController {
             
         }
         /*
-        else if segue.identifier == "goldSegue"{
-            seguer.nomePlano = "Plano Gold"
-            seguer.valorPlano = "199,90"
-        }
-        */
+         else if segue.identifier == "goldSegue"{
+         seguer.nomePlano = "Plano Gold"
+         seguer.valorPlano = "199,90"
+         }
+         */
     }
-
-
+    
+    
 }

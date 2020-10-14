@@ -195,7 +195,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyY-dT-mQs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="131"/>
+            <point key="canvasLocation" x="1678" y="113"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="oTi-KQ-bsE">
@@ -360,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-h8-sdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224.6376811594205" y="-1021.2053571428571"/>
+            <point key="canvasLocation" x="2433" y="-1078"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="S3h-HJ-X3S">
@@ -484,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndL-dd-IjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2398.5507246376815" y="-76.339285714285708"/>
+            <point key="canvasLocation" x="2912" y="-76"/>
         </scene>
         <!--Main-->
         <scene sceneID="7aF-yA-IKd">
@@ -494,7 +494,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7e-nl-2RN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3328" y="-76"/>
+            <point key="canvasLocation" x="3862" y="-76"/>
         </scene>
         <!--Terms of privacy-->
         <scene sceneID="sN8-nA-89I">
@@ -833,7 +833,7 @@ Qualquer reclamação relacionada ao site do Parken Startup será regida pelas l
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGa-qY-JZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050.7246376811595" y="-1021.2053571428571"/>
+            <point key="canvasLocation" x="3897" y="-1078"/>
         </scene>
     </scenes>
     <resources>

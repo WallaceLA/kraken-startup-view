@@ -32,12 +32,12 @@ class ListaConfirmacoesTableViewController: UITableViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Requisicao")
-        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "estado", ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: "estado CONTAINS[c] 'Pendente'")
+        
+        
         
         let fetchRequestVaga = NSFetchRequest<NSManagedObject>(entityName: "Vaga")
-        //fetchRequestVaga.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: true)]
-        //fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "rua", ascending: true)]
-        //fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "numero", ascending: true)]
         
         do {
             requisicoes = try managedContext.fetch(fetchRequest)

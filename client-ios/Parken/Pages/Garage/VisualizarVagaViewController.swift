@@ -13,7 +13,6 @@ class VisualizarVagaViewController: UIViewController {
 
     var vaga:NSManagedObject? = nil
     
-    @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var lblEndereco: UILabel!
@@ -27,19 +26,7 @@ class VisualizarVagaViewController: UIViewController {
         super.viewDidLoad()
         
         if (vaga != nil){
-            
-            /*
-            let reserva:String = "true" //vaga?.value(forKeyPath: "reservado") as? String ?? "Reservada"
-            
-            if(reserva == "true"){
-                lblStatus.tintColor = UIColor.yellow
-                lblStatus.text = "Reservado"
-            } else {
-                lblStatus.tintColor = UIColor.green
-                lblStatus.text = "Livre"
-            }
-            */
-            
+                        
             lblTitulo.text = vaga?.value(forKeyPath: "titulo") as? String ??  "Titulo"
             lblDescricao.text = vaga?.value(forKeyPath: "descricao") as? String ?? "Descricao"
                         
@@ -79,17 +66,21 @@ class VisualizarVagaViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
-    }    
-    
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "attFreqSegue"{
+            let vc = segue.destination as! AtualizarFrequenciaViewController
+            vc.vaga = vaga
+        }
+        
     }
-    */
+    
 
 }

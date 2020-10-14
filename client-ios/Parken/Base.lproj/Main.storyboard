@@ -682,6 +682,17 @@
                                     <segue destination="OE0-vL-4Uy" kind="show" id="Rik-XE-ddL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psn-pO-stb">
+                                <rect key="frame" x="0.0" y="374" width="414" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
+                                <state key="normal" title="Histórico de Aprovações"/>
+                                <connections>
+                                    <segue destination="ojE-Ph-F3P" kind="show" id="tMA-he-igJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="a9V-3w-WgD" firstAttribute="top" secondItem="QbG-5G-X1K" secondAttribute="bottom" constant="50" id="3JT-4g-U2Y"/>
@@ -738,6 +749,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4Y-Og-DAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="885"/>
+        </scene>
+        <!--Historico-->
+        <scene sceneID="yft-qP-iIa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Historico" id="ojE-Ph-F3P" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EsT-j4-n6x"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjM-eY-LL3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="925"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q8C-up-omP">
