@@ -11,5 +11,11 @@ target 'Parken' do
   pod "SGCodeTextField"
   pod 'Jelly', '~> 2.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Analytics'
+  pod 'Alamofire', '~> 5.2'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'SwiftMaskTextfield'
 end
 

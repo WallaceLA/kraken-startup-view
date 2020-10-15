@@ -19,14 +19,23 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         mapView.gestures.longPressDelegate = self
     }
     
-    func getSuggest(textQuery: String, action: @escaping (SearchError?, [Suggestion]?)-> () ) {
+    func getAutoSuggest(textQuery: String, action: @escaping (SearchError?, [Suggestion]?)-> ()) {
         let centerGeoCoordinates = getViewCenter()
-        let autosuggestOptions = SearchOptions(languageCode: LanguageCode.ptBr,
+        let autoSuggestOptions = SearchOptions(languageCode: LanguageCode.ptBr,
                                                maxItems: 5)
         
         _ = searchEngine.suggest(textQuery: TextQuery(textQuery, near: centerGeoCoordinates),
-                                 options: autosuggestOptions,
+                                 options: autoSuggestOptions,
                                  completion: action)
+    }
+    
+    func getAddressByCoordinates(geoCoordinates: GeoCoordinates, action: @escaping (SearchError?, [Place]?)-> ()) {
+        let reverseGeocodingOptions = SearchOptions(languageCode: LanguageCode.ptBr,
+                                                    maxItems: 1)
+        
+        _ = searchEngine.search(coordinates: geoCoordinates,
+                                options: reverseGeocodingOptions,
+                                completion: action)
     }
     
     // Conforming to TapDelegate protocol.
@@ -59,11 +68,10 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         }
     }
     
-    func createPointMarker(geoCoordinates: GeoCoordinates) -> MapMarkerLite {
+    func createPointMarker(geoCoordinates: GeoCoordinates, imageName: String) -> MapMarkerLite {
         let mapMarker = MapMarkerLite(at: geoCoordinates)
         
-        let image = UIImage(named: "poi")
-        
+        let image = UIImage(named: imageName)
         let mapImage = MapImageLite(image!)
         let mapMarkerImageStyle = MapMarkerImageStyleLite()
         mapMarkerImageStyle.setAnchorPoint(Anchor2D(horizontal: 0.5, vertical: 1))
@@ -73,10 +81,17 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         return mapMarker
     }
     
-    private func createCircleMarker(geoCoordinates: GeoCoordinates, imageName: String) -> MapMarkerLite {
+    func createCircleMarker(geoCoordinates: GeoCoordinates, imageName: String, isDefaultImage: Bool) -> MapMarkerLite {
         let mapMarker = MapMarkerLite(at: geoCoordinates)
         
-        let image = UIImage(named: imageName)
+        var image: UIImage?
+        
+        if isDefaultImage {
+            image = UIImage(systemName: imageName)
+        } else {
+             image = UIImage(named: imageName)
+        }
+        
         let mapImage = MapImageLite(image!)
         
         mapMarker.addImage(mapImage!, style: MapMarkerImageStyleLite())
@@ -84,13 +99,11 @@ class HereSdkController: TapDelegate, LongPressDelegate {
         return mapMarker
     }
     
-    func addCircleMarker(imageName: String, geoCoordinates: GeoCoordinates, lastMarker: MapMarkerLite?) -> MapMarkerLite {
-        let mapMarker = createCircleMarker(geoCoordinates: geoCoordinates, imageName: imageName)
-        
+    func addMarker(mapMarker: MapMarkerLite, geoCoordinates: GeoCoordinates, lastMarker: MapMarkerLite?) -> MapMarkerLite {        
         if let lastMarker = lastMarker {
             mapView.mapScene.removeMapMarker(lastMarker)
         }
-    
+        
         mapView.mapScene.addMapMarker(mapMarker)
         
         return mapMarker
