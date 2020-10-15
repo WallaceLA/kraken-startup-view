@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class ListaHistoricoTableViewController: UITableViewController {
 
+    var solicitacoes : [NSManagedObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,28 +22,53 @@ class ListaHistoricoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Requisicao")
+
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: true)]
+       
+
+        do {
+            solicitacoes = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Não foi possível buscar os dados \(error), \(error.userInfo)")
+        }
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return solicitacoes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
+        let solicitacao = solicitacoes[indexPath.row]
+
+        //cell.textLabel?.text = vagas[indexPath.row]
+        //cell.imageView?.image = UIImage(color: .red)
+        
+        //, \(vaga.value(forKeyPath: "numero"))"
         // Configure the cell...
+        cell.textLabel?.text = solicitacao.value(forKeyPath: "id") as? String
+        cell.detailTextLabel?.text = solicitacao.value(forKeyPath: "estado") as? String
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,14 +105,19 @@ class ListaHistoricoTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "VisualizarSolicitacaoSegue"){
+        let vc = segue.destination as! HistoricoViewController
+        let solicitacaoSelecionada:NSManagedObject = solicitacoes[self.tableView.indexPathForSelectedRow!.item]
+        vc.solicitacao = solicitacaoSelecionada
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        }
     }
-    */
 
 }

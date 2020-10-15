@@ -589,7 +589,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Confirmações"/>
+                                        <state key="normal" title="Solicitações"/>
                                         <connections>
                                             <segue destination="Kyj-y9-8qJ" kind="show" id="CTY-Hg-Mo1"/>
                                         </connections>
@@ -622,48 +622,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-5G-X1K">
-                                <rect key="frame" x="0.0" y="573" width="414" height="171"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTc-xj-rDP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="Vif-fo-bSY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Termos de Uso"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-9H-9nA">
-                                        <rect key="frame" x="0.0" y="57" width="414" height="57"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="FdE-d8-Xjh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Termos de Privacidade"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-ZB-ViJ">
-                                        <rect key="frame" x="0.0" y="114" width="414" height="57"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="57" id="1yD-yx-1j3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <inset key="contentEdgeInsets" minX="20" minY="15" maxX="0.0" maxY="15"/>
-                                        <state key="normal" title="Entre em contato"/>
-                                    </button>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-5G-X1K">
+                                <rect key="frame" x="0.0" y="687" width="414" height="57"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-3w-WgD">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-3w-WgD">
                                 <rect key="frame" x="0.0" y="794" width="414" height="48"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="bRp-HG-bGQ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
                                 <state key="normal" title="Sair"/>
@@ -695,18 +661,14 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="a9V-3w-WgD" firstAttribute="top" secondItem="QbG-5G-X1K" secondAttribute="bottom" constant="50" id="3JT-4g-U2Y"/>
-                            <constraint firstItem="a9V-3w-WgD" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="3eJ-83-YRX"/>
                             <constraint firstItem="QbG-5G-X1K" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="A3Z-vc-8dX"/>
                             <constraint firstItem="arG-7U-Fz6" firstAttribute="top" secondItem="CRF-A9-mQI" secondAttribute="top" constant="30" id="E3F-KN-jB8"/>
-                            <constraint firstItem="a9V-3w-WgD" firstAttribute="trailing" secondItem="Q0J-L3-VYI" secondAttribute="trailing" id="Muz-Ab-rsV"/>
                             <constraint firstItem="arG-7U-Fz6" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="Wp5-MZ-Xm9"/>
                             <constraint firstItem="arG-7U-Fz6" firstAttribute="trailing" secondItem="Q0J-L3-VYI" secondAttribute="trailing" id="b4q-OU-tGc"/>
                             <constraint firstItem="j96-nk-IFI" firstAttribute="leading" secondItem="Q0J-L3-VYI" secondAttribute="leading" id="bBf-F2-GK5"/>
                             <constraint firstItem="j96-nk-IFI" firstAttribute="trailing" secondItem="Q0J-L3-VYI" secondAttribute="trailing" id="cE1-cD-OPo"/>
                             <constraint firstItem="j96-nk-IFI" firstAttribute="top" secondItem="arG-7U-Fz6" secondAttribute="bottom" constant="20" id="p7O-25-YxX"/>
                             <constraint firstItem="Q0J-L3-VYI" firstAttribute="trailing" secondItem="QbG-5G-X1K" secondAttribute="trailing" id="peV-QL-ien"/>
-                            <constraint firstItem="Q0J-L3-VYI" firstAttribute="bottom" secondItem="a9V-3w-WgD" secondAttribute="bottom" constant="20" id="taQ-ru-Hj9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q0J-L3-VYI"/>
                     </view>

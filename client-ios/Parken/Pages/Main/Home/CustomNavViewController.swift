@@ -32,7 +32,7 @@ class CustomNavViewController: UIViewController {
     }
     
     @IBAction func sairBtnClick(_ sender: Any) {
-        performSegue(withIdentifier: "SairToWelcomeSegue", sender: nil)
+        exit(0)
     }
     
 }

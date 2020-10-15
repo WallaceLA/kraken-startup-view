@@ -36,8 +36,6 @@ class VagasTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Vaga")
 
         fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "titulo", ascending: true)]
-        //fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "rua", ascending: true)]
-        //fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "numero", ascending: true)]
 
         do {
             vagas = try managedContext.fetch(fetchRequest)
@@ -63,16 +61,12 @@ class VagasTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         let vaga = vagas[indexPath.row]
-
-        //cell.textLabel?.text = vagas[indexPath.row]
-        //cell.imageView?.image = UIImage(color: .red)
         
         let rua = vaga.value(forKeyPath: "rua") as? String ?? "Rua não encontrada"
         let num = vaga.value(forKeyPath: "numero") as? String ?? "Sem Número"
         let compl = vaga.value(forKeyPath: "complemento") as? String ?? ""
         let endereco:String = "\(rua), \(num) \(compl)"
         
-        //, \(vaga.value(forKeyPath: "numero"))"
         // Configure the cell...
         cell.textLabel?.text = vaga.value(forKeyPath: "titulo") as? String
         cell.detailTextLabel?.text = endereco
