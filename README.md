@@ -1,2 +1,6 @@
 # kraken-startup-view
-Project under development for completion of my Information Systems College at FIAP.
+Projeto desenvolvido para o Startup ONE da Fiap.
+
+Parken
+
+Um serviço de aluguel de vagas de garagem entre pessoas físicas (C2C).
